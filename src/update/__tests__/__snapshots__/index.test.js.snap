@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test hot update index Assert Success Download return hash 1`] = `
+Object {
+  "code": 1,
+  "data": Object {
+    "descs": "添加聊天功能
+修复商城页面BUG",
+    "diffUrl": "http://update-packages.reactnative.cn/hash",
+    "isup": 1,
+    "pdiffUrl": "http://update-packages.reactnative.cn/hash",
+    "phash": "hash",
+    "pname": "1.0.3-rc",
+    "updates": true,
+    "url": "http://update-packages.reactnative.cn/hash",
+  },
+}
+`;
+
+exports[`test hot update index Assert Success Download return hash 2`] = `undefined`;
+
+exports[`test hot update index Assert getOption exists 1`] = `
+Object {
+  "package": "com.android.apin",
+  "phash": "",
+  "type": 1,
+  "vcode": "1.0",
+}
+`;
+
+exports[`test hot update index Assert isFirstTime to be TRUE 1`] = `true`;
+
+exports[`test hot update index Assert isRolledBack to be FALSE 1`] = `false`;
+
+exports[`test hot update index Assert packageVersion to be 1.0 1`] = `"1.0"`;
