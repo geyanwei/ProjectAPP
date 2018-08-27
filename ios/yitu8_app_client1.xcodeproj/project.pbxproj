@@ -55,11 +55,21 @@
 		6AFAFA140B95444B97046E26 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE9409B3956421581797435 /* libRNImagePicker.a */; };
 		74C4761C8D01425996F7C21B /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7A97DE1564794807A28BA /* libRNSVG.a */; };
 		7940F581212EB44500FF60CA /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7940F545212EB33000FF60CA /* libART.a */; };
-		795EFB12212FEFD60017DEEB /* RCTMyNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFAF7212FEFD60017DEEB /* RCTMyNativeModule.m */; };
-		795EFB17212FEFD60017DEEB /* WeChatNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB01212FEFD60017DEEB /* WeChatNativeModule.m */; };
-		795EFB18212FEFD60017DEEB /* MapNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB03212FEFD60017DEEB /* MapNativeModule.m */; };
-		795EFB1D212FEFD60017DEEB /* ChatNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB0E212FEFD60017DEEB /* ChatNativeModule.m */; };
-		795EFB1E212FEFD60017DEEB /* JPushNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB11212FEFD60017DEEB /* JPushNativeModule.m */; };
+		795EFB99212FFABC0017DEEB /* RCTMyNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */; };
+		795EFB9A212FFABC0017DEEB /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB80212FFABC0017DEEB /* Order.m */; };
+		795EFB9B212FFABC0017DEEB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */; };
+		795EFB9C212FFABC0017DEEB /* AliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB84212FFABC0017DEEB /* AliPayManager.m */; };
+		795EFB9D212FFABC0017DEEB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFB85212FFABC0017DEEB /* AlipaySDK.framework */; };
+		795EFB9E212FFABC0017DEEB /* WeChatNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB88212FFABC0017DEEB /* WeChatNativeModule.m */; };
+		795EFB9F212FFABC0017DEEB /* MapNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB8A212FFABC0017DEEB /* MapNativeModule.m */; };
+		795EFBA0212FFABC0017DEEB /* RNUMConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB8E212FFABC0017DEEB /* RNUMConfigure.m */; };
+		795EFBA1212FFABC0017DEEB /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFB8F212FFABC0017DEEB /* UMCommon.framework */; };
+		795EFBA2212FFABC0017DEEB /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFB90212FFABC0017DEEB /* UMAnalytics.framework */; };
+		795EFBA3212FFABC0017DEEB /* UMAnalyticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB91212FFABC0017DEEB /* UMAnalyticsModule.m */; };
+		795EFBA4212FFABC0017DEEB /* ChatNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB95212FFABC0017DEEB /* ChatNativeModule.m */; };
+		795EFBA5212FFABC0017DEEB /* JPushNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB98212FFABC0017DEEB /* JPushNativeModule.m */; };
+		795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */; };
+		795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */; };
 		79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0BA58212EA5B30028F9CF /* libbz2.tbd */; };
 		7BB6CC4AF0B74DD99EE91CEF /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA98BC40C2B455784E10E8C /* libRCTBEEPickerManager.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -561,16 +571,30 @@
 		6EA60169671C4423B09BEFA5 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7940F53F212EB33000FF60CA /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
-		795EFAF6212FEFD60017DEEB /* RCTMyNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMyNativeModule.h; sourceTree = "<group>"; };
-		795EFAF7212FEFD60017DEEB /* RCTMyNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMyNativeModule.m; sourceTree = "<group>"; };
-		795EFB00212FEFD60017DEEB /* WeChatNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatNativeModule.h; sourceTree = "<group>"; };
-		795EFB01212FEFD60017DEEB /* WeChatNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatNativeModule.m; sourceTree = "<group>"; };
-		795EFB03212FEFD60017DEEB /* MapNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapNativeModule.m; sourceTree = "<group>"; };
-		795EFB04212FEFD60017DEEB /* MapNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapNativeModule.h; sourceTree = "<group>"; };
-		795EFB0D212FEFD60017DEEB /* ChatNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatNativeModule.h; sourceTree = "<group>"; };
-		795EFB0E212FEFD60017DEEB /* ChatNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatNativeModule.m; sourceTree = "<group>"; };
-		795EFB10212FEFD60017DEEB /* JPushNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPushNativeModule.h; sourceTree = "<group>"; };
-		795EFB11212FEFD60017DEEB /* JPushNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPushNativeModule.m; sourceTree = "<group>"; };
+		795EFB7D212FFABC0017DEEB /* RCTMyNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMyNativeModule.h; sourceTree = "<group>"; };
+		795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMyNativeModule.m; sourceTree = "<group>"; };
+		795EFB80212FFABC0017DEEB /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		795EFB82212FFABC0017DEEB /* AliPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliPayManager.h; sourceTree = "<group>"; };
+		795EFB83212FFABC0017DEEB /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		795EFB84212FFABC0017DEEB /* AliPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliPayManager.m; sourceTree = "<group>"; };
+		795EFB85212FFABC0017DEEB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		795EFB87212FFABC0017DEEB /* WeChatNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatNativeModule.h; sourceTree = "<group>"; };
+		795EFB88212FFABC0017DEEB /* WeChatNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatNativeModule.m; sourceTree = "<group>"; };
+		795EFB8A212FFABC0017DEEB /* MapNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapNativeModule.m; sourceTree = "<group>"; };
+		795EFB8B212FFABC0017DEEB /* MapNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapNativeModule.h; sourceTree = "<group>"; };
+		795EFB8D212FFABC0017DEEB /* UMAnalyticsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAnalyticsModule.h; sourceTree = "<group>"; };
+		795EFB8E212FFABC0017DEEB /* RNUMConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUMConfigure.m; sourceTree = "<group>"; };
+		795EFB8F212FFABC0017DEEB /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		795EFB90212FFABC0017DEEB /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
+		795EFB91212FFABC0017DEEB /* UMAnalyticsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAnalyticsModule.m; sourceTree = "<group>"; };
+		795EFB92212FFABC0017DEEB /* RNUMConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUMConfigure.h; sourceTree = "<group>"; };
+		795EFB94212FFABC0017DEEB /* ChatNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatNativeModule.h; sourceTree = "<group>"; };
+		795EFB95212FFABC0017DEEB /* ChatNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatNativeModule.m; sourceTree = "<group>"; };
+		795EFB97212FFABC0017DEEB /* JPushNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPushNativeModule.h; sourceTree = "<group>"; };
+		795EFB98212FFABC0017DEEB /* JPushNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPushNativeModule.m; sourceTree = "<group>"; };
+		795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		79F0BA58212EA5B30028F9CF /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
@@ -610,6 +634,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */,
+				795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */,
 				7940F581212EB44500FF60CA /* libART.a in Frameworks */,
 				79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -619,6 +645,7 @@
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
+				795EFBA1212FFABC0017DEEB /* UMCommon.framework in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
@@ -654,6 +681,8 @@
 				6801C16942DB4E9A94282C59 /* libyoga.a in Frameworks */,
 				DC60A06E0F08463FA5B9319A /* libcxxreact.a in Frameworks */,
 				2A9C48BF3C1446E4B5EA0C15 /* libjschelpers.a in Frameworks */,
+				795EFBA2212FFABC0017DEEB /* UMAnalytics.framework in Frameworks */,
+				795EFB9D212FFABC0017DEEB /* AlipaySDK.framework in Frameworks */,
 				A6D0E275E10646A596534B59 /* libthird-party.a in Frameworks */,
 				C2FFC7C5FA0647D9B3E3C09A /* libdouble-conversion.a in Frameworks */,
 			);
@@ -802,6 +831,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */,
+				795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */,
 				79F0BA58212EA5B30028F9CF /* libbz2.tbd */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				C32716AABB8A41C897A2AE1B /* libz.tbd */,
@@ -846,60 +877,87 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		795EFAF4212FEFD60017DEEB /* Tools */ = {
+		795EFB7B212FFABC0017DEEB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				795EFAF5212FEFD60017DEEB /* RCTMyNativeModule */,
-				795EFAFF212FEFD60017DEEB /* weChat */,
-				795EFB02212FEFD60017DEEB /* map */,
-				795EFB0C212FEFD60017DEEB /* IM */,
-				795EFB0F212FEFD60017DEEB /* JPush */,
+				795EFB7C212FFABC0017DEEB /* RCTMyNativeModule */,
+				795EFB7F212FFABC0017DEEB /* AliPay */,
+				795EFB86212FFABC0017DEEB /* weChat */,
+				795EFB89212FFABC0017DEEB /* map */,
+				795EFB8C212FFABC0017DEEB /* umsdk_IOS_analyics */,
+				795EFB93212FFABC0017DEEB /* IM */,
+				795EFB96212FFABC0017DEEB /* JPush */,
 			);
-			name = Tools;
-			path = ../../../yitu8_app_driver/ios/Tools;
+			path = Tools;
 			sourceTree = "<group>";
 		};
-		795EFAF5212FEFD60017DEEB /* RCTMyNativeModule */ = {
+		795EFB7C212FFABC0017DEEB /* RCTMyNativeModule */ = {
 			isa = PBXGroup;
 			children = (
-				795EFAF6212FEFD60017DEEB /* RCTMyNativeModule.h */,
-				795EFAF7212FEFD60017DEEB /* RCTMyNativeModule.m */,
+				795EFB7D212FFABC0017DEEB /* RCTMyNativeModule.h */,
+				795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */,
 			);
 			path = RCTMyNativeModule;
 			sourceTree = "<group>";
 		};
-		795EFAFF212FEFD60017DEEB /* weChat */ = {
+		795EFB7F212FFABC0017DEEB /* AliPay */ = {
 			isa = PBXGroup;
 			children = (
-				795EFB00212FEFD60017DEEB /* WeChatNativeModule.h */,
-				795EFB01212FEFD60017DEEB /* WeChatNativeModule.m */,
+				795EFB80212FFABC0017DEEB /* Order.m */,
+				795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */,
+				795EFB82212FFABC0017DEEB /* AliPayManager.h */,
+				795EFB83212FFABC0017DEEB /* Order.h */,
+				795EFB84212FFABC0017DEEB /* AliPayManager.m */,
+				795EFB85212FFABC0017DEEB /* AlipaySDK.framework */,
+			);
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		795EFB86212FFABC0017DEEB /* weChat */ = {
+			isa = PBXGroup;
+			children = (
+				795EFB87212FFABC0017DEEB /* WeChatNativeModule.h */,
+				795EFB88212FFABC0017DEEB /* WeChatNativeModule.m */,
 			);
 			path = weChat;
 			sourceTree = "<group>";
 		};
-		795EFB02212FEFD60017DEEB /* map */ = {
+		795EFB89212FFABC0017DEEB /* map */ = {
 			isa = PBXGroup;
 			children = (
-				795EFB03212FEFD60017DEEB /* MapNativeModule.m */,
-				795EFB04212FEFD60017DEEB /* MapNativeModule.h */,
+				795EFB8A212FFABC0017DEEB /* MapNativeModule.m */,
+				795EFB8B212FFABC0017DEEB /* MapNativeModule.h */,
 			);
 			path = map;
 			sourceTree = "<group>";
 		};
-		795EFB0C212FEFD60017DEEB /* IM */ = {
+		795EFB8C212FFABC0017DEEB /* umsdk_IOS_analyics */ = {
 			isa = PBXGroup;
 			children = (
-				795EFB0D212FEFD60017DEEB /* ChatNativeModule.h */,
-				795EFB0E212FEFD60017DEEB /* ChatNativeModule.m */,
+				795EFB8D212FFABC0017DEEB /* UMAnalyticsModule.h */,
+				795EFB8E212FFABC0017DEEB /* RNUMConfigure.m */,
+				795EFB8F212FFABC0017DEEB /* UMCommon.framework */,
+				795EFB90212FFABC0017DEEB /* UMAnalytics.framework */,
+				795EFB91212FFABC0017DEEB /* UMAnalyticsModule.m */,
+				795EFB92212FFABC0017DEEB /* RNUMConfigure.h */,
+			);
+			path = umsdk_IOS_analyics;
+			sourceTree = "<group>";
+		};
+		795EFB93212FFABC0017DEEB /* IM */ = {
+			isa = PBXGroup;
+			children = (
+				795EFB94212FFABC0017DEEB /* ChatNativeModule.h */,
+				795EFB95212FFABC0017DEEB /* ChatNativeModule.m */,
 			);
 			path = IM;
 			sourceTree = "<group>";
 		};
-		795EFB0F212FEFD60017DEEB /* JPush */ = {
+		795EFB96212FFABC0017DEEB /* JPush */ = {
 			isa = PBXGroup;
 			children = (
-				795EFB10212FEFD60017DEEB /* JPushNativeModule.h */,
-				795EFB11212FEFD60017DEEB /* JPushNativeModule.m */,
+				795EFB97212FFABC0017DEEB /* JPushNativeModule.h */,
+				795EFB98212FFABC0017DEEB /* JPushNativeModule.m */,
 			);
 			path = JPush;
 			sourceTree = "<group>";
@@ -1114,7 +1172,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				795EFAF4212FEFD60017DEEB /* Tools */,
+				795EFB7B212FFABC0017DEEB /* Tools */,
 				13B07FAE1A68108700A75B9A /* yitu8_app_client1 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* yitu8_app_client1Tests */,
@@ -1816,6 +1874,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795EFB9B212FFABC0017DEEB /* AlipaySDK.bundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -1882,13 +1941,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				795EFB1D212FEFD60017DEEB /* ChatNativeModule.m in Sources */,
-				795EFB1E212FEFD60017DEEB /* JPushNativeModule.m in Sources */,
-				795EFB17212FEFD60017DEEB /* WeChatNativeModule.m in Sources */,
+				795EFBA4212FFABC0017DEEB /* ChatNativeModule.m in Sources */,
+				795EFBA5212FFABC0017DEEB /* JPushNativeModule.m in Sources */,
+				795EFB9E212FFABC0017DEEB /* WeChatNativeModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				795EFB12212FEFD60017DEEB /* RCTMyNativeModule.m in Sources */,
-				795EFB18212FEFD60017DEEB /* MapNativeModule.m in Sources */,
+				795EFB9A212FFABC0017DEEB /* Order.m in Sources */,
+				795EFB99212FFABC0017DEEB /* RCTMyNativeModule.m in Sources */,
+				795EFBA3212FFABC0017DEEB /* UMAnalyticsModule.m in Sources */,
+				795EFB9C212FFABC0017DEEB /* AliPayManager.m in Sources */,
+				795EFBA0212FFABC0017DEEB /* RNUMConfigure.m in Sources */,
+				795EFB9F212FFABC0017DEEB /* MapNativeModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2067,6 +2130,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8PYC87AF8Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tools/AliPay",
+					"$(PROJECT_DIR)/Tools/umsdk_IOS_analyics",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
@@ -2106,6 +2174,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PYC87AF8Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Tools/AliPay",
+					"$(PROJECT_DIR)/Tools/umsdk_IOS_analyics",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",

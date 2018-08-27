@@ -6,15 +6,17 @@ import {
     ScrollView,
     Image,
     TouchableOpacity,
-    NativeModules, Platform, DeviceInfo
+    NativeModules,
+    Platform
 } from 'react-native';
-import {PageView, LayoutBox, navigation, Toast, AppInit, Loading, ModalBox} from 'myapplib';
+import {PageView, navigation, Toast, AppInit, Loading, ModalBox} from 'myapplib';
 import AniViewBgImage from './component/ani/AniViewBgImage.js';
 import AniNavHead from './component/ani/AniNavHead.js';
 import SelectItem from './component/aniSel/SelectItem.js';
 import ScrollAniShowView from './component/aniSel/ScrollAniShowView.js';
 import HtmlView from './component/htmlView';
 import SelectCell from '../../component/SelectCell.js';
+import ShareModule from "./component/ShareModule";
 
 const headImage_height = 155 + (Platform.OS === 'android' ? -20 : 1 == 1 ? 24 : 0);
 
@@ -250,7 +252,7 @@ class SpotsDetailsHot extends Component {
                             defIcon: require("../../image/icon_share_def.png"),
                             selIcon: require("../../image/icon_share_sel.png"),
                             onPress: () => {
-                                alert("分享");
+                                ShareModule.show();
                             }
                         }]}/>
                 <ScrollAniShowView

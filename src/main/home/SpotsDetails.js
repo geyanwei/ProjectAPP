@@ -15,6 +15,7 @@ import AniViewBgImage from './component/ani/AniViewBgImage.js';
 import AniNavHead from './component/ani/AniNavHead.js';
 import ModuleView from './component/ModuleView.js';
 import HtmlView from './component/htmlView';
+import ShareModule from "./component/ShareModule.js";
 
 import FuncItemView from "./component/FuncItemView.js";
 
@@ -130,7 +131,7 @@ class SpotsDetails extends Component {
                             defIcon: require("../../image/icon_share_def.png"),
                             selIcon: require("../../image/icon_share_sel.png"),
                             onPress: () => {
-                                alert("分享");
+                                ShareModule.show();
                             }
                         }]}/>
             </View>)

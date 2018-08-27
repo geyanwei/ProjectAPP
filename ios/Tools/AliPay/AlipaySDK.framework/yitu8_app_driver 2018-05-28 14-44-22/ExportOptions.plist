@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>compileBitcode</key>
+	<true/>
+	<key>manifest</key>
+	<dict>
+		<key>appURL</key>
+		<string>https://itunes.apple.com/us/app/yi-tu8si-ji-duan/id1080708644</string>
+		<key>displayImageURL</key>
+		<string>https://itunes.apple.com/us/app/yi-tu8si-ji-duan/id1080708644?l=zh&amp;ls=1&amp;mt=8</string>
+		<key>fullSizeImageURL</key>
+		<string>https://itunes.apple.com/us/app/yi-tu8si-ji-duan/id1080708644?l=zh&amp;ls=1&amp;mt=8</string>
+	</dict>
+	<key>method</key>
+	<string>ad-hoc</string>
+	<key>signingStyle</key>
+	<string>automatic</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>teamID</key>
+	<string>8PYC87AF8Z</string>
+	<key>thinning</key>
+	<string>&lt;thin-for-all-variants&gt;</string>
+</dict>
+</plist>

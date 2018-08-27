@@ -11,7 +11,6 @@ import {
 
 } from 'react-native';
 import SelectCell from "../../../../component/SelectCell.js";
-import {navigation} from "myapplib";
 import CalendarHelp from '../../component/calendar/CalendarHelp.js';
 import InputMoney from '../../../../component/InputMoney.js';
 import MyButton from "../../../../component/MyButton.js";
