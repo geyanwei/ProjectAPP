@@ -31,13 +31,13 @@ class PushView extends Component {
             JPushModule.notifyJSDidLoad(resultCode => {
                 if (resultCode === 0) {
                 }
-            })
+            });
             JPushModule.getRegistrationID((registrationId) => {
                 log("================registrationId " + registrationId);
                 // MyNativeMoudles.registrationId = registrationId;
             })
         } else {
-            JPushModule.setupPush()
+            JPushModule.setupPush();
                     //监听极光注册成功
             JPushModule.addnetworkDidLoginListener((rep) => {
                 //iOS获取registrationId

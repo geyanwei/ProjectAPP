@@ -173,7 +173,7 @@ window.YITU.getAction = (key) => {
     if (this.globalActionArray) {
         return this.globalActionArray[key];
     } else {
-        return;
+
     }
 };
 

@@ -44,9 +44,9 @@ export default class App extends Component {
                                 //去加载
                                 let config = this.pageView.getConfig();
                                 config.pageLoading = true;
-                                config.emptyConfig.message = "又来loading"
+                                config.emptyConfig.message = "又来loading";
                                 config.showError = false;
-                                this.pageView.refresh()
+                                this.pageView.refresh();
                                 setTimeout(()=>{
                                     config.pageLoading = false;
                                     config.showError = true;

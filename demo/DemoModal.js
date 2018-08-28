@@ -29,16 +29,16 @@ export default class App extends Component {
                     <Item
                         onPress={() => {
                             let mbBase = ModalBox.showSelect("通知","是否再次弹一个窗口？，请选择",(v)=>{
-                                Toast.show("你选择了"+v)
+                                Toast.show("你选择了"+v);
 
                                 if(v===0){
                                     return true;
                                 }else{
-                                    let mb = ModalBox.showTitle("选择确定".repeat(Math.random()*10+1))
+                                    let mb = ModalBox.showTitle("选择确定".repeat(Math.random()*10+1));
                                     mb.setCloseListener(()=>{
                                         //继续关闭
                                         mbBase.close();
-                                    })
+                                    });
                                     return false;
                                 }
 
@@ -73,7 +73,7 @@ export default class App extends Component {
                     <Item
                         onPress={() => {
                             ModalBox.showSelect("通知","你是否准备好了？，请选择",(v)=>{
-                                Toast.show("你选择了"+v)
+                                Toast.show("你选择了"+v);
                                 return true;
                             })
                         }}
@@ -82,7 +82,7 @@ export default class App extends Component {
                     <Item
                         onPress={() => {
                             ModalBox.showSelect("通知","生或者死，请选择",(v)=>{
-                                Toast.show("你选择了"+v)
+                                Toast.show("你选择了"+v);
                                 return true;
                             },"生","死",)
                         }}
@@ -124,7 +124,7 @@ export default class App extends Component {
                                             onPress:(e)=>{
                                                 // if()
                                                 if(inputValue){
-                                                    Loading.show("反馈中")
+                                                    Loading.show("反馈中");
                                                     setTimeout(()=>{
                                                         Loading.hide();
                                                         mb.close();

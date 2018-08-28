@@ -12,7 +12,7 @@ import AlphabetListView from 'react-native-alphabetlistview'
  */
 export default class extends Component {
   render() {
-    const {separatorHeight, sectionHeaderHeight, cellHeight, ...others} = this.props
+    const {separatorHeight, sectionHeaderHeight, cellHeight, ...others} = this.props;
     return (
       <AlphabetListView
         {...others}
@@ -25,7 +25,7 @@ export default class extends Component {
   static PropTypes = {
     ...AlphabetListView.propTypes,
     separatorHeight: PropTypes.number,
-  }
+  };
   static defaultProps = {
     separatorHeight: 0,
   }
@@ -52,7 +52,7 @@ AlphabetListView.prototype.scrollToSection = function (section) {
     sectionHeaderHeight = index * sectionHeaderHeight;
     y += numcells * cellHeight + sectionHeaderHeight;
     var maxY = this.totalHeight - this.containerHeight + headerHeight;
-    if (maxY < 0) maxY = 0
+    if (maxY < 0) maxY = 0;
     y = y > maxY ? maxY : y;
 
     this.refs.listview.scrollTo({ x:0, y, animated: true });
@@ -65,4 +65,4 @@ AlphabetListView.prototype.scrollToSection = function (section) {
   }
 
   this.props.onScrollToSection && this.props.onScrollToSection(section);
-}
+};

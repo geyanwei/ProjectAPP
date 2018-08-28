@@ -29,7 +29,7 @@ class UpdateProgressBar extends Component {
 		progress: 0,
 		onLoadBegin: () => { },
 		onLoadEnd: () => { }
-	}
+	};
 
 
 	componentWillUnmount() {

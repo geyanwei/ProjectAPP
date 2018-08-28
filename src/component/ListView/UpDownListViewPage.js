@@ -377,7 +377,7 @@ let customStyles = StyleSheet.create({
         color: '#fff',
     },
 
-})
+});
 let screenStyles = StyleSheet.create({
     container: {
         flex: 1,
@@ -396,5 +396,5 @@ let screenStyles = StyleSheet.create({
         marginTop: 12,
     }
 
-})
+});
 module.exports = demoPage;

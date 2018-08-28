@@ -54,7 +54,7 @@ class SpotsDetailsHot extends Component {
                     price: "1450.00"
                 };
             }),
-        }
+        };
         this.setState({
             data: data,
         });
@@ -546,7 +546,7 @@ const htmlStyle = StyleSheet.create({
         fontSize: YITU.fontSize_14,
         color: YITU.textColor_3
     }
-})
+});
 
 const styles = StyleSheet.create({
     container: {

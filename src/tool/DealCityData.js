@@ -21,5 +21,5 @@ let DealCityData = {
         obj.serviceCity = serviveList;
         return obj;
     }
-}
+};
 module.exports = DealCityData;

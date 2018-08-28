@@ -51,7 +51,7 @@ setTimeout(()=>{
         >
             <Text>DEV</Text>
         </TouchableOpacity>
-    )
+    );
 
     if(this.root){
         this.root.update(view)
@@ -59,7 +59,7 @@ setTimeout(()=>{
         this.root =  new RootSiblings(view)
     }
 
-},300)
+},300);
 export default class Demo extends Component {
     render() {
         return (

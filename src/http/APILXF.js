@@ -201,6 +201,6 @@ let APILXF = {
     api_route_modifyRoute: "/api/route/modifyRoute",
 
 
-}
+};
 
 module.exports = APILXF;

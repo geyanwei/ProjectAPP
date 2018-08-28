@@ -137,7 +137,7 @@ export default class App extends Component {
                                         onSelect:(arr)=>{
                                             if(arr&&arr.length===1){
                                                 let v  = arr[0];
-                                                console.log(data.refItem)
+                                                console.log(data.refItem);
                                                 if(v ==="隐藏性别"){
                                                     data.resultValue = undefined;
                                                 }else{
@@ -155,7 +155,7 @@ export default class App extends Component {
                         onPress={()=>{
                             //收集文本区域值
                             let a = this.LBREF.getLayoutBox().getLayoutValue();
-                            console.log(a)
+                            console.log(a);
                             alert(JSON.stringify(a))
                         }}
                     >

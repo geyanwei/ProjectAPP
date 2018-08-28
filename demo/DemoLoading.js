@@ -28,7 +28,7 @@ export default class App extends Component {
                 <View style={styles.container}>
                     <Item
                         onPress={() => {
-                            Loading.show()
+                            Loading.show();
                             //3秒后关闭
                             setTimeout(()=>{
                                 Loading.hide();

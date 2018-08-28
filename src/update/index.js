@@ -86,8 +86,8 @@ export function markSuccess() {
 
 NativeAppEventEmitter.addListener('RCTHotUpdateDownloadProgress', (params) => {
 
-})
+});
 
 NativeAppEventEmitter.addListener('RCTHotUpdateUnzipProgress', (params) => {
 
-})
+});

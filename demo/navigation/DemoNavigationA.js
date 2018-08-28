@@ -18,13 +18,13 @@ import {AppInit,Toast, ModalBox, LayoutBox, PageView,navigation} from "myapplib"
 
 export default class App extends Component {
     constructor(props){
-        super(props)
+        super(props);
 
         this.state = {
             test:1
-        }
+        };
         AppInit.test = ()=>{
-            console.log("aa")
+            console.log("aa");
             this.setState({
                 test:2
             })

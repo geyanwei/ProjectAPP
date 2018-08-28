@@ -27,7 +27,7 @@ class ActivityMessage extends Component{
 
             if (json) {
                 let pageNumber = (param.page-1) * param.pageSize + json.length;
-                let optionNumber = option || 0
+                let optionNumber = option || 0;
                 callback(json, {
                     allLoaded: pageNumber == optionNumber, //显示结束的底部样式,由你来控制
                 });
@@ -41,7 +41,7 @@ class ActivityMessage extends Component{
         let errorCallBack=(code,message,option)=>{
             Toast.show(message);
             let data = this.flatList && this.flatList.state && this.flatList.state.data;
-            let optionNumber = option || 0
+            let optionNumber = option || 0;
             let allLoaded = param.page * param.pageSize == optionNumber;
             if (page === 1 || !data || data&&data.length === 0) {
                 allLoaded = true;

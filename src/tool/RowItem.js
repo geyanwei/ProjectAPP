@@ -349,5 +349,5 @@ RowItem.fTime = (obj, page) => {
         return obj.value;
     }
 
-}
+};
 module.exports = RowItem;

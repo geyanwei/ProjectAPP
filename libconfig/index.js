@@ -32,12 +32,12 @@ Toast.STYLE = {
     maxWidth:265,//14个字的宽度
     borderRadius:4,
     alignItems:"center",
-}
+};
 Toast.TEXTSTYLE = {
     color: "#ffffff",
     fontSize:YITU.fontSize_4,
     textAlign:"center"
-}
+};
 Toast.POSITION = "top";
 Toast.showOK = (text) => {
     Toast.show(text, {
@@ -48,7 +48,7 @@ Toast.showOK = (text) => {
             backgroundColor: "green"
         }
     })
-}
+};
 
 Toast.showICON = (text, icon) => {
     Toast.show(text, {
@@ -78,12 +78,12 @@ Toast.showICON = (text, icon) => {
             </View>
         )
     })
-}
+};
 
-Loading.BGSTYLE = {}//视图背影样式 默认
+Loading.BGSTYLE = {};//视图背影样式 默认
 Loading.CONTENTSTYLE = {
     backgroundColor: '#000000cc',
-}//LOADING背影样式 默认
+};//LOADING背影样式 默认
 Loading.TEXTSTYLE = {
     color: 'white',
     marginTop: YITU.space_2,
@@ -92,17 +92,17 @@ Loading.TEXTSTYLE = {
     backgroundColor: '#00000000',
     width: "100%",
     maxWidth: 90,
-}//文本样式  默认
+};//文本样式  默认
 Loading.CIRCLERING = {
     color: [YITU.textColor_4],
     thickness: 2,
     spinDuration: 2000,
     ringColor: YITU.backgroundColor_4,
-}//环形转圈样式  默认
-Loading.TEXT = "请求中"
+};//环形转圈样式  默认
+Loading.TEXT = "请求中";
 
 UpImage.uploadListen = (data, callBack) => {
-    console.log(('data:image/jpeg;base64,' + data.data))
+    console.log(('data:image/jpeg;base64,' + data.data));
     fetch(Config.url + "/cloudfile/upload", {
         method: "POST",
         headers: {
@@ -112,7 +112,7 @@ UpImage.uploadListen = (data, callBack) => {
     }).then((response) => response.json())
         .then((json) => {
             if (json && json.code === 200 && json.data) {
-                data.imageUrl = json.data.domain + json.data.path
+                data.imageUrl = json.data.domain + json.data.path;
                 callBack("uploaddone", "上传成功", data);
 
             } else {
@@ -124,7 +124,7 @@ UpImage.uploadListen = (data, callBack) => {
         });
     callBack("uploading", "上传开始", data);
 
-}
+};
 Select.STYLE = {
     pickerConfirmBtnColor: YITU.textColor_4,
     pickerCancelBtnColor: YITU.textColor_4,
@@ -133,7 +133,7 @@ Select.STYLE = {
     pickerFontColor: YITU.textColor_0,
     pickerTitleColor: YITU.textColor_0,
     pickerToolBarFontSize: YITU.fontSize_5
-}
+};
 
 
 LayoutBox.Icon = class  extends Component {
@@ -244,7 +244,7 @@ LayoutBox.Icon = class  extends Component {
             />
         );
     }
-}
+};
 LayoutBox.Input = class  extends Component {
 
     getLayoutBox() {
@@ -294,7 +294,7 @@ LayoutBox.Input = class  extends Component {
             />
         );
     }
-}
+};
 LayoutBox.Second = class  extends Component {
 
     getLayoutBox() {
@@ -315,11 +315,11 @@ LayoutBox.Second = class  extends Component {
             />
         );
     }
-}
+};
 LayoutBox.InputFile = class  extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         let {data} = this.props;
         let loadState = 0, upLoadImageUrl = null;
         if (data.resultValue || data.preview) {
@@ -381,7 +381,7 @@ LayoutBox.InputFile = class  extends Component {
                     <TouchableOpacity style={layoutBoxFileStyle.actionLayoutLeft}
                                       onPress={() => {
                                           //清空图片
-                                          this.props.data.resultValue = undefined
+                                          this.props.data.resultValue = undefined;
                                           this.setState({
                                               loadState: 0,
                                               upLoadImageUrl: null
@@ -421,26 +421,26 @@ LayoutBox.InputFile = class  extends Component {
                     //上传中显示
                     this.setState({
                         loadState: 1
-                    })
+                    });
                     break;
                 case "uploaddone":
                     //上传完成显示
-                    console.log(data.imageUrl)
-                    this.props.data.resultValue = data.imageUrl
+                    console.log(data.imageUrl);
+                    this.props.data.resultValue = data.imageUrl;
                     this.setState({
                         loadState: 2,
                         upLoadImageUrl: data.imageUrl
-                    })
+                    });
                     break;
                 case "errorMessage":
-                    Toast.show(message)
+                    Toast.show(message);
                 case "cancel":
                 case "error":
 
                     //不处理用户取消类别错误
                     this.setState({
                         loadState: save ? 2 : 0
-                    })
+                    });
 
                     break;
                 case "uploaderror":
@@ -449,8 +449,8 @@ LayoutBox.InputFile = class  extends Component {
                     //上传失败
                     this.setState({
                         loadState: save ? 2 : 0
-                    })
-                    Toast.show(message)
+                    });
+                    Toast.show(message);
                     break;
             }
 
@@ -506,11 +506,11 @@ LayoutBox.InputFile = class  extends Component {
             </View>
         );
     }
-}
+};
 LayoutBox.InputArea = class  extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         let {data} = this.props;
         let text = "";
         if (data.rightProps) {
@@ -549,7 +549,7 @@ LayoutBox.InputArea = class  extends Component {
                     style={[layoutInputAreaStyle.inputStyle, this.props.rightTextStyle, data.rightTextStyle]}
                     onChangeText={(text) => {
                         if (maxLength)
-                            text = text.substring(0, maxLength)
+                            text = text.substring(0, maxLength);
                         data.resultValue = text;
                         this.setState({text})
                     }}
@@ -573,7 +573,7 @@ LayoutBox.InputArea = class  extends Component {
             }, 100);
         }
     }
-}
+};
 const layoutInputAreaStyle = StyleSheet.create({
     row: {
         backgroundColor: YITU.backgroundColor_0,
@@ -753,7 +753,7 @@ PageView.toLoading = (pageView, cb) => {
     config.pageLoading = true;
     config.showError = false;
     pageView.refresh(cb)
-}
+};
 
 PageView.toError = (pageView, message, cb) => {
     let config = pageView.getConfig();
@@ -761,14 +761,14 @@ PageView.toError = (pageView, message, cb) => {
     config.showError = true;
     config.errorConfig.message = message;
     pageView.refresh(cb)
-}
+};
 
 PageView.clearLoading = (pageView, cb) => {
     let config = pageView.getConfig();
     config.pageLoading = false;
     config.showError = false;
     pageView.refresh(cb)
-}
+};
 
 PageView.defaultConfig = (obj = {props: {}}, other = {}) => {
 
@@ -809,7 +809,7 @@ PageView.defaultConfig = (obj = {props: {}}, other = {}) => {
         }
     }
     return obj.pageViewDefaultConfig
-}
+};
 
 if (__DEV__) {
     require("../demo/Demo")
@@ -909,7 +909,7 @@ ModalBox.showOK = (title, desc, cb)=> {
             ]
         }
 
-    })
+    });
     return mb;
 };
 

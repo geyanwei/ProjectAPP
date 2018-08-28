@@ -49,7 +49,7 @@ export default class App extends Component {
                     <Text
 
                         onPress={()=>{
-                            console.log(AppInit.ref)
+                            console.log(AppInit.ref);
                             AppInit.removeRoutes(AppInit.ref,["DemoNavigationC"])
                         }}
                     >删除C</Text>

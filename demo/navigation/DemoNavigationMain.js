@@ -18,9 +18,9 @@ import {Toast, ModalBox, LayoutBox, PageView,navigation} from "myapplib";
 
 export default class App extends Component {
     render() {
-        console.log(this.props)
+        console.log(this.props);
 
-        console.log("test:"+PageView.test)
+        console.log("test:"+PageView.test);
         //注：统一样式，现配置在mylib.js文件中
         return (
             <PageView

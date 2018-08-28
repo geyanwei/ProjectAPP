@@ -9,7 +9,7 @@ import React,{
   processColor
 } from 'react-native';
 
-var DropRefreshControl = NativeModules.DropRefreshControl
+var DropRefreshControl = NativeModules.DropRefreshControl;
 
 /**
  * A pull down to refresh control like the one in Apple's iOS6 Mail App.

@@ -60,5 +60,5 @@ let VerHelp = {
         let isPassWord  = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/.test(passWord);
         return isPassWord;
     },
-}
+};
 module.exports = VerHelp;

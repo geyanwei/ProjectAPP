@@ -131,7 +131,7 @@ class index extends Component {
     commitImg(base64, successBack, errorBack) {
         var param = {
             image: base64,
-        }
+        };
         var successCallback = (code, message, json, option) => {
             successBack(json);
         };

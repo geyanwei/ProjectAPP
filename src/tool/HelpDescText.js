@@ -10,5 +10,5 @@ let HelpDescText = {
             '<Text>我要吃西瓜</Text>';
         return desc;
     },
-}
+};
 module.exports = HelpDescText;

@@ -46,7 +46,7 @@ const {height, width} = Dimensions.get('window');
 
     verApp(){
         if(!NativeModules.BEEPickerManager){
-            alert("你当前的版本过低")
+            alert("你当前的版本过低");
             this.hidden();
             return false;
         }

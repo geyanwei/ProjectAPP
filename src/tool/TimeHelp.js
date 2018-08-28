@@ -65,13 +65,13 @@ let TimeHelp = {
         newDate.setTime(date);//date为13位时间戳
         var week = newDate;
         switch (newDate.getDay()) {
-            case 0:week="日";break
-            case 1:week="一";break
-            case 2:week="二";break
-            case 3:week="三";break
-            case 4:week="四";break
-            case 5:week="五";break
-            case 6:week="六";break
+            case 0:week="日";break;
+            case 1:week="一";break;
+            case 2:week="二";break;
+            case 3:week="三";break;
+            case 4:week="四";break;
+            case 5:week="五";break;
+            case 6:week="六";break;
             default:week = "";break
         }
         return week;
@@ -105,5 +105,5 @@ let TimeHelp = {
                 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     }
-}
+};
 module.exports = TimeHelp;

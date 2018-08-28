@@ -37,14 +37,14 @@ class PriceTicket extends Component {
             let arr = json && json.couponKeyList || [];
 
             let pageNumber = (param.page-1) * param.pageSize + arr.length;
-            let optionNumber = option || 0
+            let optionNumber = option || 0;
             callback(arr, {
                 allLoaded: pageNumber == optionNumber, //显示结束的底部样式,由你来控制
             });
         };
         let failCallback = (code, message, option) => {
             let data = this.flatList && this.flatList.state && this.flatList.state.data;
-            let optionNumber = option || 0
+            let optionNumber = option || 0;
             let allLoaded = param.page * param.pageSize == optionNumber;
             if (page === 1 || !data || data && data.length === 0) {
                 allLoaded = true;

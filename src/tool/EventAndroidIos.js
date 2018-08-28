@@ -66,7 +66,7 @@ class DemoEventAndroidIos {
                 ]);
             }
         }else{
-            var sdkArray = new Array();
+            var sdkArray = [];
             this.verInstall(undefined,sdkArray,()=>{
                 if(callBack){
                     callBack(sdkArray)
@@ -158,7 +158,7 @@ class DemoEventAndroidIos {
                         this.callBack({code: 0, msg: '请安装微信客户端'})
                     }
                 });
-                break
+                break;
             default:
                 break
         }
@@ -218,7 +218,7 @@ class DemoEventAndroidIos {
         }).catch(err => {
             callback(0,'异常');
         });
-    }
+    };
     /**
      *
      * 微信分享好友 仅分享图片
@@ -263,7 +263,7 @@ class DemoEventAndroidIos {
         }).catch(err => {
             callback(0,'异常');
         });
-    }
+    };
     WXshareToSession(shareMsg) {
         let result = WeChat.shareToSession(
             {
@@ -384,4 +384,4 @@ class DemoEventAndroidIos {
 
     }
 }
-module.exports = DemoEventAndroidIos
+module.exports = DemoEventAndroidIos;

@@ -326,6 +326,6 @@ let APILQ = {
      *
      */
     accountapi_accounts_getAccountNet: "/base-wallet/accountapi/accounts/getAccountNet",
-}
+};
 
 module.exports = APILQ;

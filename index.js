@@ -5,7 +5,7 @@ import HttpTool from "./src/http/HttpTool";
 import Config from "./src/Config";
 
 import {AppRegistry} from 'react-native';
-import App from './src/App';
+import App from './App';
 import "./libconfig";
 import Orientation from "react-native-orientation";
 

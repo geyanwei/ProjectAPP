@@ -40,7 +40,7 @@ class OrderItem extends Component {
             110: require('../../../image/main/order_jieji.png'), //指定区域接机
             111: require('../../../image/main/order_songji.png'),//指定区域送机
             112: require('../../../image/main/order_songji.png'),//酒店songji
-        }
+        };
         return obj;
     }
 

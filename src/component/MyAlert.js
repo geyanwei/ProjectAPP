@@ -134,7 +134,7 @@ class index extends Component {
                     fontSize:16,
                     textAlign:"center",
                 }}>{obj.title?obj.title:"确定"}</Text>
-            </TouchableOpacity>)
+            </TouchableOpacity>);
             itemArr.push(item);
         }
         return itemArr;

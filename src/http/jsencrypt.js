@@ -94,7 +94,7 @@ BigInteger.prototype.F2 = 2*dbits-BI_FP;
 
 // Digit conversions
 var BI_RM = "0123456789abcdefghijklmnopqrstuvwxyz";
-var BI_RC = new Array();
+var BI_RC = [];
 var rr,vv;
 rr = "0".charCodeAt(0);
 for(vv = 0; vv <= 9; ++vv) BI_RC[rr++] = vv;
@@ -661,7 +661,7 @@ function bnpFromNumber(a,b,c) {
   }
   else {
     // new BigInteger(int,RNG)
-    var x = new Array(), t = a&7;
+    var x = [], t = a&7;
     x.length = (a>>3)+1;
     b.nextBytes(x);
     if(t > 0) x[0] &= ((1<<t)-1); else x[0] = 0;
@@ -671,7 +671,7 @@ function bnpFromNumber(a,b,c) {
 
 // (public) convert to bigendian byte array
 function bnToByteArray() {
-  var i = this.t, r = new Array();
+  var i = this.t, r = [];
   r[0] = this.s;
   var p = this.DB-(i*this.DB)%8, d, k = 0;
   if(i-- > 0) {
@@ -867,7 +867,7 @@ function bnRemainder(a) { var r = nbi(); this.divRemTo(a,null,r); return r; }
 function bnDivideAndRemainder(a) {
   var q = nbi(), r = nbi();
   this.divRemTo(a,q,r);
-  return new Array(q,r);
+  return [q,r];
 }
 
 // (protected) this *= n, this >= 0, 1 < n < DV
@@ -987,7 +987,7 @@ function bnModPow(e,m) {
     z = new Montgomery(m);
 
   // precomputation
-  var g = new Array(), n = 3, k1 = k-1, km = (1<<k)-1;
+  var g = [], n = 3, k1 = k-1, km = (1<<k)-1;
   g[1] = z.convert(this);
   if(k > 1) {
     var g2 = nbi();
@@ -1223,7 +1223,7 @@ BigInteger.prototype.square = bnSquare;
 function Arcfour() {
   this.i = 0;
   this.j = 0;
-  this.S = new Array();
+  this.S = [];
 }
 
 // Initialize arcfour context from key, an array of ints, each from [0..255]
@@ -1271,7 +1271,7 @@ var rng_pptr;
 
 // Initialize the pool with junk if needed.
 if(rng_pool == null) {
-  rng_pool = new Array();
+  rng_pool = [];
   rng_pptr = 0;
   var t;
   if(window.crypto && window.crypto.getRandomValues) {
@@ -1366,7 +1366,7 @@ function pkcs1pad2(s,n) {
     console.error("Message too long for RSA");
     return null;
   }
-  var ba = new Array();
+  var ba = [];
   var i = s.length - 1;
   while(i >= 0 && n > 0) {
     var c = s.charCodeAt(i--);
@@ -1385,7 +1385,7 @@ function pkcs1pad2(s,n) {
   }
   ba[--n] = 0;
   var rng = new SecureRandom();
-  var x = new Array();
+  var x = [];
   while(n > 2) { // random non-zero pad
     x[0] = 0;
     while(x[0] == 0) rng.nextBytes(x);
@@ -1722,7 +1722,7 @@ var bnpFromNumberAsync = function (a,b,c,callback) {
       setTimeout(bnpfn1,0);
     }
   } else {
-    var x = new Array(), t = a&7;
+    var x = [], t = a&7;
     x.length = (a>>3)+1;
     b.nextBytes(x);
     if(t > 0) x[0] &= ((1<<t)-1); else x[0] = 0;
@@ -1757,7 +1757,7 @@ function hex2b64(h) {
 
 // convert a base64 string to hex
 function b64tohex(s) {
-  var ret = ""
+  var ret = "";
   var i;
   var k = 0; // b64 state, 0-3
   var slop;
@@ -1797,7 +1797,7 @@ function b64toBA(s) {
   //piggyback on b64tohex for now, optimize later
   var h = b64tohex(s);
   var i;
-  var a = new Array();
+  var a = [];
   for(i = 0; 2*i < h.length; ++i) {
     a[i] = parseInt(h.substring(2*i,2*i+2),16);
   }
@@ -2152,7 +2152,7 @@ KJUR.asn1.ASN1Util = new function() {
 KJUR.asn1.ASN1Object = function() {
     var isModified = true;
     var hTLV = null;
-    var hT = '00'
+    var hT = '00';
     var hL = '00';
     var hV = '';
 
@@ -2215,7 +2215,7 @@ KJUR.asn1.ASN1Object = function() {
     this.getValueHex = function() {
 	this.getEncodedHex();
 	return this.hV;
-    }
+    };
 
     this.getFreshValueHex = function() {
 	return '';
@@ -2429,7 +2429,7 @@ KJUR.asn1.DERAbstractStructured = function(params) {
 	this.asn1Array.push(asn1Object);
     };
 
-    this.asn1Array = new Array();
+    this.asn1Array = [];
     if (typeof params != "undefined") {
 	if (typeof params['array'] != "undefined") {
 	    this.asn1Array = params['array'];
@@ -2743,7 +2743,7 @@ KJUR.asn1.DERObjectIdentifier = function(params) {
 	    h += itox(parseInt(b8, 2));
 	}
 	return h;
-    }
+    };
 
     KJUR.asn1.DERObjectIdentifier.superclass.constructor.call(this);
     this.hT = "06";
@@ -3063,7 +3063,7 @@ KJUR.asn1.DERSet = function(params) {
     KJUR.asn1.DERSet.superclass.constructor.call(this, params);
     this.hT = "31";
     this.getFreshValueHex = function() {
-	var a = new Array();
+	var a = [];
 	for (var i = 0; i < this.asn1Array.length; i++) {
 	    var asn1Obj = this.asn1Array[i];
 	    a.push(asn1Obj.getEncodedHex());
@@ -3387,7 +3387,7 @@ Stream.prototype.parseStringUTF = function (start, end) {
     return s;
 };
 Stream.prototype.parseStringBMP = function (start, end) {
-    var str = ""
+    var str = "";
     for (var i = start; i < end; i += 2) {
         var high_byte = this.get(i);
         var low_byte = this.get(i + 1);

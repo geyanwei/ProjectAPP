@@ -32,7 +32,7 @@ class UnReadView extends Component {
             }
         }else{
             if (value.count === this.state.count){
-                return ;
+                
             }else {
                 this.setState({
                     count:value.count,

@@ -15,7 +15,7 @@
 // <LoadIngView  color="#000000" size = {3}/>
 
 
-'use strict'
+'use strict';
 
 import React, {
     Component,

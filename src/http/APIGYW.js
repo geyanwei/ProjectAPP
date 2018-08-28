@@ -182,6 +182,6 @@ let APIGYW = {
      */
     driver_authentication_viewAuthInfo: "/driver/authentication/viewAuthInfo",
 
-}
+};
 
 module.exports = APIGYW;

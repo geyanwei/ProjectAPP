@@ -19,9 +19,9 @@ module.exports = {
     createDateData(currenttime, min , max) {
           let starttime=typeof(min)==="string"?min.split(","):this.getDatedifference(min);
        let endtime=typeof(max)==="string"?max.split(","):this.getDatedifference(max);
-       let pickerData =this.getjson(starttime,endtime)
+       let pickerData =this.getjson(starttime,endtime);
        let arr = typeof(currenttime)==="string"?currenttime.split(","):this.getDatedifference(currenttime);
-       let selectedValue=Array.from({'0':arr[0]+'年','1':arr[1]+'月','2':arr[2]+'日',length:3})
+       let selectedValue=Array.from({'0':arr[0]+'年','1':arr[1]+'月','2':arr[2]+'日',length:3});
        return {
            pickerData,selectedValue
        }
@@ -34,7 +34,7 @@ module.exports = {
         let Month =min.getMonth()+1;           //当前月
         let Year = min.getYear();             //当前年   
         Year += (Year < 2000) ? 1900 : 0;  // 
-        let ymd = Array.from({'0':Year,'1':Month,'2':Day,length:3})
+        let ymd = Array.from({'0':Year,'1':Month,'2':Day,length:3});
         return ymd
     },
     getjson (starttime, endtime) {
@@ -155,4 +155,4 @@ module.exports = {
         let combUrl = url +'?'+ ecodUrl;
         return combUrl;
     }
-}
+};

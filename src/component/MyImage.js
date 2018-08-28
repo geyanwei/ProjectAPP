@@ -23,7 +23,7 @@ class MyImage extends Component {
         height :0,
         updata:false,
 
-    }
+    };
      this.defaultWH = 100;
       var w = this.props.maxWidth;
       var h =  this.props.maxHeight;

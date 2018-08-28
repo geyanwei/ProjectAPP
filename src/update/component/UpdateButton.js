@@ -9,7 +9,7 @@ class UpdateButton extends Component {
 		pressEvt: () => { },
 		text: '立即升级',
 		style: []
-	}
+	};
 	render() {
 		return (
 			<TouchableHighlight style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} underlayColor={'white'}

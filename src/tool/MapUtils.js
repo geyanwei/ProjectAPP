@@ -4,7 +4,7 @@ import { NativeModules, Platform } from "react-native";
 let exportModule = {
 	StartMap: () => { },
 	installedMapApps: {}
-}
+};
 
 const AllMapList = Platform.select({
 	android: {

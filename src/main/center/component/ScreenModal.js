@@ -305,13 +305,13 @@ class ScreenModal extends Component {
                         onPress={() => {
                             this.productType.map((item, index) => {
                                 this.productType[index].isSel = false
-                            })
+                            });
                             this.carType.map((item, index) => {
                                 this.carType[index].isSel = false
-                            })
+                            });
                             this.state.serviceCity && this.state.serviceCity.map((item, index) => {
                                 this.state.serviceCity[index].isSel = false
-                            })
+                            });
                             this.setState({
                                 useTimeBegin: "",
                                 useTimeEnd: ""

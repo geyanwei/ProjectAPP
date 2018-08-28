@@ -43,15 +43,15 @@ const excludeBarPage = [
     "RobbingDetail",
 
     "TripDetail"
-]
+];
 
 let RouteStack = AppInit.initApp(routeMain, {
     onTransitionStart: () => {
         let routes = AppInit.ref.state.nav.routes, routeName = routes[routes.length - 1]['routeName'];
         AppInit.routeName = routeName;
 
-        log("当前页面----------------："+AppInit.routeName)
-        log(routes)
+        log("当前页面----------------："+AppInit.routeName);
+        log(routes);
         if (Platform.OS === "ios"&&excludeBarPage.indexOf(routeName)<0) {
             if (WhiteBarPage.indexOf(routeName) >= 0) {
                 StatusBar.setBarStyle(Platform.select({
@@ -142,7 +142,7 @@ AppInit.saveRoutes = (that, routeNameArr) => {
         AppInit.removeRoutes(that, removeName);
     }
 
-}
+};
 
 /**
  * 将最后一个，做为主页
@@ -151,7 +151,7 @@ AppInit.saveRoutes = (that, routeNameArr) => {
  */
 AppInit.toMainForType = (that, type = "last") => {
     if (!that) {
-        console.error("这是错误的一个ref对像")
+        console.error("这是错误的一个ref对像");
         return
     }
     let routes = that._navigation.state.routes;
@@ -184,16 +184,16 @@ AppInit.toMainForType = (that, type = "last") => {
     that.setState({}, () => {
         that._navigation.state.isChange = undefined;
     })
-}
+};
 AppInit.toMainForLast = (that) => {
     AppInit.toMainForType(that, "last");
-}
+};
 AppInit.toMainForFirst = (that) => {
     AppInit.toMainForType(that, "first");
-}
+};
 AppInit.toMainForCurrentAndMain = (that) => {
     AppInit.toMainForType(that, "currentAndmain");
-}
+};
 
 let exitTime = 0;
 
@@ -259,7 +259,7 @@ class App extends Component {
             // UMUtils.onPause();
         }
         this.setState({appState: nextAppState});
-    }
+    };
 
     componentWillUnmount() {
         // UMUtils.onPageEnd("Main");

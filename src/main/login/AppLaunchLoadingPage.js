@@ -28,7 +28,7 @@ class AppLaunchLoadingPage extends Component {
         //showBody 如果项目内回退，不进行视频播放
         //判定项目内，全局第一次进入
 
-        this.state = {type: !!AppInit.isFirst ? (Storage.getUserInfo() ? 2 : 1) : 0, showBody: !!AppInit.isFirst}
+        this.state = {type: !!AppInit.isFirst ? (Storage.getUserInfo() ? 2 : 1) : 0, showBody: !!AppInit.isFirst};
         if (!AppInit.isFirst) {
             AppInit.isFirst = true;
             AppInit.upDateMain = () => {
@@ -89,7 +89,7 @@ class AppLaunchLoadingPage extends Component {
             return;
         }
         if (!this.callBackArray) {
-            this.callBackArray = []
+            this.callBackArray = [];
             this.callBackArray.push(callBack)
         }
         // 判定配置文件与用户信息是否拉取
@@ -230,7 +230,7 @@ class PlayVideo extends Component {
                     onLoadStart={() => {
                         //开始播放,视频正常，给予播放，体验完整视频
                         if (this.autoTime) {
-                            clearTimeout(this.autoTime)
+                            clearTimeout(this.autoTime);
                             this.autoTime = null;
                         }
                         //万一，开始播放，也挂掉，再次计时
@@ -240,7 +240,7 @@ class PlayVideo extends Component {
 
                     }}
                     onError={(value) => {
-                        log("视频错误" + JSON.stringify(value))
+                        log("视频错误" + JSON.stringify(value));
                         this.end();
                     }}
                     repeat={false}

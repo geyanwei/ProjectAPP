@@ -123,4 +123,4 @@ Toast.defaultProps = {
     fadeInDuration: 500,
     fadeOutDuration: 500,
     opacity: 1
-}
+};

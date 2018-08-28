@@ -20,11 +20,11 @@ class MyWallet extends Component {
             upData: 1,
             data: null,
             accountCashList: []
-        }
+        };
         this.hasAccount = undefined;
         YITU.addAction("MyWallet", () => {
             this.loadData()
-        })
+        });
         this.animatedValue = new Animated.Value(0);
     }
 
@@ -39,7 +39,7 @@ class MyWallet extends Component {
         this.loadData();
         this.loadPutForwardData((hasAccount) => {
             this.hasAccount = hasAccount;
-        })
+        });
         Animated.timing(
             this.animatedValue,
             {
@@ -120,12 +120,12 @@ class MyWallet extends Component {
                                         return true;
                                     });
                                 }
-                            }
+                            };
                             if (this.hasAccount === undefined) {
-                                Loading.show()
+                                Loading.show();
                                 this.loadPutForwardData((hasAccount) => {
                                     this.hasAccount = hasAccount;
-                                    Loading.hide()
+                                    Loading.hide();
                                     exe();
                                 })
                             } else {

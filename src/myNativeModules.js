@@ -22,4 +22,4 @@ module.exports =  {
     callPhone,
     isInstallWeChat,
     systemVersion
-}
+};

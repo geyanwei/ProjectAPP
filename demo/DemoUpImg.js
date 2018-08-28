@@ -41,11 +41,11 @@ export default class App extends Component {
                                     height: 300,
                                     cropping: true,
                                 }, (state, message, data) => {
-                                    console.log("state:" + state, "message:" + message)
+                                    console.log("state:" + state, "message:" + message);
                                     this.setState({
                                         upLoadImageUrl: data && data.imageUrl,
                                         upLoadImageMessage: message
-                                    })
+                                    });
                                     switch (state) {
                                         case "start":
                                             break;
@@ -58,7 +58,7 @@ export default class App extends Component {
                                         case "uploading":
                                             break;
                                         case "uploaddone":
-                                            console.log(data.imageUrl)
+                                            console.log(data.imageUrl);
                                             break;
 
                                         case "uploaderror":
@@ -77,11 +77,11 @@ export default class App extends Component {
                         <Item
                             onPress={() => {
                                 UpImage.show(null, (state, message, data) => {
-                                    console.log("state:" + state, "message:" + message)
+                                    console.log("state:" + state, "message:" + message);
                                     this.setState({
                                         upLoadImageUrl: data && data.imageUrl,
                                         upLoadImageMessage: message
-                                    })
+                                    });
                                     switch (state) {
                                         case "start":
                                             break;
@@ -94,7 +94,7 @@ export default class App extends Component {
                                         case "uploading":
                                             break;
                                         case "uploaddone":
-                                            console.log(data.imageUrl)
+                                            console.log(data.imageUrl);
                                             break;
 
                                         case "uploaderror":

@@ -28,12 +28,12 @@ class page extends Component {
     }
 
     leftButton(){
-        log("1111")
+        log("1111");
         if (this.state.back){
-            log("1111")
+            log("1111");
             this.webView.goBack();
         } else {
-            log("22222")
+            log("22222");
             navigation.pop(this)
         }
     }
@@ -143,6 +143,6 @@ const styles=StyleSheet.create({
         fontSize:YITU.fontSize_4,
     }
 
-})
+});
 
 module.exports = page;

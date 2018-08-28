@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React, {Component} from 'react';
 
@@ -93,7 +93,7 @@ export default class MyEtcListView extends Component{
         paginationWaitingView: null,
         emptyView: null,
         renderSeparator: null,
-    }
+    };
 
 
 
@@ -401,7 +401,7 @@ export default class MyEtcListView extends Component{
                 dataSource:dataSource,
                 loadData: true,
             }
-        )
+        );
         this._onRefresh();
 
     }

@@ -24,7 +24,7 @@ export default class App extends Component {
         super(props);
         this.state = {
             text:"",
-        }
+        };
         this.maxLength = 10;
     }
 
@@ -49,7 +49,7 @@ export default class App extends Component {
                             value={this.state.text}
                             maxLength={this.maxLength}
                             onChangeText={(e)=>{
-                                console.log(e)
+                                console.log(e);
 
                                 let text =e;
                                 let index = e.indexOf(".");
@@ -66,7 +66,7 @@ export default class App extends Component {
                                     //不存在
                                     this.maxLength = 10
                                 }
-                                this.setState({text:text})
+                                this.setState({text:text});
 
                                 // e.nativeEvent.text = e.nativeEvent.text+"1"
                                 return false;

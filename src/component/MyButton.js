@@ -100,7 +100,7 @@ export default class MyButton extends Component {
         this.setState({
             isLoading: isLoading
         });
-    }
+    };
     setDisabled = (disabled) => {
         this.setState({
             disabled: disabled

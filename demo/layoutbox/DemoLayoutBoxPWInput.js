@@ -111,7 +111,7 @@ export default class App extends Component {
                         onPress={()=>{
                             //收集文本区域值
                             let a = this.LBREF.getLayoutBox().getLayoutValue();
-                            console.log(a)
+                            console.log(a);
                             alert(JSON.stringify(a))
                         }}
                     >

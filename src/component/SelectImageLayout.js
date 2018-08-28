@@ -150,7 +150,7 @@ class index extends Component {
                             }
                         )
                     });
-                }
+                };
                 if (index == 0) {
                     SelectImage.show(this.self, (response) => {
                         response.callBack = (url) => {
@@ -168,7 +168,7 @@ class index extends Component {
                     exe(false);
                 }
 
-                return;
+                
 
 
             }
@@ -290,7 +290,7 @@ class AddDesc extends Component {
                                 onPress={() => {
                                     this.setState({
                                         show: false
-                                    })
+                                    });
                                     onClick(0)
                                 }
                                 }
@@ -303,7 +303,7 @@ class AddDesc extends Component {
                                 onPress={() => {
                                     this.setState({
                                         show: false
-                                    })
+                                    });
                                     onClick(1)
                                 }
                                 } style={{marginHorizontal: YITU.s_2}}>

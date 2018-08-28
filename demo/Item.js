@@ -16,19 +16,19 @@ import {
 export default class Item extends Component {
     render() {
 
-        let bg = "#666666",title = "（点我）"
+        let bg = "#666666",title = "（点我）";
         switch (this.props.state) {
             case 0:
-                bg = "#9c9c9c"
-                title= "（未开发）"
+                bg = "#9c9c9c";
+                title= "（未开发）";
                 break;
             case 1:
-                bg = "#0d9c13"
-                title= "（完成）"
+                bg = "#0d9c13";
+                title= "（完成）";
                 break;
             case 2:
-                bg = "#ff8919"
-                title= "（努力成狗中）"
+                bg = "#ff8919";
+                title= "（努力成狗中）";
                 break;
         }
         return (

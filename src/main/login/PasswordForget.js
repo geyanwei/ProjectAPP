@@ -31,7 +31,7 @@ class PasswordForget extends Component {
         super(props);
         this.state = {
             upData: 1,
-        }
+        };
         this.areaCode = "";
     }
 

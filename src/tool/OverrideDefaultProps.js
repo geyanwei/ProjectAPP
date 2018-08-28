@@ -13,4 +13,4 @@ TextInput.defaultProps = {
 RefreshControl.defaultProps = {
     colors:["#ccc"],
     tintColor: "#ccc"
-}
+};

@@ -4,7 +4,7 @@
  */
 import { AsyncStorage } from "react-native";
 
-let _userInfo = null // memory for quick index
+let _userInfo = null; // memory for quick index
 
 class StorageHelp {
 	// constructor() {

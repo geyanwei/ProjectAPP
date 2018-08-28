@@ -59,7 +59,7 @@ export default class App extends Component {
                                                 data.resultValue  = arr[0];
                                                 data.refItem.refresh();
                                                 //控制其他组件
-                                                let refDataArray = this.LBREF.getLayoutBox().getItemRefArrayForKey("title","导游资格证照片")
+                                                let refDataArray = this.LBREF.getLayoutBox().getItemRefArrayForKey("title","导游资格证照片");
                                                 if(refDataArray&&refDataArray.length===1){
                                                     refDataArray[0].display  = data.resultValue==="有";
                                                     refDataArray[0].refItem.refresh();
@@ -107,10 +107,10 @@ export default class App extends Component {
                         onPress={()=>{
                             //收集文本区域值
                             let box = this.LBREF.getLayoutBox().getLayoutValue();
-                            console.log(box)
+                            console.log(box);
                             if(box.error&&box.error.length>0){
-                                Toast.show(box.error[0].verMessage)
-                                return;
+                                Toast.show(box.error[0].verMessage);
+                                
                             }else{
                                 Toast.show(JSON.stringify(box.parameter))
 

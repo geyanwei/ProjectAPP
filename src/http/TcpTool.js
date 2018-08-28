@@ -14,7 +14,7 @@ class TcpTool{
         //自动连接时长
         this.time = 1000*15;
 
-        this.KEY = "YITU"
+        this.KEY = "YITU";
         //消息类型
         this.mt = new MessageType();
         this.tpm = new ThreadPoolManage();
@@ -32,7 +32,7 @@ class TcpTool{
 
         let url = json.url;
 
-        this.print("开始连接"+url)
+        this.print("开始连接"+url);
 
 
         //打通tcp
@@ -42,8 +42,8 @@ class TcpTool{
             this.ws =  io(url,{transports:["websocket"]});
 
             this.ws.on('connect',  ()=> {
-                this.print("连接成功"+this.ws.id)
-                this.keepConnect()
+                this.print("连接成功"+this.ws.id);
+                this.keepConnect();
                 if(cb){
                     cb(this.ws.id);
                 }
@@ -77,7 +77,7 @@ class TcpTool{
 
     }
     unInit(){
-        this.print("退出连接")
+        this.print("退出连接");
         //验证连接的真实性
         if(!this.verConnect({})){
             return;
@@ -103,7 +103,7 @@ class TcpTool{
         }
         //1:添加消息类型队列
         //2:消息非单例
-        this.tpm.join(temp)
+        this.tpm.join(temp);
 
         return temp.id;
 
@@ -118,7 +118,7 @@ class TcpTool{
             type:this.mt.chatInfo,
             data:{code:1,msg:"haha",data:new Date().toLocaleString()}
 
-        }
+        };
         if(!this.verConnect(temp)){
             return;
         }
@@ -140,7 +140,7 @@ class TcpTool{
     verConnect(temp){
         if(!this.ws||!this.ws.id){
             //
-            this.error(temp,-2,"连接未开通")
+            this.error(temp,-2,"连接未开通");
             return false;
         }else{
             return true;
@@ -164,7 +164,7 @@ class TcpTool{
         this.print(temp);
        try{
            //加入发送消息队列
-           this.tpm.join(temp)
+           this.tpm.join(temp);
            //注：在此可做序列发送，如果有此要求
            // this.ws.send(JSON.stringify(template));
            this.ws.emit(this.KEY,temp)
@@ -229,8 +229,8 @@ class TcpTool{
     keepConnect(skipTime){
         const exe = ()=>{
             // 发送一个消息
-            this.print("定时请求")
-            this.ws.emit(this.KEY,{type:this.mt.testing})
+            this.print("定时请求");
+            this.ws.emit(this.KEY,{type:this.mt.testing});
             if(this.ws&&this.ws.id){
 
                 this.keepConnect();
@@ -307,7 +307,7 @@ class ThreadPoolManage{
     result(template){
        if(template&&this.threadMap.has(template.id)){
            let temp = this.threadMap.get(template.id);
-           temp.callBack(template.data)
+           temp.callBack(template.data);
            //卸磨杀驴
            this.threadMap.delete(template.id);
        }else{

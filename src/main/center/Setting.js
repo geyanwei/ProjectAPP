@@ -20,7 +20,7 @@ class Setting extends Component {
             isOn: this.isOn,
             upData: 0,
             isNoticeOpen: true
-        }
+        };
         let userInfor = Storage.getUserInfo() || {};
         this.userId = userInfor && userInfor.id || "";
     }

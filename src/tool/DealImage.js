@@ -8,7 +8,7 @@ let DealImage = {
      * @param type {string}图片的剪切方式 1-5
      */
     getNewImage(url,options){
-        var urlArr = url.split("?")
+        var urlArr = url.split("?");
         if (!urlArr||!urlArr[1]) {return url}
 
         var imgArr = urlArr[1]?urlArr[1].split("/"):[];
@@ -28,5 +28,5 @@ let DealImage = {
         }
         return url;
     },
-}
+};
 module.exports = DealImage;

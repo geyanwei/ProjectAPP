@@ -8,7 +8,7 @@ export let CustomActions = {
 	PopToRoot: "PopToRoot",
 	UpdateParams: "UpdateParams",
 	BackSavedPage: "BackSavedPage"
-}
+};
 
 module.exports = function(RouteStack) {
 	prevGetStateForAction = RouteStack.router.getStateForAction;
