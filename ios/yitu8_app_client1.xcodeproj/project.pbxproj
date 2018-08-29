@@ -51,7 +51,6 @@
 		5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C6B8415F7946238A81BEE7 /* Foundation.framework */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		6801C16942DB4E9A94282C59 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 957F33B03C994C07AE92CE44 /* libyoga.a */; };
-		6AFAFA140B95444B97046E26 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE9409B3956421581797435 /* libRNImagePicker.a */; };
 		74C4761C8D01425996F7C21B /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7A97DE1564794807A28BA /* libRNSVG.a */; };
 		7940F581212EB44500FF60CA /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7940F545212EB33000FF60CA /* libART.a */; };
 		795EFB99212FFABC0017DEEB /* RCTMyNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */; };
@@ -430,13 +429,6 @@
 			remoteGlobalIDString = 6456441F1EB8DA9100672408;
 			remoteInfo = "RNFS-tvOS";
 		};
-		79F0B9B4212E9F1A0028F9CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24E3CBE5C41B40E8B9477260 /* RNImagePicker.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
-			remoteInfo = RNImagePicker;
-		};
 		79F0B9B8212E9F1A0028F9CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1F6A06E9712648FBB583BAA8 /* RNSVG.xcodeproj */;
@@ -544,7 +536,6 @@
 		1DE76820E273437495939DBF /* libthird-party.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libthird-party.a"; sourceTree = "<group>"; };
 		1ED76A11135A4799932BA3E7 /* libresolv.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		1F6A06E9712648FBB583BAA8 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
-		24E3CBE5C41B40E8B9477260 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* yitu8_app_client1-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yitu8_app_client1-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* yitu8_app_client1-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yitu8_app_client1-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -599,7 +590,6 @@
 		C1853955CF854053983D05A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C32716AABB8A41C897A2AE1B /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CEA7A97DE1564794807A28BA /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
-		DCE9409B3956421581797435 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		E54AB117A96243549C523D26 /* libdouble-conversion.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libdouble-conversion.a"; sourceTree = "<group>"; };
 		EA1F7F9874DA40DF856E03ED /* UIKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF05BE85E54946E2B10298BE /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
@@ -657,7 +647,6 @@
 				D19A61CCD7AF4A418CD31FFE /* libRCTContacts.a in Frameworks */,
 				38B3D70388B9422C82C15815 /* libRNDeviceInfo.a in Frameworks */,
 				0655FC15A70E4AF599160935 /* libRNFS.a in Frameworks */,
-				6AFAFA140B95444B97046E26 /* libRNImagePicker.a in Frameworks */,
 				5088A1F6181B48AAAA691323 /* libInteractable.a in Frameworks */,
 				3681626D9503401CB9DD8531 /* libBVLinearGradient.a in Frameworks */,
 				9DB3A72FB4684083AEE093A7 /* libRCTOrientation.a in Frameworks */,
@@ -1020,14 +1009,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		79F0B981212E9F1A0028F9CF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				79F0B9B5212E9F1A0028F9CF /* libRNImagePicker.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		79F0B983212E9F1A0028F9CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1125,7 +1106,6 @@
 				52AD005D747F419A8878268A /* RCTContacts.xcodeproj */,
 				3B114DA82A64488C9C245B08 /* RNDeviceInfo.xcodeproj */,
 				8DCD5D068C7F4534963B6308 /* RNFS.xcodeproj */,
-				24E3CBE5C41B40E8B9477260 /* RNImagePicker.xcodeproj */,
 				F045752BF28C462FB38FEC26 /* Interactable.xcodeproj */,
 				1DAA285D6BA74725B749ECD0 /* BVLinearGradient.xcodeproj */,
 				114A765231DB4AA6A46FB013 /* RCTOrientation.xcodeproj */,
@@ -1397,10 +1377,6 @@
 				{
 					ProductGroup = 79F0B97D212E9F1A0028F9CF /* Products */;
 					ProjectRef = 8DCD5D068C7F4534963B6308 /* RNFS.xcodeproj */;
-				},
-				{
-					ProductGroup = 79F0B981212E9F1A0028F9CF /* Products */;
-					ProjectRef = 24E3CBE5C41B40E8B9477260 /* RNImagePicker.xcodeproj */;
 				},
 				{
 					ProductGroup = 79F0B98D212E9F1A0028F9CF /* Products */;
@@ -1751,13 +1727,6 @@
 			remoteRef = 79F0B9B1212E9F1A0028F9CF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		79F0B9B5212E9F1A0028F9CF /* libRNImagePicker.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNImagePicker.a;
-			remoteRef = 79F0B9B4212E9F1A0028F9CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		79F0B9B9212E9F1A0028F9CF /* libRNSVG.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1983,7 +1952,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2021,7 +1989,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2066,7 +2033,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2109,7 +2075,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2153,7 +2118,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2200,7 +2164,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2246,7 +2209,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
@@ -2292,7 +2254,6 @@
 					"$(SRCROOT)/../node_modules/react-native-contacts/ios/RCTContacts",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
