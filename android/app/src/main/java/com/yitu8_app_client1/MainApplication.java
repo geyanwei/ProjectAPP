@@ -14,7 +14,6 @@ import com.github.yamill.orientation.OrientationPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.wix.interactable.Interactable;
 import com.imagepicker.ImagePickerPackage;
-import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.rnfs.RNFSPackage;
 import ca.jaysoo.extradimensions.ExtraDimensionsPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
@@ -51,7 +50,6 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new Interactable(),
             new ImagePickerPackage(),
-            new PickerPackage(),
             new RNFSPackage(),
             new ExtraDimensionsPackage(),
             new RNDeviceInfo(),
