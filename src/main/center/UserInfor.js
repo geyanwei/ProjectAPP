@@ -3,9 +3,7 @@ import {
     StyleSheet,
     View,
     ScrollView,
-    Text,
     Image,
-    TouchableOpacity,
 } from 'react-native';
 import {PageView, LayoutBox, UpImage, navigation, Toast, Loading} from 'myapplib';
 import HttpTool from "../../http/HttpTool";
@@ -115,13 +113,11 @@ class UserInfor extends Component {
                 onPress: () => {
                     this.selHeadImg();
                 }
-            },
-            {
+            }, {
                 title: "手机号",
                 resultValue: userObj.mobile || "",
                 type: "label",
-            },
-            {
+            }, {
                 title: "昵称",
                 resultValue: userObj.name || userObj.userName || "请设置昵称",
                 onPress: () => {
@@ -137,17 +133,14 @@ class UserInfor extends Component {
                         }
                     });
                 }
-            },
-            {
+            }, {
                 title: "性别",
                 resultValue: userObj.gender === 2 ? "女" : "男",
                 space: true,
                 onPress: () => {
                     alert("男");
                 }
-            },
-
-            {
+            }, {
                 title: "常用邮箱",
                 resultValue: userObj.email || "未填写",
                 onPress: () => {
@@ -164,8 +157,7 @@ class UserInfor extends Component {
                         }
                     });
                 }
-            },
-            {
+            }, {
                 title: "登录密码",
                 resultValue: "修改",
                 onPress: () => {
@@ -174,8 +166,7 @@ class UserInfor extends Component {
                         pageKey: this.pageKey,
                     });
                 }
-            },
-            {
+            }, {
                 title: "支付密码",
                 resultValue: "未设置",
                 onPress: () => {

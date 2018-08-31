@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -44,7 +45,6 @@
 		3681626D9503401CB9DD8531 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C10D0C7BE90453EA2C063E8 /* libBVLinearGradient.a */; };
 		369530C468164CFE8BFE3D2D /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA8924E99994FF9B26CAEFB /* libRCTVideo.a */; };
 		38B3D70388B9422C82C15815 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */; };
-		413FAAEB1EC54B87B3D0A51A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FE2FEFC48144D1BCAC7D49 /* CoreFoundation.framework */; };
 		46A98EE7201648DE88ED0D55 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0788E158A4D740E4A2F04A40 /* UserNotifications.framework */; };
 		5088A1F6181B48AAAA691323 /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6970CF44E2641E4B248100C /* libInteractable.a */; };
 		57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF234F42284F21B498AF88 /* CFNetwork.framework */; };
@@ -576,6 +576,8 @@
 		795EFB98212FFABC0017DEEB /* JPushNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPushNativeModule.m; sourceTree = "<group>"; };
 		795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		79D644F62136917B00FA2794 /* QBImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = "<group>"; };
+		79D644F72136917C00FA2794 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RSKImageCropper.framework; sourceTree = "<group>"; };
 		79F0BA58212EA5B30028F9CF /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
@@ -638,7 +640,6 @@
 				07582213FDFE46D6B847922D /* CoreTelephony.framework in Frameworks */,
 				0915A01ECE8046D18A48703F /* Security.framework in Frameworks */,
 				57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */,
-				413FAAEB1EC54B87B3D0A51A /* CoreFoundation.framework in Frameworks */,
 				1BA4315C43604A69AB96015E /* SystemConfiguration.framework in Frameworks */,
 				5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */,
 				D8C2409204CB42C59D3D66F3 /* UIKit.framework in Frameworks */,
@@ -948,8 +949,6 @@
 				87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */,
 				FDBD9F482C1E4997820CD667 /* libRNDeviceInfo-tvOS.a */,
 				F574E9931A3C428ABF1DBAA5 /* libRNFS.a */,
-				B688296A488A45CFB3B7BB3A /* libimageCropPicker.a */,
-				DCE9409B3956421581797435 /* libRNImagePicker.a */,
 				A6970CF44E2641E4B248100C /* libInteractable.a */,
 				0C10D0C7BE90453EA2C063E8 /* libBVLinearGradient.a */,
 				F725964D99C949DD9B8C16DE /* libRCTOrientation.a */,
@@ -1131,6 +1130,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				79D644F62136917B00FA2794 /* QBImagePicker.framework */,
+				79D644F72136917C00FA2794 /* RSKImageCropper.framework */,
 				795EFB7B212FFABC0017DEEB /* Tools */,
 				13B07FAE1A68108700A75B9A /* yitu8_app_client1 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -1965,9 +1966,7 @@
 				INFOPLIST_FILE = yitu8_app_client1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -2002,9 +2001,7 @@
 				INFOPLIST_FILE = yitu8_app_client1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -2025,6 +2022,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tools/AliPay",
 					"$(PROJECT_DIR)/Tools/umsdk_IOS_analyics",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2067,6 +2065,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tools/AliPay",
 					"$(PROJECT_DIR)/Tools/umsdk_IOS_analyics",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2130,9 +2129,7 @@
 				);
 				INFOPLIST_FILE = "yitu8_app_client1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -2176,9 +2173,7 @@
 				);
 				INFOPLIST_FILE = "yitu8_app_client1-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -2221,9 +2216,7 @@
 				);
 				INFOPLIST_FILE = "yitu8_app_client1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -2266,9 +2259,7 @@
 				);
 				INFOPLIST_FILE = "yitu8_app_client1-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",

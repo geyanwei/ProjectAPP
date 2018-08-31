@@ -111,11 +111,9 @@ class FreedomCharter extends Component {
 
                         navigation.push(this,"QueryCharter",{
                             title:finalParam.flight+"包车"+finalParam.days.length+"日游",
-                            values:finalParam
+                            values:{...finalParam,userCarType:"自由包车"}
                         });
-
-                    }}>查询
-                </MyButton>
+                    }}>查 询</MyButton>
             </View>);
         return (
             <PageView

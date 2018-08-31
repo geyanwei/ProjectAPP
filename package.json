@@ -29,6 +29,7 @@
     "react": "^16.0.0",
     "react-native": "0.51.0",
     "react-native-alphabetlistview": "^0.2.0",
+    "react-native-autoheight-webview": "^0.10.2",
     "react-native-cli": "^2.0.1",
     "react-native-contacts": "^2.1.2",
     "react-native-device-info": "^0.20.0",

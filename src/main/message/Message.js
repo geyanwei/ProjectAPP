@@ -24,41 +24,8 @@ class Message extends Component {
         super(props);
         this.listener = {};
         this.state = {
-            dataList: [
-                {
-                    imageSource: require("../../image/message/xx-ddxx.png"),
-                    title: "订单消息",
-                    content: "暂无消息",
-                    path: "OrderMessage",
-                    time: "",
-                    unreadNum: 0
-                },
-                {
-                    imageSource: require("../../image/message/xx-pttz.png"),
-                    title: "平台通知",
-                    content: "暂无消息",
-                    path: "NotificationMessage",
-                    time: "",
-                    unreadNum: 0
-
-                },
-                {
-                    imageSource: require("../../image/message/xx-hdtj.png"),
-                    title: "活动推荐",
-                    content: "暂无消息",
-                    path: "ActivityMessage",
-                    time: "",
-                    unreadNum: 0
-                },
-                {
-                    imageSource: require("../../image/message/xx-lxkf.png"),
-                    title: "联系客服",
-                    content: "暂无消息",
-                    time: "",
-                    unreadNum: 0,
-                }
-            ],
             service: {}, //客服消息
+            dataList: [],
             indexCount: 0, //订单 平台 活动小红点累加
         };
     }
@@ -89,6 +56,9 @@ class Message extends Component {
     }
 
     componentDidMount() {
+        this.setState({
+            dataList: this.dataAnalysis(),
+        });
         AppState.addEventListener('change', this.appstateChange.bind(this));
         // this.getData();
         this.httpGetMessage();
@@ -221,27 +191,24 @@ class Message extends Component {
 
     dataAnalysis(json) {
         let ary = [];
-        if (!json.orderMsg && !json.noticeMsg && !json.activityMsg) {
-            return this.state.dataList;
-        }
-        let orderMsg = json.orderMsg.lastMsg || {};
-        let noticeMsg = json.noticeMsg.lastMsg || {};
-        let activityMsg = json.activityMsg.lastMsg || {};
+        let orderMsg = json && json.orderMsg && json.orderMsg.lastMsg || {};
+        let noticeMsg = json && json.noticeMsg && json.noticeMsg.lastMsg || {};
+        let activityMsg = json && json.activityMsg && json.activityMsg.lastMsg || {};
         ary.push({
             title: "订单消息",
             path: "OrderMessage",
             imageSource: require("../../image/message/xx-ddxx.png"),
             time: orderMsg.createdTime || "",
             content: orderMsg.title || "暂无消息",
-            unreadNum: json.orderMsg.unreadNum
+            unreadNum: json && json.orderMsg && json.orderMsg.unreadNum || 0
         });
         ary.push({
-            title: "平台通知",
+            title: "互动消息" || "平台通知",
             path: "NotificationMessage",
             imageSource: require("../../image/message/xx-pttz.png"),
             time: noticeMsg.createdTime || "",
-            content: noticeMsg.title || "暂无消息",
-            unreadNum: json.noticeMsg.unreadNum
+            content: "系统消息通知" || noticeMsg.title || "暂无消息",
+            unreadNum: json && json.noticeMsg && json.noticeMsg.unreadNum || 0
         });
         ary.push({
             title: "活动推荐",
@@ -249,14 +216,14 @@ class Message extends Component {
             imageSource: require("../../image/message/xx-hdtj.png"),
             time: activityMsg.createdTime || "",
             content: activityMsg.title || "暂无消息",
-            unreadNum: json.activityMsg.unreadNum
+            unreadNum: json && json.activityMsg && json.activityMsg.unreadNum || 0
         });
         ary.push({
             title: "联系客服",
             imageSource: require("../../image/message/xx-lxkf.png"),
             time: this.state.service.date || "",
             content: this.state.service.content || "暂无消息",
-            unreadNum: this.state.service.count,
+            unreadNum: this.state.service.count || 0,
         });
         return ary;
     }
@@ -280,25 +247,28 @@ class Message extends Component {
         return array.map((item, index) => {
 
             if (index === 3) {
-                item.unreadNum = this.state.service.count;
-                return (<SelectCell key={index}
-                                    style={{backgroundColor: YITU.c_bg_white}}
-                                    onPress={() => {
-                                        let person = {
-                                            targetid: "杭州易途吧",
-                                            groupid: GroupId
-                                        };
-                                        alert("杭州易途吧客服");
-                                        // InteractionManager.runAfterInteractions(() => {
-                                        //     NativeModules.ChatNativeModule.jumpToIM(person, (err) => {
-                                        //         log(err)
-                                        //     });
-                                        // })
-                                    }}>
-                    <MessageCell data={item} serviceMessage={this.state.service}/>
-                </SelectCell>)
+                // item.unreadNum = this.state.service.count;
+                // return (<SelectCell key={index}
+                //                     style={{backgroundColor: YITU.c_bg_white}}
+                //                     onPress={() => {
+                //                         let person = {
+                //                             targetid: "杭州易途吧",
+                //                             groupid: GroupId
+                //                         };
+                //                         alert("杭州易途吧客服");
+                //                         // InteractionManager.runAfterInteractions(() => {
+                //                         //     NativeModules.ChatNativeModule.jumpToIM(person, (err) => {
+                //                         //         log(err)
+                //                         //     });
+                //                         // })
+                //                     }}>
+                //     <MessageCell data={item} serviceMessage={this.state.service}/>
+                // </SelectCell>)
             }
 
+            if (index !== 1) {
+                return null;
+            }
             return (<SelectCell key={index}
                                 style={{backgroundColor: YITU.c_bg_white}}
                                 onPress={() => {

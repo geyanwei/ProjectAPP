@@ -76,8 +76,8 @@ class LineCharter extends Component {
                         navigation.push(this, "SelectCity", {
                             title: "选择城市",
                             param: {value: text},
-                            callBack: (value) => {
-                                ref.setTitle(value || "");
+                            callBack: (obj) => {
+                                 ref.setTitle(obj.name || "");
                             }
                         });
                     }}/>

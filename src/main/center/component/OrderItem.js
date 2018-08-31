@@ -82,7 +82,9 @@ class OrderItem extends Component {
                 direction: "row",
                 buttons: [
                     {
-                        text: "确定", style: {color: YITU.textColor_4, backgroundColor: 'transparent'}, onPress: (e) => {
+                        text: "确定",
+                        style: {color: YITU.textColor_4, backgroundColor: 'transparent'},
+                        onPress: (e) => {
                             mb.close()
                         }
                     },
@@ -96,17 +98,9 @@ class OrderItem extends Component {
 
     /**
      * 跳转订单详情
-     *
-     *
-     *
      */
     jumpToOrderDetail(data) {
         Storage.getUserInfo((userInfo) => {
-                // if (!(this.props.isTrip) && data.isAvailable === 2) {
-                //     this.myEditModal();
-                //     return;
-                // }
-
                 if (userInfo && (userInfo.isbanned === 1) && (!this.props.isTrip)) {
                     let message = "";
                     if (userInfo.bannedSecond) {
@@ -130,11 +124,11 @@ class OrderItem extends Component {
                 }
                 let id = "";
                 //接单和行程主键名不一样
-            if (this.props.isTrip) { // 是行程或我的订单
-                id = this.props.data.acceptId;
-            } else { // 接单页
-                id = this.props.data.orderId;
-            }
+                if (this.props.isTrip) { // 是行程或我的订单
+                    id = this.props.data.acceptId;
+                } else { // 接单页
+                    id = this.props.data.orderId;
+                }
                 navigation.push(this.props.obj, path, {
                     title: '订单详情',
                     callBack: () => {

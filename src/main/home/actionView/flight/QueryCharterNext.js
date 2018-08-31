@@ -55,8 +55,9 @@ class QueryCharterNext extends Component {
 
     //获取每日视图数据
     getRowData() {
-        this.viewData = [
-            {
+        let data = [];
+        if (this.myValue.days){
+            data=[{
                 title: "上车地址",
                 placeHolder: "请选择上车地址",
                 type: "select",
@@ -65,7 +66,7 @@ class QueryCharterNext extends Component {
                 isCheck: true,
                 value: this.address || "",
                 onPress: (valueData) => {
-                    navigation.push(this,'PositionLocation', {
+                    navigation.push(this, 'PositionLocation', {
                         title: '选择的目的地',
                         single: true,
                         callBack: (cityObj) => {
@@ -75,10 +76,12 @@ class QueryCharterNext extends Component {
                         },
                     });
                 }
-            },
-            {
+            },{
                 type: "line",
-            },
+            },];
+        }
+
+        let viewD = [
             {
                 title: "成人",
                 type: "add",
@@ -263,6 +266,7 @@ class QueryCharterNext extends Component {
                 }
             },
         ];
+        this.viewData = data.concat(viewD);
         return this.viewData;
     }
 
@@ -275,22 +279,31 @@ class QueryCharterNext extends Component {
         return carStr;
     }
 
+    //组装头部用车描述数据
+    assemblyHeadTitle() {
+        let obj = this.myValue || {};
+        let headTitleObj = {
+            userCarType: obj.userCarType || "",
+            userDate: obj.time,
+            desc: obj.headValue || (obj.flight + "包车" + (obj.days && obj.days.length) + "日游"),
+        };
+        return headTitleObj;
+    }
+
     render() {
         let view = (
             <KeyboardAvoidingView {...keyBoard} style={styles.container}>
                 <ScrollView style={{marginBottom: 45}}>
                     <QueryCharterItemDetail
-                        myValue={this.myValue || {}}
+                        myValue={this.assemblyHeadTitle()}
                         carType={this.assemblyCarType(this.carDescObj)}
                     />
 
                     <View style={{
                         marginTop: YITU.space_5,
                         backgroundColor: YITU.backgroundColor_0,
-                        paddingHorizontal: YITU.space_5,
-                        paddingVertical: 3
                     }}>
-                        {this.createDaysView(this.myValue.days || [])}
+                        {this.myValue.days ? this.createDaysView(this.myValue.days) : this.createPlaceView(this.myValue)}
                     </View>
 
                     <View style={{
@@ -373,7 +386,8 @@ class QueryCharterNext extends Component {
                 style={{
                     flex: 1,
                     flexDirection: "row",
-                    paddingVertical: 3
+                    paddingVertical: YITU.space_0,
+                    paddingHorizontal: YITU.space_5
                 }}>
                 <Text style={{
                     minWidth: 45,
@@ -387,6 +401,38 @@ class QueryCharterNext extends Component {
                     fontSize: YITU.fontSize_5,
                     marginLeft: YITU.space_1
                 }}><Text>{"住在" + item.value}</Text></Text>
+            </View>);
+        });
+    }
+
+    //显示机场数据
+    createPlaceView(obj) {
+        let arr = [{
+            icon: require("../../../../image/main/icon_place.png"),
+            value: obj.headValue
+        }, {
+            icon: require("../../../../image/main/icon_position.png"),
+            value: obj.endPlace
+        }];
+        return arr.map((item, index) => {
+            return (<View
+                key={index}
+                style={{
+                    flex: 1,
+                    paddingHorizontal: YITU.space_5,
+                    flexDirection: "row",
+                    paddingVertical: YITU.space_2,
+                    borderBottomColor: YITU.backgroundColor_Line,
+                    borderBottomWidth: StyleSheet.hairlineWidth
+                }}>
+                <Image
+                    resizeMode={"contain"}
+                    style={{width: YITU.d_icon, height: YITU.d_icon, marginRight: YITU.space_5}}
+                    source={item.icon}/>
+                <Text style={{
+                    color: YITU.textColor_1,
+                    fontSize: YITU.fontSize_5
+                }}><Text>{item.value}</Text></Text>
             </View>);
         });
     }

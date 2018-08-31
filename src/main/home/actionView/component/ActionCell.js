@@ -51,13 +51,23 @@ class ActionCell extends Component {
                 <Image
                     resizeMode={"contain"}
                     style={styles.image}
-                    source={require("../../../../image/userIcon/grzx-zhaq.png")}/>
-                <Text style={[
-                    styles.title, {
-                        color: data.value && data.value != "" ? YITU.textColor_1 : YITU.textColor_5
-                    }
-                ]}><Text>{data.value || data.defaultValue}</Text></Text>
-                <Text style={styles.text}><Text>{data.value && data.value != "" ? "" : data.text}</Text></Text>
+                    source={data.icon||require("../../../../image/userIcon/grzx-zhaq.png")}/>
+                <View style={{justifyContent:"center"}}>
+                    <Text style={[
+                        styles.title, {
+                            color: data.value && data.value != "" ? YITU.textColor_1 : YITU.textColor_5
+                        }
+                    ]}>{data.value || data.defaultValue}</Text>
+
+                    {data.littleValue ? <Text style={{
+                        marginTop:3,
+                        color: YITU.textColor_5,
+                        fontSize: YITU.fontSize_2
+                    }}>{data.littleValue}</Text> : null}
+                </View>
+
+
+                <Text style={styles.text}>{data.text||""}</Text>
                 {data.isNoShowRightIcon ? null :
                     <Image resizeMode={"contain"}
                            style={styles.icon}
@@ -69,13 +79,17 @@ class ActionCell extends Component {
 
 module.exports = ActionCell;
 
-ActionCell.showMessage = (obj, page) => {
-    if (!obj.value||obj.value===""){
+ActionCell.showMessage = (obj, page,isNoShowToast) => {
+    if (!obj.value || obj.value === "") {
+        if (isNoShowToast){
+            return false;
+        }
         Toast.show(obj.defaultValue);
         return false;
     }
     return true;
 };
+
 ActionCell.getValue = (obj, page) => {
     return obj.value || "";
 };
@@ -87,11 +101,11 @@ const styles = StyleSheet.create({
     },
     cell: {
         flex: 1,
-        paddingVertical: YITU.space_2,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         paddingRight: YITU.space_5,
+        height: 50,
     },
     image: {
         width: YITU.d_icon,
@@ -102,7 +116,7 @@ const styles = StyleSheet.create({
         fontSize: YITU.fontSize_7,
         color: YITU.textColor_1,
         minWidth: 140,
-        maxWidth:170
+        maxWidth: 170
     },
     text: {
         flex: 1,

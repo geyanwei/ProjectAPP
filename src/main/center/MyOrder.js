@@ -82,11 +82,6 @@ class MyOrder extends Component {
             imageStyle: {width: 370 / 2, height: 417 / 2},
             message: this.props.type === "all" ? "您还没有相关的订单" : "给自己定一个小目标，先来一单",
             messageStyle: {textAlign: 'center', lineHeight: 20, fontSize: YITU.fontSize_4, color: YITU.textColor_2},
-            // buttonTitle: "重新加载",
-            // buttonStyle: {width: 163, height: 33, justifyContent: "center", alignItems: 'center'},
-            // callBack: () => {
-            //     this.listView[this.index].refresh();
-            // }
         };
         return (
             <View style={{
@@ -249,9 +244,7 @@ class MyOrder extends Component {
                             this.listView[this.index].refresh();
                         }
                     }
-
-                }}
-            >
+                }}>
                 {
                     label.map((item, index) => {
                         return (
@@ -283,8 +276,7 @@ class MyOrder extends Component {
                                         )
                                     }}
                                 />
-                            </View>
-                        )
+                            </View>)
                     })
                 }
             </ScrollableTabView>
@@ -307,8 +299,7 @@ class MyOrder extends Component {
                 config={PageView.defaultConfig(this, {
                     barConfig: this.navBar(),
                     hiddenIphoneXBottom: true,
-                })}
-            >
+                })}>
                 {view}
             </PageView>
         );
@@ -421,6 +412,4 @@ const styles = StyleSheet.create({
         height: 2,
     }
 });
-
-
 module.exports = MyOrder;

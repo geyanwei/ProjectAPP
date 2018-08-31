@@ -32,7 +32,7 @@ class SelectFlight extends Component {
             isNoShowRightIcon: true,
             defaultValue: "请选择用车时间",
             value: "",
-            field: "time",
+            field: "date",
         }
     }
 
@@ -46,11 +46,51 @@ class SelectFlight extends Component {
 
     }
 
+    //提交查询操作
+    commitQuery() {
+        let param = {};
+        if (this.state.selIndex === 0) {
+            if (!this.state.inputValue || this.state.inputValue === "") {
+                Toast.show("请输入航班号");
+                return;
+            }
+            param = {
+                flightNum: this.state.inputValue
+            }
+        } else {
+            if (!this.state.startCity || this.state.startCity === "") {
+                Toast.show("请选择出发城市");
+                return;
+            }
+            if (!this.state.endCity || this.state.endCity === "") {
+                Toast.show("请选择到达城市");
+                return;
+            }
+            param = {
+                startCity: this.state.startCity,
+                endCity: this.state.endCity
+            }
+        }
+        if (!ActionCell.showMessage(this.flightDateObj, this)) {
+            return;
+        }
+        param[this.flightDateObj.field] = ActionCell.getValue(this.flightDateObj, this);
+
+        navigation.push(this,"FightList",{
+            title:this.state.selIndex===0?this.state.inputValue:"",
+            value:param,
+            callBack:(data)=>{
+                this.props.callBack&&this.props.callBack(data||{});
+            }
+        })
+    }
+
     render() {
         let {selIndex} = this.state;
         let view = (
             <View style={styles.container}>
                 <ScrollView
+                    keyboardShouldPersistTaps={"handled"}
                     style={{
                         backgroundColor: YITU.backgroundColor_1,
                     }}>
@@ -72,7 +112,8 @@ class SelectFlight extends Component {
                     <View style={{backgroundColor: YITU.backgroundColor_0}}>
                         <View style={{
                             marginLeft: YITU.space_5,
-                            height: StyleSheet.hairlineWidth, backgroundColor: YITU.backgroundColor_Line
+                            height: StyleSheet.hairlineWidth,
+                            backgroundColor: YITU.backgroundColor_Line
                         }}/>
                     </View>
 
@@ -91,12 +132,12 @@ class SelectFlight extends Component {
                         }}/>
 
                     <Text style={{
-                        paddingVertical:YITU.space_6,
-                        paddingHorizontal:YITU.space_5,
-                        fontSize:YITU.fontSize_3,
-                        color:this.state.selIndex===0?YITU.textColor_2:YITU.textColor_3
+                        paddingVertical: YITU.space_6,
+                        paddingHorizontal: YITU.space_5,
+                        fontSize: YITU.fontSize_3,
+                        color: this.state.selIndex === 0 ? YITU.textColor_2 : YITU.textColor_3
                     }}>
-                        <Text>{"注："+"\n"+"1、如有中转，请选择末趟航班"+"\n"+"2、起飞日期请按您出发城市的当地时间来选择"}</Text>
+                        <Text>{"注：" + "\n" + "1、如有中转，请选择末趟航班" + "\n" + "2、起飞日期请按您出发城市的当地时间来选择"}</Text>
                     </Text>
 
                     <MyButton
@@ -113,9 +154,7 @@ class SelectFlight extends Component {
                         underlayTxtColor='#FFFFFFf0'
                         noClickedBackgroundColor={YITU.backgroundColor_4}
                         onPress={() => {
-                            navigation.pop(this, () => {
-                                this.props && this.props.callBack("ZU9540");
-                            });
+                            this.commitQuery();
                         }}>查 询
                     </MyButton>
                 </ScrollView>
@@ -148,7 +187,7 @@ class SelectFlight extends Component {
     //航班号
     createFlightInput() {
         return (<TextInput
-            style={[styles.title,{flex:1}]}
+            style={[styles.title, {flex: 1}]}
             placeholder={"请输入航班号"}
             value={this.state.inputValue}
             onChangeText={(text) => {
@@ -168,10 +207,19 @@ class SelectFlight extends Component {
             justifyContent: "center",
         }}>
             <TouchableOpacity
-                style={{flex: 1,justifyContent:"center"}}
+                style={{flex: 1, justifyContent: "center"}}
                 onPress={() => {
-                    this.setState({
-                        startCity: "杭州"
+                    navigation.push(this, "SelectCity", {
+                        title: "选择城市",
+                        callBack: (obj) => {
+                            if (obj.name===this.state.endCity) {
+                                Toast.show("出发城市不能与到达城市相同");
+                                return;
+                            }
+                            this.setState({
+                                startCity: obj.name || ""
+                            });
+                        }
                     });
                 }}>
                 <Text
@@ -192,8 +240,17 @@ class SelectFlight extends Component {
             <TouchableOpacity
                 style={{flex: 1, marginRight: YITU.d_icon}}
                 onPress={() => {
-                    this.setState({
-                        endCity: "曼谷"
+                    navigation.push(this, "SelectCity", {
+                        title: "选择城市",
+                        callBack: (obj) => {
+                            if (obj.name===this.state.startCity) {
+                                Toast.show("到达城市不能与出发城市相同");
+                                return;
+                            }
+                            this.setState({
+                                endCity: obj.name || ""
+                            });
+                        }
                     });
                 }}>
                 <Text
@@ -243,18 +300,18 @@ const styles = StyleSheet.create({
     },
 
     row: {
-        height:50,
+        height: 45,
         paddingLeft: YITU.space_5,
         backgroundColor: YITU.backgroundColor_0,
-        alignItems:"center"
+        alignItems: "center"
     },
     cell: {
         flex: 1,
-        paddingVertical: YITU.space_5,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         paddingRight: YITU.space_5,
+        height: 50,
     },
     image: {
         width: YITU.d_icon,

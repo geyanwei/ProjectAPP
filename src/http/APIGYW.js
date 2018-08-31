@@ -182,6 +182,14 @@ let APIGYW = {
      */
     driver_authentication_viewAuthInfo: "/driver/authentication/viewAuthInfo",
 
+
+    //消息界面
+    /**
+     *  系统消息界面
+     */
+    msgcenter_msgapi_messages_app_query: "/base-msgcenter/msgapi/messages/app/query",
+
+
 };
 
 module.exports = APIGYW;

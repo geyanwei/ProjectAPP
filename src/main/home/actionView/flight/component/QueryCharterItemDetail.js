@@ -36,7 +36,7 @@ class QueryCharterItemDetail extends Component {
             <View style={{flexDirection: "row", alignItems: "center"}}>
                 <Text style={{
                     color: YITU.textColor_warn, fontSize: YITU.fontSize_5
-                }}>{"自由包车"}</Text>
+                }}>{myValue.userCarType}</Text>
                 <View style={{
                     width: 1,
                     height: 20,
@@ -46,7 +46,7 @@ class QueryCharterItemDetail extends Component {
                 <Text style={{
                     flex: 1, color: YITU.textColor_0, fontSize: YITU.fontSize_5
                 }}>
-                    {myValue.flight + "包车" + (myValue.days && myValue.days.length) + "日游"}
+                    {myValue.desc}
                 </Text>
             </View>
 
@@ -61,7 +61,7 @@ class QueryCharterItemDetail extends Component {
                     color: YITU.textColor_1,
                     fontSize: YITU.fontSize_3,
                 }}>
-                    {myValue.time}
+                    {myValue.userDate}
                 </Text>
             </View>
 
