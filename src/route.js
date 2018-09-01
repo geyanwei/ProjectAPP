@@ -21,7 +21,7 @@ import UserInfor from './main/center/UserInfor.js';
 import MyWallet from './main/center/MyWallet.js';
 import PriceTicket from './main/center/PriceTicket.js';
 import MyOrder from './main/center/MyOrder.js';
-// import TripDetail from './main/center/detail/TripDetail.js';
+import TripDetail from './main/center/detail/TripDetail.js';
 import Setting from './main/center/Setting.js';
 import EditInfor from './main/center/userInfor/EditInfor.js';
 
@@ -75,7 +75,7 @@ const routeList = {
     'MyWallet': MyWallet,
     'PriceTicket': PriceTicket,
     'MyOrder': MyOrder,
-    // 'TripDetail': TripDetail,
+    'TripDetail': TripDetail,
     'Setting': Setting,
     'EditInfor': EditInfor,
     'UserCarInvoice': UserCarInvoice,

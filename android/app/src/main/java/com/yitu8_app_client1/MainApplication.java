@@ -3,6 +3,7 @@ package com.yitu8_app_client1;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.iou90.autoheightwebview.AutoHeightWebViewPackage;
 import com.zyu.ReactNativeWheelPickerPackage;
 import com.theweflex.react.WeChatPackage;
 import com.brentvatne.react.ReactVideoPackage;
@@ -38,6 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new AutoHeightWebViewPackage(),
             new ReactNativeWheelPickerPackage(),
             new WeChatPackage(),
             new ReactVideoPackage(),

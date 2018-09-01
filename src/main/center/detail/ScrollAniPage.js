@@ -164,19 +164,20 @@ class ScrollAniPage extends Component {
                     }
                 </ScrollView>
 
-                <NavHead ref={(a) => {
-                    this.navHead = a
-                }}
-                         title={this.props.title || "订单详情"}
-                         isBack={true}
-                         cb={(index) => {
-                             if (index === 1) {
-                                 navigation.pop(this.props.obj || this);
-                             } else {
-                                 YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_function);
-                                 this.myAlert.show();
-                             }
-                         }} rightTitle={"•••"}/>
+                <NavHead
+                    ref={(a) => this.navHead = a}
+                    rightTitle={"•••"}
+                    title={this.props.title || "订单详情"}
+                    isBack={true}
+                    cb={(index) => {
+                        if (index === 1) {
+                            navigation.pop(this.props.obj || this);
+                        } else {
+                            YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_function);
+                            this.myAlert.show();
+                        }
+                    }}
+                />
                 <ScrollAniShowView
                     ref={(a) => this.scrollAniShowView = a}
                     view={<SelectItem
@@ -189,11 +190,13 @@ class ScrollAniPage extends Component {
                 {
                     //右上角按钮
                 }
-                <MyOrderFunc orderTypeTitle={
-                    this.orderTypeTitle(orderMessage)
-                } orderMessage={orderMessage} ref={(ref) => {
-                    this.myAlert = ref
-                }} obj={this.props.obj}/>
+                <MyOrderFunc
+                    ref={(ref) => this.myAlert = ref}
+                    orderTypeTitle={
+                        this.orderTypeTitle(orderMessage)
+                    }
+                    orderMessage={orderMessage}
+                    obj={this.props.obj}/>
 
                 {
                     //行程详情按钮
@@ -407,7 +410,7 @@ class ScrollAniPage extends Component {
                                 paddingBottom: bottom
                             }}>
                                 <Text style={{
-                                    fontWeight:"bold",
+                                    fontWeight: "bold",
                                     color: YITU.textColor_warn,
                                     fontSize: YITU.fontSize_5
                                 }}>{data.orderStatusMessage}</Text>

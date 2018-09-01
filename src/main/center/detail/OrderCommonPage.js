@@ -298,13 +298,14 @@ class OrderCommonPage extends Component {
                     }}><Text>{"送达地址"}</Text></Text>
 
                     <View style={{flex: 1, marginLeft: YITU.space_6}}>
-                        <TouchableOpacity onPress={() => {
-                            YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_gohere);
-                            this.openMap(orderMessage.toLongitude, orderMessage.toLatitude)
-                        }}
-                                          onLongPress={() => {
-                                              this.copyOrderMessage()
-                                          }}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_gohere);
+                                this.openMap(orderMessage.toLongitude, orderMessage.toLatitude)
+                            }}
+                            onLongPress={() => {
+                                this.copyOrderMessage()
+                            }}>
                             <Text
                                 style={{color: YITU.textColor_1, fontSize: YITU.fontSize_15,}}>
                                 <Text>{orderMessage.toAddressName ? orderMessage.toAddressName : ""}</Text>
@@ -327,7 +328,6 @@ class OrderCommonPage extends Component {
                             }
                         </TouchableOpacity>
                     </View>
-
                 </View>
             </View>
         );
@@ -389,25 +389,22 @@ class OrderCommonPage extends Component {
                                     return (
                                         <View key={index}>
                                             <Text style={{
-                                                marginTop:(index===0)?0:YITU.space_0,
+                                                marginTop: (index === 0) ? 0 : YITU.space_0,
                                                 color: YITU.textColor_1,
                                                 fontSize: YITU.fontSize_15,
                                             }}><Text>{data.title}</Text></Text>
                                             {
                                                 data.detail ?
                                                     <Text style={{
-                                                        marginTop:2,
-                                                        marginBottom:((messageArray.length-1)===index)?0:4,
+                                                        marginTop: 2,
+                                                        marginBottom: ((messageArray.length - 1) === index) ? 0 : 4,
                                                         color: YITU.textColor_adorn,
                                                         fontSize: YITU.fontSize_15,
                                                     }}><Text>{data.detail}</Text></Text> : null
                                             }
-                                        </View>
-                                    )
+                                        </View>)
                                 }) : <Text style={{color: YITU.textColor_1, fontSize: YITU.fontSize_15,}}>
-                                    <Text>{
-                                        message
-                                    }</Text>
+                                    <Text>{message}</Text>
                                 </Text>
                         }
                     </View>
@@ -419,9 +416,7 @@ class OrderCommonPage extends Component {
 
 
     renderLine(height) {
-        return (
-            <View style={{backgroundColor: "transparent", height: height ? height : YITU.space_2}}/>
-        )
+        return (<View style={{backgroundColor: "transparent", height: height ? height : YITU.space_2}}/>);
     }
 
     /**
@@ -725,7 +720,8 @@ class OrderCommonPage extends Component {
                 title: "酒店电话",
                 type: "hotelPhone",
                 detail: [{phone: ("+" + userInfo.hotelAreaCode + userInfo.hotelPhone), type: ""}],
-                source: require("require(\"../../../image/userIcon/jddh.png"), style: {width: 48 / 2, height: 45 / 2}
+                source: require("../../../image/order/jddh.png"),
+                style: {width: 48 / 2, height: 45 / 2}
             })
         }
 
@@ -760,8 +756,8 @@ class OrderCommonPage extends Component {
                                                     width: StyleSheet.hairlineWidth
                                                 }}/> : null
                                         }
-                                        <TouchableOpacity onPress={
-                                            () => {
+                                        <TouchableOpacity
+                                            onPress={() => {
                                                 if (item.type === 'wechat') {
                                                     YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_wechat);
                                                     this.contactWechat(item.detail);
@@ -784,13 +780,10 @@ class OrderCommonPage extends Component {
                                                     marginTop: YITU.space_2,
                                                     color: YITU.textColor_1,
                                                     fontSize: YITU.fontSize_14
-                                                }}>
-                                                    {item.title}
-                                                </Text>
+                                                }}>{item.title}</Text>
                                             </View>
                                         </TouchableOpacity>
-                                    </View>
-                                )
+                                    </View>)
                             })
                         }
                     </View>
@@ -798,36 +791,31 @@ class OrderCommonPage extends Component {
                 {
                     this.renderLine()
                 }
-            </View>
-        )
+            </View>);
     }
 
     render() {
-        return (
-            <View>
-                {
-                    this.renderLine()
-                }
-                {
-                    this.renderOrderDetail()
-                }
-                {
-                    this.renderLine()
-                }
-                {
-                    this.renderContact()
-                }
-                {
-                    this.renderUserOrder()
-                }
-                {
-                    this.renderLine()
-                }
-                <MyBottomAlert ref={(ref) => {
-                    this.myBottom = ref
-                }}/>
-            </View>
-        )
+        return (<View>
+            {
+                this.renderLine()
+            }
+            {
+                this.renderOrderDetail()
+            }
+            {
+                this.renderLine()
+            }
+            {
+                this.renderContact()
+            }
+            {
+                this.renderUserOrder()
+            }
+            {
+                this.renderLine()
+            }
+            <MyBottomAlert ref={(ref) => this.myBottom = ref}/>
+        </View>);
     }
 }
 

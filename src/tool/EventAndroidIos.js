@@ -25,7 +25,7 @@ var UMNative = require('react-native').NativeModules.UMAnalyticsModule;
 class DemoEventAndroidIos {
 
     constructor() {
-        WeChat.registerApp(Config.wxChatAppId);
+        // WeChat.registerApp(Config.wxChatAppId);
     }
     //友盟统计点击事件
     static umOnEvent(eventID){

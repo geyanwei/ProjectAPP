@@ -1,9 +1,5 @@
-//
 //  WeChatNativeModule.m
 //  yitu8_app_driver
-//
-//  Created by 潘之平 on 2018/5/25.
-//  Copyright © 2018年 Facebook. All rights reserved.
 //
 
 #import "WeChatNativeModule.h"

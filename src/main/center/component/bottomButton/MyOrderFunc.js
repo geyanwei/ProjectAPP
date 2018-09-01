@@ -6,14 +6,12 @@ import {
     TouchableHighlight,
     Image,
     TouchableOpacity,
-    InteractionManager,
-    NativeModules,
     Linking,
     Platform,
     Clipboard,
     TextInput
 } from 'react-native';
-import {PageView, ModalBox, Toast, navigation, Loading} from "myapplib";
+import {ModalBox, Toast, navigation, Loading} from "myapplib";
 import ShareHelp from '../../../share/ShareHelp.js'
 import HttpTool from "../../../../http/HttpTool";
 import APIPZP from "../../../../http/APIPZP";
@@ -41,7 +39,6 @@ class MyBottomAlert extends Component {
                 text: "确定取消此订单",
                 props: {},//标题参数 Text所有参数
                 style: {},//标题样式
-
             },
             desc: (
                 <Text style={{
@@ -59,13 +56,17 @@ class MyBottomAlert extends Component {
                 direction: "row",
                 buttons: [
                     {
-                        text: "取消订单", style: {color: YITU.textColor_1}, onPress: () => {
+                        text: "取消订单",
+                        style: {color: YITU.textColor_1},
+                        onPress: () => {
                             mb.close();
                             this.showModalCancleOrder()
                         }
                     },
                     {
-                        text: "继续服务", style: {color: YITU.textColor_4}, onPress: () => {
+                        text: "继续服务",
+                        style: {color: YITU.textColor_4},
+                        onPress: () => {
                             mb.close();
                         }
                     }
@@ -77,7 +78,6 @@ class MyBottomAlert extends Component {
                 swipeToClose: true,
                 clickToClose: false,
             }
-
         };
         let mb = ModalBox.showConfig(option);
     }
@@ -85,7 +85,6 @@ class MyBottomAlert extends Component {
     showModalCancleOrder() {
         let mb = ModalBox.showConfig({
             content: <MyAlert ref={(ref) => this.myAlert = ref}/>,
-
             foot: {
                 direction: "row",
                 buttons: [
@@ -107,7 +106,6 @@ class MyBottomAlert extends Component {
                             } else {
                                 this.myAlert.showError(true);
                             }
-
                         }
                     }
                 ]
@@ -182,10 +180,8 @@ class MyBottomAlert extends Component {
     }
 
     renderLine() {
-        return (
-            <View
-                style={{backgroundColor: YITU.backgroundColor_Line, height: StyleSheet.hairlineWidth, width: "100%"}}/>
-        )
+        return (<View
+            style={{backgroundColor: YITU.backgroundColor_Line, height: StyleSheet.hairlineWidth, width: "100%"}}/>)
     }
 
     /**
@@ -323,31 +319,27 @@ class MyBottomAlert extends Component {
                 style: {width: 72 / 2, height: 60 / 2},
                 title: "微信好友",
                 onPress: () => {
-                    if (cb.close) {
-                        cb.close(
-                            () => {
-                                YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_wechatshare);
-                                let titleObj = this.props.orderTypeTitle || {};
-                                let title = "易途8" + titleObj.title + "订单";
-                                let message = ("订单号：" + orderMessage.orderId + "，用车时间：" + (orderMessage.useTime ? this.getMyDay(orderMessage.useTime) : "") + " (当地时间)");
-                                ShareHelp.openShare("WECHAR", {
-                                        title: title,
-                                        description: message,
-                                        thumbImage: orderMessage.weixinShareImage || "https://image.pro.io.yitu8.cn/wechatshare/40@2x.png",
-                                        type: 'news',
-                                        webpageUrl: encodeURI(orderMessage.weixinShareUrl + urlData)
-                                    }, (data) => {
-                                        if (data.code === 1) {
-                                            Toast.show(data.msg)
-                                        } else {
-                                            //错误不显示
-                                            //Toast.show(data.msg)
-                                        }
-                                    }
-                                )
+                    cb.close && cb.close(() => {
+                        YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_wechatshare);
+                        let titleObj = this.props.orderTypeTitle || {};
+                        let title = "易途8" + titleObj.title + "订单";
+                        let message = ("订单号：" + orderMessage.orderId + "，用车时间：" + (orderMessage.useTime ? this.getMyDay(orderMessage.useTime) : "") + " (当地时间)");
+                        ShareHelp.openShare("WECHAR", {
+                                title: title,
+                                description: message,
+                                thumbImage: orderMessage.weixinShareImage || "https://image.pro.io.yitu8.cn/wechatshare/40@2x.png",
+                                type: 'news',
+                                webpageUrl: encodeURI(orderMessage.weixinShareUrl + urlData)
+                            }, (data) => {
+                                if (data.code === 1) {
+                                    Toast.show(data.msg)
+                                } else {
+                                    //错误不显示
+                                    Toast.show(data.msg)
+                                }
                             }
                         )
-                    }
+                    })
 
                 }
             },
@@ -356,24 +348,20 @@ class MyBottomAlert extends Component {
                 style: {width: 71 / 2, height: 64 / 2},
                 title: "短信分享",
                 onPress: () => {
-                    if (cb.close) {
-                        cb.close(() => {
-                            YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_messageshare);
-                            Linking.canOpenURL('sms:').then(supported => {
+                    cb.close && cb.close(() => {
+                        YITU.ClickTrackFunction(YITU.TrackOrderDetail.orderdetail_messageshare);
+                        Linking.canOpenURL('sms:').then(supported => {
+                            if (!supported) {
+                                Toast.show("您的设备不支持直接发送短信");
+                            } else {
                                 let titleObj = this.props.orderTypeTitle || {};
-                                let message = (titleObj.title + "订单，订单号：" + orderMessage.orderId + "，用车时间：" + (orderMessage.useTime ? this.getMyDay(orderMessage.useTime) : "") + " (当地时间)，" + encodeURI(orderMessage.smsShareUrl + urlData)) + "  请点击查看";
-                                if (!supported) {
-                                    Toast.show("您的设备不支持直接发送短信");
-                                } else {
-                                    if (Platform.OS === "ios") {
-                                        return Linking.openURL("sms:&body=" + message);
-                                    } else {
-                                        return Linking.openURL("sms:?body=" + message);
-                                    }
-                                }
-                            }).catch(err => Toast.show("您的设备不支持直接发送短信"));
-                        })
-                    }
+                                let message = (titleObj.title + "订单，订单号：" + orderMessage.orderId + "，用车时间：" +
+                                    (orderMessage.useTime ? this.getMyDay(orderMessage.useTime) : "") +
+                                    " (当地时间)，" + encodeURI(orderMessage.smsShareUrl + urlData)) + "  请点击查看";
+                                return Linking.openURL((Platform.OS === "ios" ? "sms:&body=" : "sms:?body=") + message);
+                            }
+                        }).catch(err => Toast.show("您的设备不支持直接发送短信"));
+                    })
                 }
             },
             {
@@ -388,7 +376,8 @@ class MyBottomAlert extends Component {
                                     targetid: "杭州易途吧",
                                     groupid: data.group_id || 0,
                                 };
-                            })
+                            });
+                            alert("联系");
                         })
                     }
                 }
@@ -430,40 +419,38 @@ class MyBottomAlert extends Component {
 
         let cb = ModalBox.showEditModal({
             type: "bottom",
-            view: (
-                <View style={{marginBottom: YITU.IPHONEX_BOTTOM, backgroundColor: "#f5f5f9"}}>
-                    {
-                        this.renderContainer(array1)
-                    }
-                    {
-                        this.renderLine()
-                    }
-                    {
-                        orderMessage.status !== undefined && (orderMessage.status === 1 || orderMessage.status === 0) ?
-                            <View>
-                                {
-                                    this.renderContainer(array2)
-                                }
-                                {
-                                    this.renderLine()
-                                }
-                            </View> : null
-                    }
-                    {
-                        this.renderClose(() => {
-                            if (cb.close) {
-                                cb.close(
-                                    () => {
-                                        if (this.props.closeCallBack) {
-                                            this.props.closeCallBack();
-                                        }
-                                    }
-                                )
+            view: (<View style={{marginBottom: YITU.IPHONEX_BOTTOM, backgroundColor: "#f5f5f9"}}>
+                {
+                    this.renderContainer(array1)
+                }
+                {
+                    this.renderLine()
+                }
+                {
+                    orderMessage.status !== undefined && (orderMessage.status === 1 || orderMessage.status === 0) ?
+                        <View>
+                            {
+                                this.renderContainer(array2)
                             }
-                        })
-                    }
-                </View>
-            )
+                            {
+                                this.renderLine()
+                            }
+                        </View> : null
+                }
+                {
+                    this.renderClose(() => {
+                        if (cb.close) {
+                            cb.close(
+                                () => {
+                                    if (this.props.closeCallBack) {
+                                        this.props.closeCallBack();
+                                    }
+                                }
+                            )
+                        }
+                    })
+                }
+            </View>)
         });
     }
 
@@ -491,46 +478,42 @@ class MyBottomAlert extends Component {
     renderContainer(array) {
         let list = [];
         array && array.map((data, index) => {
-            list.push(
-                <View key={index}
-                      style={{
-                          marginLeft: YITU.space_5,
-                          paddingRight: YITU.space_5,
-                          paddingBottom: YITU.space_6,
-                          flexDirection: 'row'
-                      }}>
-                    <TouchableOpacity onPress={() => {
-                        if (data.onPress) {
-                            data.onPress()
-                        }
-                    }} style={{alignItems: "center", justifyContent: 'center'}}>
-                        <View style={{
-                            backgroundColor: YITU.backgroundColor_0,
-                            width: SIZE,
-                            height: SIZE,
-                            borderRadius: YITU.radius_1,
-                            justifyContent: "center",
-                            alignItems: 'center'
-                        }}>
-                            <Image source={data.image}
-                                   style={data.style}/>
-                        </View>
-                        <Text
+            list.push(<View key={index}
                             style={{
-                                marginTop: YITU.space_2,
-                                fontSize: YITU.fontSize_1,
-                                color: "#888"
-                            }}>{data.title}</Text>
-                    </TouchableOpacity>
-                </View>
-            )
-        })
+                                marginLeft: YITU.space_5,
+                                paddingRight: YITU.space_5,
+                                paddingBottom: YITU.space_6,
+                                flexDirection: 'row'
+                            }}>
+                <TouchableOpacity onPress={() => {
+                    if (data.onPress) {
+                        data.onPress()
+                    }
+                }} style={{alignItems: "center", justifyContent: 'center'}}>
+                    <View style={{
+                        backgroundColor: YITU.backgroundColor_0,
+                        width: SIZE,
+                        height: SIZE,
+                        borderRadius: YITU.radius_1,
+                        justifyContent: "center",
+                        alignItems: 'center'
+                    }}>
+                        <Image source={data.image}
+                               style={data.style}/>
+                    </View>
+                    <Text
+                        style={{
+                            marginTop: YITU.space_2,
+                            fontSize: YITU.fontSize_1,
+                            color: "#888"
+                        }}>{data.title}</Text>
+                </TouchableOpacity>
+            </View>)
+        });
         if (list.length) {
-            return (
-                <View style={{flexDirection: 'row', flexWrap: "wrap", paddingTop: YITU.space_6}}>
-                    {list}
-                </View>
-            )
+            return (<View style={{flexDirection: 'row', flexWrap: "wrap", paddingTop: YITU.space_6}}>
+                {list}
+            </View>);
         }
         return null;
     }
@@ -538,8 +521,6 @@ class MyBottomAlert extends Component {
 
     render() {
         return null;
-
-
     }
 
 }
@@ -613,7 +594,6 @@ class MyAlert extends Component {
                         }}>{this.state.showError ? "请输入取消原因" : ""}</Text>
                     }
                 </View>
-            </View>
-        )
+            </View>);
     }
 }

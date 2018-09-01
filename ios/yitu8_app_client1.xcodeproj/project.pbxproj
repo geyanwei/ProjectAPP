@@ -68,6 +68,8 @@
 		795EFBA5212FFABC0017DEEB /* JPushNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB98212FFABC0017DEEB /* JPushNativeModule.m */; };
 		795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */; };
 		795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */; };
+		79E04F1B213A2CC40081B80E /* libRCTWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0B9D1212E9F1B0028F9CF /* libRCTWeChat.a */; };
+		79E04F54213A2D5C0081B80E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F53213A2D5C0081B80E /* libc++.tbd */; };
 		79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0BA58212EA5B30028F9CF /* libbz2.tbd */; };
 		7BB6CC4AF0B74DD99EE91CEF /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA98BC40C2B455784E10E8C /* libRCTBEEPickerManager.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -578,6 +580,7 @@
 		795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		79D644F62136917B00FA2794 /* QBImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = "<group>"; };
 		79D644F72136917C00FA2794 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RSKImageCropper.framework; sourceTree = "<group>"; };
+		79E04F53213A2D5C0081B80E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		79F0BA58212EA5B30028F9CF /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
@@ -615,7 +618,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AEC8629B194271B274427F /* libz.tbd in Frameworks */,
+				79E04F54213A2D5C0081B80E /* libc++.tbd in Frameworks */,
 				795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */,
+				07582213FDFE46D6B847922D /* CoreTelephony.framework in Frameworks */,
+				1BA4315C43604A69AB96015E /* SystemConfiguration.framework in Frameworks */,
 				795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */,
 				7940F581212EB44500FF60CA /* libART.a in Frameworks */,
 				79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */,
@@ -635,12 +642,9 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				F2D114CFD6EF48A3ADF6226E /* libRCTJCoreModule.a in Frameworks */,
 				E67F0ADBC51A4D209380F129 /* libRCTJPushModule.a in Frameworks */,
-				D6AEC8629B194271B274427F /* libz.tbd in Frameworks */,
 				46A98EE7201648DE88ED0D55 /* UserNotifications.framework in Frameworks */,
-				07582213FDFE46D6B847922D /* CoreTelephony.framework in Frameworks */,
 				0915A01ECE8046D18A48703F /* Security.framework in Frameworks */,
 				57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */,
-				1BA4315C43604A69AB96015E /* SystemConfiguration.framework in Frameworks */,
 				5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */,
 				D8C2409204CB42C59D3D66F3 /* UIKit.framework in Frameworks */,
 				C53875A6F22349519AB97B00 /* libresolv.tbd in Frameworks */,
@@ -663,6 +667,7 @@
 				795EFB9D212FFABC0017DEEB /* AlipaySDK.framework in Frameworks */,
 				A6D0E275E10646A596534B59 /* libthird-party.a in Frameworks */,
 				C2FFC7C5FA0647D9B3E3C09A /* libdouble-conversion.a in Frameworks */,
+				79E04F1B213A2CC40081B80E /* libRCTWeChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +814,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79E04F53213A2D5C0081B80E /* libc++.tbd */,
 				795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */,
 				795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */,
 				79F0BA58212EA5B30028F9CF /* libbz2.tbd */,

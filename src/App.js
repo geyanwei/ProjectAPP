@@ -18,7 +18,7 @@ import Config from "./Config";
 import Storage from "./tool/Storage";
 import RegisterSuccess from "./main/login/RegisterSuccess";
 
-// import UMUtils from './tool/UMUtils'; // UMeng track
+import UMUtils from './tool/UMUtils'; // UMeng track
 import ErrorUtils from 'ErrorUtils'; // red box catcher
 
 import './tool/OverrideDefaultProps';
