@@ -15,26 +15,40 @@ class TitleArea extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: 0
+            index: 0,
+            isSearch:false
         }
     }
 
+    setData(isSearch){
+        this.setState({
+            isSearch:isSearch||false,
+            index: 0
+        });
+    }
     render() {
-        let {index} = this.state;
+        let {index,isSearch} = this.state;
         let {cb} = this.props;
         return (
             <View style={{
                 backgroundColor: YITU.backgroundColor_0,
             }}>
                 <ScrollView>
-                    {this.createItem(index, cb)}
+                    {this.createItem(isSearch?this.getSearchData():this.getData(),index, cb)}
                 </ScrollView>
 
             </View>
         );
     }
-
-    createItem(index, cb) {
+    getSearchData(){
+        return [
+            {
+                title:"结果",
+                englishTitle:"Result",
+                imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535797735915&di=20df7a9d79d2187142154669a7868f8e&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F2%2F2D%2F2DC8D18B509E29477F89BBB150F2DDF1.jpg"
+            }];
+    }
+    getData(){
         return [
             {
                 title:"热门",
@@ -44,7 +58,7 @@ class TitleArea extends Component {
             {
                 title:"亚洲",
                 englishTitle:"Asia",
-imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531915121124&di=2223657da317a7816aac171e690a44a7&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Flvpics%2Fh%3D800%2Fsign%3Dac868f11925298221a3334c3e7cb7b3b%2Fb3b7d0a20cf431ad214af0ef4936acaf2fdd9848.jpg"
+                imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531915121124&di=2223657da317a7816aac171e690a44a7&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Flvpics%2Fh%3D800%2Fsign%3Dac868f11925298221a3334c3e7cb7b3b%2Fb3b7d0a20cf431ad214af0ef4936acaf2fdd9848.jpg"
             },
             {
                 title:"欧洲",
@@ -65,7 +79,10 @@ imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531
                 title:"大洋洲",
                 englishTitle:"Oceania",
                 imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531915335872&di=09878f2bde442028c79f936554791f68&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F342ac65c10385343fed4e1209913b07eca808893.jpg"
-            }].map((item, i) => {
+            }];
+    }
+    createItem(arr,index, cb) {
+        return arr.map((item, i) => {
             return (
                 <SelectCell
                     key={i}

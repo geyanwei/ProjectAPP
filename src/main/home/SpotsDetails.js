@@ -28,7 +28,7 @@ class SpotsDetails extends Component {
         this.isAutoControlScroll = true;
         this.state = ({
             update: 0
-        })
+        });
     }
 
     componentDidMount() {
@@ -78,8 +78,7 @@ class SpotsDetails extends Component {
                         paddingBottom: YITU.space_2,
                         paddingLeft: YITU.space_5,
                     }}>
-                        <Text
-                            style={{color: YITU.c_title_white, fontSize: YITU.fontSize_6, marginBottom: YITU.space_0}}>
+                        <Text style={{color: YITU.c_title_white, fontSize: YITU.fontSize_6, marginBottom: YITU.space_0}}>
                             曼谷
                         </Text>
                         <Text style={{color: YITU.c_title_white, fontSize: YITU.fontSize_6}}>
@@ -114,10 +113,12 @@ class SpotsDetails extends Component {
                 <AniNavHead
                     ref={(a) => this.AniNavHead = a}
                     aniHeight={headImage_height - YITU.navBarHeight}
-                    title={this.props.title || "详情"}
+                    title={this.props.title || ""}
                     isBack={true}
                     cb={() => {
-                        navigation.pop(this);
+                        navigation.pop(this,()=>{
+                            this.props.callBack&&this.props.callBack();
+                        });
                     }}
                     rightArr={[
                         {
@@ -134,8 +135,7 @@ class SpotsDetails extends Component {
                                 ShareModule.show();
                             }
                         }]}/>
-            </View>)
-        ;
+            </View>);
         return (<PageView
             ref={(ref) => {
                 this.pageView = ref;
@@ -148,8 +148,10 @@ class SpotsDetails extends Component {
                 },
                 pageLoading: true,
                 errorTitle: this.props.title || "详情",
-                back: () => {
-                    navigation.pop(this)
+                navBack: () => {
+                    navigation.pop(this,()=>{
+                        this.props.callBack&&this.props.callBack();
+                    });
                 },
             })}>
             {view}

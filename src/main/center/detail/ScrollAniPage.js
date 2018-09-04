@@ -16,7 +16,7 @@ import SelectItem from '../component/aniSel/SelectItem.js';
 import ScrollAniShowView from '../component/aniSel/ScrollAniShowView.js';
 import OrderCommonPage from './OrderCommonPage';
 import MyOrderFunc from '../component/bottomButton/MyOrderFunc';
-import OrderTimeDown from '../component/OrderTimeDown';
+import OrderTimeDown from '../cell/OrderTimeDown';
 import HttpTool from "../../../http/HttpTool";
 import APIPZP from "../../../http/APIPZP";
 import Storage from "../../../tool/Storage";

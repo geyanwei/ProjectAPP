@@ -132,8 +132,7 @@ class OrderItem extends Component {
                 navigation.push(this.props.obj, path, {
                     title: '订单详情',
                     callBack: () => {
-                        if (this.props.onRefresh)
-                            this.props.onRefresh()
+                        this.props.onRefresh&&this.props.onRefresh()
                     },
                     isTrip: this.props.isTrip,
                     id: id,
@@ -221,7 +220,7 @@ class OrderItem extends Component {
                         height: IMAGE_SIZE_SMALL,
                         width: IMAGE_SIZE_SMALL,
                         backgroundColor: "transparent",
-                    }} source={require('./img_clock.png')}/>
+                    }} source={require('../../../image/order/img_clock.png')}/>
                     <Text
                         numberOfLines={1}
                         ellipsizeMode={"tail"}
@@ -251,7 +250,7 @@ class OrderItem extends Component {
                                 backgroundColor: "transparent",
                             }}
                                    resizeMode={"contain"}
-                                   source={require('./img_qd.png')}/>
+                                   source={require('../../../image/order/img_qd.png')}/>
                             <Text
                                 numberOfLines={1}
                                 ellipsizeMode={"tail"}
@@ -277,7 +276,7 @@ class OrderItem extends Component {
                                         backgroundColor: "transparent",
                                     }}
                                            resizeMode={"contain"}
-                                           source={require('./img_zd.png')}/>
+                                           source={require('../../../image/order/img_zd.png')}/>
                                     <Text numberOfLines={1}
                                           ellipsizeMode={"tail"}
                                           style={{fontSize: YITU.fontSize_4, color: YITU.textColor_1, marginLeft: 7,}}>

@@ -5,10 +5,10 @@ import {
     ScrollView,
     Image,
 } from 'react-native';
-import {PageView, LayoutBox, UpImage, navigation, Toast, Loading} from 'myapplib';
-import HttpTool from "../../http/HttpTool";
-import APIGYW from "../../http/APIGYW.js";
-import Storage from "../../tool/Storage.js";
+import {PageView, LayoutBox, UpImage, navigation, Toast, Loading, Select} from 'myapplib';
+import HttpTool from "../../../http/HttpTool";
+import APIGYW from "../../../http/APIGYW.js";
+import Storage from "../../../tool/Storage.js";
 
 
 class UserInfor extends Component {
@@ -105,9 +105,9 @@ class UserInfor extends Component {
                 renderRight: () => {
                     return (<View>
                         <Image style={styles.conImg}
-                               defaultSource={require('../../image/userIcon/grzx-user.png')}
+                               defaultSource={require('../../../image/userIcon/grzx-user.png')}
                                source={userObj.headImg ? {uri: userObj.headImg} :
-                                   require('../../image/userIcon/grzx-user.png')}/>
+                                   require('../../../image/userIcon/grzx-user.png')}/>
                     </View>)
                 },
                 onPress: () => {
@@ -138,7 +138,23 @@ class UserInfor extends Component {
                 resultValue: userObj.gender === 2 ? "女" : "男",
                 space: true,
                 onPress: () => {
-                    alert("男");
+                    let arr = ["男", "女"];
+                    Select.show({
+                        pickerData: arr,
+                        selectedValue: [arr[userObj.gender?userObj.gender-1:0]],
+                        onSelect: (value, index) => {
+                            let gender = 0;
+                            for(let i in arr){
+                                if (arr[i] === value[0]) {
+                                    gender = parseInt(i)+1;
+                                    break;
+                                }
+                            }
+                            Storage.getUserInfo((userInfo)=>{
+                                Storage.saveUserInfo(Object.assign(userInfo,{gender,gender}), ()=>this.upView());
+                            });
+                        }
+                    });
                 }
             }, {
                 title: "常用邮箱",

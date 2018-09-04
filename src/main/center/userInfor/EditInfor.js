@@ -148,9 +148,9 @@ class EditInfor extends Component {
 
     navBar() {
         return {
-            rightButtonText:"完成",
-            leftContainerStyle: {width:60},
-            rightContainerStyle: {width:60},
+            rightButtonText:"保存",
+            leftContainerStyle: {width:65},
+            rightContainerStyle: {width:62},
             rightButtonFunc:()=>{
                 this.commit();
             }

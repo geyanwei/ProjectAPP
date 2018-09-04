@@ -9,7 +9,7 @@ import {
     Animated
 } from 'react-native';
 import HttpTool from "../../http/HttpTool";
-import APILQ from "../../http/APILQ.js";
+import APIGYW from "../../http/APIGYW.js";
 import {PageView, LayoutBox, Toast, ModalBox, Loading, navigation} from "myapplib";
 import Storage from "../../tool/Storage";
 

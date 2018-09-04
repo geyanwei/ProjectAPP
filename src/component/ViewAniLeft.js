@@ -20,7 +20,7 @@ class ViewAniLeft extends Component {
         noDisable: false,
         //按钮底部背景的样式
         rowBg: {
-            right: 15,
+            right: 15
         },
         //一个点击Item的样式
         itemStyle: {
@@ -51,7 +51,7 @@ class ViewAniLeft extends Component {
         let {actionArr} = this.props;
 
         return (<View style={{backgroundColor: 'white'}} {...this.props}>
-            <View style={[{position: "absolute", height: "100%", flexDirection: "row",}, this.props.rowBg]}>
+            <View style={[{position: "absolute", height: "100%", flexDirection: "row"}, this.props.rowBg]}>
                 {this.createItem(actionArr || [])}
             </View>
             {this.getRightView(this.props.noDisable, this.props.children)}
@@ -112,7 +112,7 @@ class ViewAniLeft extends Component {
                     const snapPointId = e.nativeEvent.id;
                 }}
                 snapPoints={[{x: 0, id: 'open'}, {
-                    x: 0 - ((this.scrollWidth || 0) + this.props.rowBg.right-10),
+                    x: 0 - ((this.scrollWidth || 0) + this.props.rowBg.right),
                     id: 'closed'
                 }]}>
                 {view}

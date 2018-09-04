@@ -289,7 +289,8 @@ class UserCenter extends Component {
                     }}>
                     <Image
                         resizeMode={"contain"}
-                        style={{width: 35, height: 35,}} source={item.icon}/>
+                        style={{width: 35, height: 35,}}
+                        source={item.icon}/>
                     <Text style={{
                         marginTop: 4,
                         fontSize: YITU.fontSize_2,

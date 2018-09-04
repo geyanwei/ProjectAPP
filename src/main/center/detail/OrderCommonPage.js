@@ -17,7 +17,7 @@ import MyBottomAlert from '../component/bottomButton/MyBottomAlert';
 import androidMap from '../../../tool/MapUtils';
 import HTMLView from '../component/htmlView';
 import HttpTool from "../../../http/HttpTool";
-import APIPZP from "../../../http/APIPZP";
+import APIGYW from "../../../http/APIGYW.js";
 import Storage from "../../../tool/Storage";
 import TextCopy from '../component/Text/Text';
 

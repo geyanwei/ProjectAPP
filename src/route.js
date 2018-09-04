@@ -17,17 +17,21 @@ import CalendarList from './main/home/CalendarList.js';
 import InviteFriend from './main/center/InviteFriend.js';
 import MyCollection from './main/center/MyCollection.js';
 import MyInvoice from './main/center/MyInvoice.js';
-import UserInfor from './main/center/UserInfor.js';
+import UserInfor from './main/center/userInfor/UserInfor.js';
 import MyWallet from './main/center/MyWallet.js';
 import PriceTicket from './main/center/PriceTicket.js';
 import MyOrder from './main/center/MyOrder.js';
 import TripDetail from './main/center/detail/TripDetail.js';
 import Setting from './main/center/Setting.js';
 import EditInfor from './main/center/userInfor/EditInfor.js';
+import VerIdentity from './main/center/userInfor/accountSecurity/VerIdentity.js';
+import SetPayPW from './main/center/userInfor/accountSecurity/SetPayPW.js';
+import AlterLoginPW from './main/center/userInfor/accountSecurity/AlterLoginPW.js';
 
 //我的发票
 import UserCarInvoice from './main/center/myInvoice/UserCarInvoice.js';
 import RechargeInvoice from './main/center/myInvoice/RechargeInvoice.js';
+import InvoiceInforInput from './main/center/myInvoice/InvoiceInforInput.js';
 import InvoiceRecord from './main/center/myInvoice/InvoiceRecord.js';
 import InvoiceDesc from './main/center/myInvoice/InvoiceDesc.js';
 
@@ -77,9 +81,14 @@ const routeList = {
     'MyOrder': MyOrder,
     'TripDetail': TripDetail,
     'Setting': Setting,
+
     'EditInfor': EditInfor,
+    'VerIdentity': VerIdentity,
+    'SetPayPW': SetPayPW,
+    'AlterLoginPW': AlterLoginPW,
     'UserCarInvoice': UserCarInvoice,
     'RechargeInvoice': RechargeInvoice,
+    'InvoiceInforInput': InvoiceInforInput,
     'InvoiceRecord': InvoiceRecord,
     'InvoiceDesc': InvoiceDesc,
 

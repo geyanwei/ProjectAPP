@@ -14,7 +14,7 @@ import {PageView, navigation, Toast, Loading} from 'myapplib';
 import HttpTool from "../../../../http/HttpTool";
 import APIGYW from "../../../../http/APIGYW.js";
 import BottomItemView from "./component/BottomItemView.js";
-import MyRow from "./component/MyRow.js";
+import MyRow from "../../../../component/MyRow.js";
 import QueryCharterItemDetail from "./component/QueryCharterItemDetail.js";
 import DetailsModule from "./component/DetailsModule.js";
 
@@ -145,7 +145,7 @@ class QueryCharterNext extends Component {
                 field: "name",
                 isCheck: true,
                 value: this.name || "",
-                props: {
+                valueStyle: {
                     maxLength: 30,
                 },
                 onPress: (valueData, text) => {
@@ -162,7 +162,7 @@ class QueryCharterNext extends Component {
                 areaNum: this.areaNum || "",
                 isCheck: true,
                 value: this.mobile || "",
-                props: {
+                valueStyle: {
                     maxLength: 20,
                     keyboardType: "numeric",
                 },
@@ -192,7 +192,7 @@ class QueryCharterNext extends Component {
                 mobile: this.beiTelNum || "",
                 areaNum: this.beiAreaNum || "",
                 value: this.beiMobile || "",
-                props: {
+                valueStyle: {
                     maxLength: 20,
                     keyboardType: "numeric",
                 },
@@ -221,7 +221,7 @@ class QueryCharterNext extends Component {
                 type: "input",
                 field: "weChat",
                 value: this.weChat || "",
-                props: {
+                valueStyle: {
                     maxLength: 30,
                 },
                 noShowLine: true,
@@ -239,8 +239,9 @@ class QueryCharterNext extends Component {
                 type: "select",
                 field: "quanMoney",
                 value: this.quanMoney || "",
-                icon: require('../../../../image/userIcon/arrow.png'),
+                isShowClickIcon:true,
                 noShowLine: true,
+                valueStyle:{textAlign:"right"},
                 onPress: (valueData) => {
                     valueData.value = "￥50";
                     this.quanMoney = "￥50";
@@ -256,7 +257,7 @@ class QueryCharterNext extends Component {
                 type: "input",
                 field: "noteInfo",
                 value: this.noteInfo || "",
-                props: {
+                valueStyle: {
                     maxLength: 100,
                 },
                 noShowLine: true,

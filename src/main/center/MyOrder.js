@@ -17,7 +17,7 @@ import APIPZP from '../../http/APIPZP'
 import HttpTool from '../../http/HttpTool.js';
 import EmptyView from '../../component/MyEmptyView';
 import MyEtcListView from '../../component/ListView/MyFlatList.js';
-import OrderItem from './component/OrderItem.js'
+import OrderItem from './cell/OrderItem.js'
 import ScreenModal from './component/ScreenModal.js'
 import Storage from "../../tool/Storage.js";
 import {ModalBox, PageView} from 'myapplib';
@@ -186,18 +186,9 @@ class MyOrder extends Component {
             }
 
             let successCallback = (code, message, json, option) => {
-                if (json) {
-                    let pageNumber = (param.page - 1) * param.pageSize + json.length;
-                    let optionNumber = option || 0;
-                    callback(json, {
-                        allLoaded: pageNumber == optionNumber, //显示结束的底部样式,由你来控制
-                    });
-                } else {
-                    callback([], {
-                        allLoaded: true, //显示结束的底部样式,由你来控制
-                    });
-                }
-
+                callback(json||[], {
+                    allLoaded: json&&json.length>0?(((param.page - 1) * param.pageSize + json.length) === (option || 0)):true, //显示结束的底部样式,由你来控制
+                });
             };
             let failCallback = (code, message, option) => {
                 let data = this.listView && this.listView[index] && this.listView[index].state && this.listView[index].state.data;

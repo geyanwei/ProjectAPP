@@ -9,7 +9,7 @@ import {
     Animated
 } from 'react-native';
 import HttpTool from "../../../http/HttpTool";
-import APILQ from "../../../http/APILQ.js";
+import APIGYW from "../../../http/APIGYW.js";
 import {PageView, navigation} from "myapplib";
 
 class InvoiceDesc extends Component {

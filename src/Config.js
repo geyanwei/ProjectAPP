@@ -13,8 +13,8 @@ let config = {
 
 if(__DEV__){
     //测试开发，可以摇一摇的 //开发：http://172.25.254.10:9500
-    config.url  = 'http://172.25.254.10:9500';
-    config.updateHost  = 'http://172.25.254.20:32003';
+    config.url  = 'http://appapi-out.test.io.yitu8.cn';
+    config.updateHost  = 'http://appver-out.test.io.yitu8.cn';
     // config.url  = 'http://172.25.254.10:9500';
     // config.updateHost  = 'http://172.25.254.20:32003';
 }else{

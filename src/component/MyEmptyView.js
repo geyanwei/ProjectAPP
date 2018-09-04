@@ -11,6 +11,17 @@ import {
 
 class MyEmptyView extends Component {
 
+    static defaultProps = {
+        imgStyle:{
+            height: 417 / 2
+        },
+        textStyle: {
+            fontSize: YITU.fontSize_4,
+            color: YITU.textColor_2,
+            margin: YITU.space_6
+        }
+    };
+
     constructor(props) {
         super(props);
     }
@@ -21,9 +32,10 @@ class MyEmptyView extends Component {
      */
     renderImage() {
         let imageSource = this.props.imageSource;
-        let imageStyle = this.props.imageStyle;
         if (imageSource) {
-            return <Image style={imageStyle} source={imageSource}/>
+            return <Image resizeMode={"contain"}
+                          style={[this.props.imgStyle,this.props.imageStyle||{}]}
+                          source={imageSource}/>
         }
         return null;
     }
@@ -34,9 +46,8 @@ class MyEmptyView extends Component {
      */
     rendermessage() {
         let message = this.props.message;
-        let messageStyle = this.props.messageStyle;
         if (message) {
-            return <Text style={[{fontSize:YITU.fontSize_4,color:YITU.textColor_2,margin:YITU.space_6},messageStyle]}>{message}</Text>;
+            return <Text style={[this.props.textStyle,this.props.messageStyle||{}]}>{message}</Text>;
         }
         return null;
     }
@@ -56,12 +67,12 @@ class MyEmptyView extends Component {
         } else if (buttonTitle || callBack) {
 
             return (
-                <TouchableHighlight activeOpacity = {1} underlayColor = {"#3d97ea"} onPress={() => {
+                <TouchableHighlight activeOpacity={1} underlayColor={"#3d97ea"} onPress={() => {
                     if (callBack) {
                         callBack()
                     }
                 }}
-                                  style={[styles.defaultButtonContainer, buttonStyle]}>
+                                    style={[styles.defaultButtonContainer, buttonStyle]}>
                     <Text style={[styles.defaultButtonTextStyle, buttonTitleStyle]}>{buttonTitle}</Text>
                 </TouchableHighlight>
             )

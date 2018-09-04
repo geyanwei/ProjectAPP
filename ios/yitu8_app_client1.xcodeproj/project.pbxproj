@@ -54,7 +54,6 @@
 		74C4761C8D01425996F7C21B /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7A97DE1564794807A28BA /* libRNSVG.a */; };
 		7940F581212EB44500FF60CA /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7940F545212EB33000FF60CA /* libART.a */; };
 		795EFB99212FFABC0017DEEB /* RCTMyNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */; };
-		795EFB9A212FFABC0017DEEB /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB80212FFABC0017DEEB /* Order.m */; };
 		795EFB9B212FFABC0017DEEB /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */; };
 		795EFB9C212FFABC0017DEEB /* AliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB84212FFABC0017DEEB /* AliPayManager.m */; };
 		795EFB9D212FFABC0017DEEB /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFB85212FFABC0017DEEB /* AlipaySDK.framework */; };
@@ -70,6 +69,9 @@
 		795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */; };
 		79E04F1B213A2CC40081B80E /* libRCTWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0B9D1212E9F1B0028F9CF /* libRCTWeChat.a */; };
 		79E04F54213A2D5C0081B80E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F53213A2D5C0081B80E /* libc++.tbd */; };
+		79E04F7A213A690B0081B80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F79213A690B0081B80E /* QuartzCore.framework */; };
+		79E04F7C213A691D0081B80E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F7B213A691D0081B80E /* CoreText.framework */; };
+		79E04F7F213A69900081B80E /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E04F7E213A698F0081B80E /* Order.m */; };
 		79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0BA58212EA5B30028F9CF /* libbz2.tbd */; };
 		7BB6CC4AF0B74DD99EE91CEF /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA98BC40C2B455784E10E8C /* libRCTBEEPickerManager.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -556,10 +558,8 @@
 		7940F53F212EB33000FF60CA /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		795EFB7D212FFABC0017DEEB /* RCTMyNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMyNativeModule.h; sourceTree = "<group>"; };
 		795EFB7E212FFABC0017DEEB /* RCTMyNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMyNativeModule.m; sourceTree = "<group>"; };
-		795EFB80212FFABC0017DEEB /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		795EFB82212FFABC0017DEEB /* AliPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliPayManager.h; sourceTree = "<group>"; };
-		795EFB83212FFABC0017DEEB /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		795EFB84212FFABC0017DEEB /* AliPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliPayManager.m; sourceTree = "<group>"; };
 		795EFB85212FFABC0017DEEB /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		795EFB87212FFABC0017DEEB /* WeChatNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatNativeModule.h; sourceTree = "<group>"; };
@@ -581,6 +581,10 @@
 		79D644F62136917B00FA2794 /* QBImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = "<group>"; };
 		79D644F72136917C00FA2794 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RSKImageCropper.framework; sourceTree = "<group>"; };
 		79E04F53213A2D5C0081B80E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		79E04F79213A690B0081B80E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		79E04F7B213A691D0081B80E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		79E04F7D213A698F0081B80E /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		79E04F7E213A698F0081B80E /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		79F0BA58212EA5B30028F9CF /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		87D902D98F594E4F90E33BAB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
@@ -618,12 +622,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */,
+				57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */,
+				5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */,
+				D8C2409204CB42C59D3D66F3 /* UIKit.framework in Frameworks */,
+				AFB507C8B4CA454499108E21 /* CoreGraphics.framework in Frameworks */,
+				79E04F7C213A691D0081B80E /* CoreText.framework in Frameworks */,
+				79E04F7A213A690B0081B80E /* QuartzCore.framework in Frameworks */,
+				07582213FDFE46D6B847922D /* CoreTelephony.framework in Frameworks */,
 				D6AEC8629B194271B274427F /* libz.tbd in Frameworks */,
 				79E04F54213A2D5C0081B80E /* libc++.tbd in Frameworks */,
 				795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */,
-				07582213FDFE46D6B847922D /* CoreTelephony.framework in Frameworks */,
 				1BA4315C43604A69AB96015E /* SystemConfiguration.framework in Frameworks */,
-				795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */,
 				7940F581212EB44500FF60CA /* libART.a in Frameworks */,
 				79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -644,11 +654,7 @@
 				E67F0ADBC51A4D209380F129 /* libRCTJPushModule.a in Frameworks */,
 				46A98EE7201648DE88ED0D55 /* UserNotifications.framework in Frameworks */,
 				0915A01ECE8046D18A48703F /* Security.framework in Frameworks */,
-				57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */,
-				5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */,
-				D8C2409204CB42C59D3D66F3 /* UIKit.framework in Frameworks */,
 				C53875A6F22349519AB97B00 /* libresolv.tbd in Frameworks */,
-				AFB507C8B4CA454499108E21 /* CoreGraphics.framework in Frameworks */,
 				D19A61CCD7AF4A418CD31FFE /* libRCTContacts.a in Frameworks */,
 				38B3D70388B9422C82C15815 /* libRNDeviceInfo.a in Frameworks */,
 				0655FC15A70E4AF599160935 /* libRNFS.a in Frameworks */,
@@ -814,6 +820,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79E04F7B213A691D0081B80E /* CoreText.framework */,
+				79E04F79213A690B0081B80E /* QuartzCore.framework */,
 				79E04F53213A2D5C0081B80E /* libc++.tbd */,
 				795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */,
 				795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */,
@@ -887,10 +895,10 @@
 		795EFB7F212FFABC0017DEEB /* AliPay */ = {
 			isa = PBXGroup;
 			children = (
-				795EFB80212FFABC0017DEEB /* Order.m */,
 				795EFB81212FFABC0017DEEB /* AlipaySDK.bundle */,
+				79E04F7D213A698F0081B80E /* Order.h */,
+				79E04F7E213A698F0081B80E /* Order.m */,
 				795EFB82212FFABC0017DEEB /* AliPayManager.h */,
-				795EFB83212FFABC0017DEEB /* Order.h */,
 				795EFB84212FFABC0017DEEB /* AliPayManager.m */,
 				795EFB85212FFABC0017DEEB /* AlipaySDK.framework */,
 			);
@@ -1890,11 +1898,11 @@
 				795EFB9E212FFABC0017DEEB /* WeChatNativeModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				795EFB9A212FFABC0017DEEB /* Order.m in Sources */,
 				795EFB99212FFABC0017DEEB /* RCTMyNativeModule.m in Sources */,
 				795EFBA3212FFABC0017DEEB /* UMAnalyticsModule.m in Sources */,
 				795EFB9C212FFABC0017DEEB /* AliPayManager.m in Sources */,
 				795EFBA0212FFABC0017DEEB /* RNUMConfigure.m in Sources */,
+				79E04F7F213A69900081B80E /* Order.m in Sources */,
 				795EFB9F212FFABC0017DEEB /* MapNativeModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -95,8 +95,6 @@ class PushView extends Component {
                     }
                 }
             });
-
-
         }
     }
 
@@ -104,9 +102,7 @@ class PushView extends Component {
         JPushModule.clearAllNotifications()
     }
 
-
     render() {
-        let main = null;
         return null;
     }
 }

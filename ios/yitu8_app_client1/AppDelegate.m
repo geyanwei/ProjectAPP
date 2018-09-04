@@ -15,6 +15,9 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
+#import <React/RCTLinkingManager.h>
+#import <AlipaySDK/AlipaySDK.h>
+
 @implementation AppDelegate
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -80,6 +83,40 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  return YES;
+}
+
+
+//9.0之前接口
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
+  if ([url.host isEqualToString:@"safepay"]) {
+    //跳转支付宝钱包进行支付，处理支付结果
+    [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+      NSLog(@"result = %@",resultDic);
+    }];
+  }
+  if ( [RCTLinkingManager application:application openURL:url
+                    sourceApplication:sourceApplication annotation:annotation]) {
+    return YES;
+  }
+  return NO;
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+  if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+  }
+}
+
+//9.0之后新接口
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+  if ([url.host isEqualToString:@"safepay"]) {
+    //跳转支付宝钱包进行支付，处理支付结果
+    [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+      NSLog(@"result = %@",resultDic);
+    }];
+  }
   return YES;
 }
 
