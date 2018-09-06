@@ -21,8 +21,6 @@ class UserCenter extends Component {
         this.state = {
             upData: 1,
         };
-        let profileObj = Storage.getAppConfig || {};
-        this.objH5 = profileObj.h5 || {};
         YITU.addAction("USERCENTER", () => {
             this.upView();
         })
@@ -112,9 +110,8 @@ class UserCenter extends Component {
             icon: require('../../image/userIcon/grzx-sdzn.png'),
             space: true,
             onPress: () => {
-                this.openPage('BrowserPage', {
-                    title: '关于易途吧',
-                    url: this.objH5 && this.objH5.aboutUs || "",
+                this.openPage("AboutYiTuBa",{
+                    title:"关于易途吧"
                 });
             }
         };

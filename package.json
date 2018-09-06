@@ -31,6 +31,7 @@
     "react-native-alphabetlistview": "^0.2.0",
     "react-native-autoheight-webview": "^0.10.2",
     "react-native-cli": "^2.0.1",
+    "react-native-communications": "^2.2.1",
     "react-native-contacts": "^2.1.2",
     "react-native-device-info": "^0.20.0",
     "react-native-extra-dimensions-android": "^0.21.0",

@@ -6,9 +6,9 @@ import {
     Image,
 } from 'react-native';
 import {PageView, LayoutBox, UpImage, navigation, Toast, Loading, Select} from 'myapplib';
-import HttpTool from "../../../http/HttpTool";
-import APIGYW from "../../../http/APIGYW.js";
-import Storage from "../../../tool/Storage.js";
+import HttpTool from "../../http/HttpTool";
+import APIGYW from "../../http/APIGYW.js";
+import Storage from "../../tool/Storage.js";
 
 
 class UserInfor extends Component {
@@ -105,9 +105,9 @@ class UserInfor extends Component {
                 renderRight: () => {
                     return (<View>
                         <Image style={styles.conImg}
-                               defaultSource={require('../../../image/userIcon/grzx-user.png')}
+                               defaultSource={require('../../image/userIcon/grzx-user.png')}
                                source={userObj.headImg ? {uri: userObj.headImg} :
-                                   require('../../../image/userIcon/grzx-user.png')}/>
+                                   require('../../image/userIcon/grzx-user.png')}/>
                     </View>)
                 },
                 onPress: () => {

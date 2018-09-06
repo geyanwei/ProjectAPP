@@ -18,6 +18,10 @@
 #import <React/RCTLinkingManager.h>
 #import <AlipaySDK/AlipaySDK.h>
 
+#import "WelcomeVC.h"
+
+#import "FirstVC.h"
+
 @implementation AppDelegate
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -65,23 +69,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  self.window.backgroundColor = [UIColor whiteColor];
+  
   [JPUSHService setupWithOption:launchOptions appKey:@"ad50eab787ef7ed8ca929412"
                         channel:nil apsForProduction:nil];
-
-  NSURL *jsCodeLocation;
-
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"yitu8_app_client1"
-                                               initialProperties:nil
-                                                   launchOptions:launchOptions];
+  NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  
+  RCTRootView *rootView = [[RCTRootView alloc]
+                           initWithBundleURL:jsCodeLocation
+                           moduleName:@"yitu8_app_client1"
+                           initialProperties:nil
+                           launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  
+  
+  if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+    NSLog(@"首次启动");
+    self.window.rootViewController = rootViewController;
+  }else {
+    NSLog(@"非首次启动");
+    WelcomeVC *root = [[WelcomeVC alloc] init];
+    root.rootVC  = rootViewController;
+    self.window.rootViewController = root;
+  }
+  
   [self.window makeKeyAndVisible];
   return YES;
 }

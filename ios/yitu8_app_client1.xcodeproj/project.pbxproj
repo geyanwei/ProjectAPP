@@ -21,7 +21,6 @@
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
@@ -67,6 +66,12 @@
 		795EFBA5212FFABC0017DEEB /* JPushNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 795EFB98212FFABC0017DEEB /* JPushNativeModule.m */; };
 		795EFBA7212FFDBE0017DEEB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */; };
 		795EFBA9212FFE690017DEEB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */; };
+		796837342140F8EA006523AF /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796837302140F8E9006523AF /* 1.jpg */; };
+		796837352140F8EA006523AF /* 1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796837312140F8E9006523AF /* 1-1.jpg */; };
+		796837362140F8EA006523AF /* 1-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796837322140F8E9006523AF /* 1-2.jpg */; };
+		796837372140F8EA006523AF /* 1-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 796837332140F8E9006523AF /* 1-3.jpg */; };
+		7968373A2140F8FC006523AF /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 796837392140F8FC006523AF /* FirstVC.m */; };
+		7968373D2140F906006523AF /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7968373C2140F906006523AF /* WelcomeVC.m */; };
 		79E04F1B213A2CC40081B80E /* libRCTWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F0B9D1212E9F1B0028F9CF /* libRCTWeChat.a */; };
 		79E04F54213A2D5C0081B80E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F53213A2D5C0081B80E /* libc++.tbd */; };
 		79E04F7A213A690B0081B80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E04F79213A690B0081B80E /* QuartzCore.framework */; };
@@ -528,7 +533,6 @@
 		13B07F961A680F5B00A75B9A /* yitu8_app_client1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yitu8_app_client1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = yitu8_app_client1/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = yitu8_app_client1/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = yitu8_app_client1/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yitu8_app_client1/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yitu8_app_client1/main.m; sourceTree = "<group>"; };
@@ -578,6 +582,14 @@
 		795EFB98212FFABC0017DEEB /* JPushNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPushNativeModule.m; sourceTree = "<group>"; };
 		795EFBA6212FFDBE0017DEEB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		795EFBA8212FFE690017DEEB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		796837302140F8E9006523AF /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = yitu8_app_client1/1.jpg; sourceTree = "<group>"; };
+		796837312140F8E9006523AF /* 1-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-1.jpg"; path = "yitu8_app_client1/1-1.jpg"; sourceTree = "<group>"; };
+		796837322140F8E9006523AF /* 1-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-2.jpg"; path = "yitu8_app_client1/1-2.jpg"; sourceTree = "<group>"; };
+		796837332140F8E9006523AF /* 1-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1-3.jpg"; path = "yitu8_app_client1/1-3.jpg"; sourceTree = "<group>"; };
+		796837382140F8FC006523AF /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstVC.h; path = yitu8_app_client1/FirstVC.h; sourceTree = "<group>"; };
+		796837392140F8FC006523AF /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstVC.m; path = yitu8_app_client1/FirstVC.m; sourceTree = "<group>"; };
+		7968373B2140F906006523AF /* WelcomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeVC.h; path = yitu8_app_client1/WelcomeVC.h; sourceTree = "<group>"; };
+		7968373C2140F906006523AF /* WelcomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeVC.m; path = yitu8_app_client1/WelcomeVC.m; sourceTree = "<group>"; };
 		79D644F62136917B00FA2794 /* QBImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = "<group>"; };
 		79D644F72136917C00FA2794 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RSKImageCropper.framework; sourceTree = "<group>"; };
 		79E04F53213A2D5C0081B80E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -785,12 +797,19 @@
 		13B07FAE1A68108700A75B9A /* yitu8_app_client1 */ = {
 			isa = PBXGroup;
 			children = (
+				796837312140F8E9006523AF /* 1-1.jpg */,
+				796837322140F8E9006523AF /* 1-2.jpg */,
+				796837332140F8E9006523AF /* 1-3.jpg */,
+				796837302140F8E9006523AF /* 1.jpg */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				7968373B2140F906006523AF /* WelcomeVC.h */,
+				7968373C2140F906006523AF /* WelcomeVC.m */,
+				796837382140F8FC006523AF /* FirstVC.h */,
+				796837392140F8FC006523AF /* FirstVC.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = yitu8_app_client1;
@@ -1826,9 +1845,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796837362140F8EA006523AF /* 1-2.jpg in Resources */,
+				796837342140F8EA006523AF /* 1.jpg in Resources */,
+				796837352140F8EA006523AF /* 1-1.jpg in Resources */,
+				796837372140F8EA006523AF /* 1-3.jpg in Resources */,
 				795EFB9B212FFABC0017DEEB /* AlipaySDK.bundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1894,6 +1916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				795EFBA4212FFABC0017DEEB /* ChatNativeModule.m in Sources */,
+				7968373A2140F8FC006523AF /* FirstVC.m in Sources */,
 				795EFBA5212FFABC0017DEEB /* JPushNativeModule.m in Sources */,
 				795EFB9E212FFABC0017DEEB /* WeChatNativeModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
@@ -1902,6 +1925,7 @@
 				795EFBA3212FFABC0017DEEB /* UMAnalyticsModule.m in Sources */,
 				795EFB9C212FFABC0017DEEB /* AliPayManager.m in Sources */,
 				795EFBA0212FFABC0017DEEB /* RNUMConfigure.m in Sources */,
+				7968373D2140F906006523AF /* WelcomeVC.m in Sources */,
 				79E04F7F213A69900081B80E /* Order.m in Sources */,
 				795EFB9F212FFABC0017DEEB /* MapNativeModule.m in Sources */,
 			);
@@ -1938,18 +1962,6 @@
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = yitu8_app_client1;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
@@ -2029,6 +2041,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8PYC87AF8Z;
@@ -2073,6 +2086,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PYC87AF8Z;
 				FRAMEWORK_SEARCH_PATHS = (

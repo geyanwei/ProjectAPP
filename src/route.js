@@ -17,7 +17,7 @@ import CalendarList from './main/home/CalendarList.js';
 import InviteFriend from './main/center/InviteFriend.js';
 import MyCollection from './main/center/MyCollection.js';
 import MyInvoice from './main/center/MyInvoice.js';
-import UserInfor from './main/center/userInfor/UserInfor.js';
+import UserInfor from './main/center/UserInfor.js';
 import MyWallet from './main/center/MyWallet.js';
 import PriceTicket from './main/center/PriceTicket.js';
 import MyOrder from './main/center/MyOrder.js';
@@ -27,6 +27,10 @@ import EditInfor from './main/center/userInfor/EditInfor.js';
 import VerIdentity from './main/center/userInfor/accountSecurity/VerIdentity.js';
 import SetPayPW from './main/center/userInfor/accountSecurity/SetPayPW.js';
 import AlterLoginPW from './main/center/userInfor/accountSecurity/AlterLoginPW.js';
+
+import AboutYiTuBa from './main/center/AboutYiTuBa.js';
+import Suggestion from './main/center/about/Suggestion.js';
+
 
 //我的发票
 import UserCarInvoice from './main/center/myInvoice/UserCarInvoice.js';
@@ -91,6 +95,9 @@ const routeList = {
     'InvoiceInforInput': InvoiceInforInput,
     'InvoiceRecord': InvoiceRecord,
     'InvoiceDesc': InvoiceDesc,
+
+    'AboutYiTuBa': AboutYiTuBa,
+    'Suggestion': Suggestion,
 
     'FreedomCharter': FreedomCharter,
     'LineCharter': LineCharter,

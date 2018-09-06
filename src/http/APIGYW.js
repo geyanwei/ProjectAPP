@@ -190,6 +190,11 @@ let APIGYW = {
     msgcenter_msgapi_messages_app_query: "/base-msgcenter/msgapi/messages/app/query",
 
 
+    /**
+     *  意见或建议
+     */
+    driver_usercenter_contactUsForDriver: "/driver/usercenter/contactUsForDriver",
+
 };
 
 module.exports = APIGYW;

@@ -40,12 +40,13 @@ export default class MyButton extends Component {
         }
     }
 
+    //按下效果
     onShowUnderlay = () => {
         this.setState({
             onShowUnderlay: true
         });
     };
-
+    //抬起效果
     onHideUnderlay = () => {
         this.setState({
             onShowUnderlay: false

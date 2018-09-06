@@ -26,8 +26,6 @@ import './tool/ClickEventList'; // 全局点击埋点列表
 import Orientation from "react-native-orientation";
 
 
-
-
 let routeMain = AppInit.initRoute(routeList);
 const WhiteBarPage = [
     "Main",
@@ -50,9 +48,9 @@ let RouteStack = AppInit.initApp(routeMain, {
         let routes = AppInit.ref.state.nav.routes, routeName = routes[routes.length - 1]['routeName'];
         AppInit.routeName = routeName;
 
-        log("当前页面----------------："+AppInit.routeName);
+        log("当前页面----------------：" + AppInit.routeName);
         log(routes);
-        if (Platform.OS === "ios"&&excludeBarPage.indexOf(routeName)<0) {
+        if (Platform.OS === "ios" && excludeBarPage.indexOf(routeName) < 0) {
             if (WhiteBarPage.indexOf(routeName) >= 0) {
                 StatusBar.setBarStyle(Platform.select({
                     ios: "light-content"
@@ -82,7 +80,7 @@ let RouteStack = AppInit.initApp(routeMain, {
             AppInit.removeRoutes(AppInit.ref, ["AccountCash", "AccountAdd", "AccountAddWX"])
         }
         else if (routeName === "AccountCash") {
-            AppInit.removeRoutes(AppInit.ref, ["AccountResult","AccountAddWXResult"])
+            AppInit.removeRoutes(AppInit.ref, ["AccountResult", "AccountAddWXResult"])
         } else if (routeName === "PutForwardResult") {
             AppInit.removeRoutes(AppInit.ref, ["MyWallet", "BondPutForward"])
         } else if (routeName === "MyWallet") {
@@ -220,18 +218,20 @@ class App extends Component {
 
     _handleHardwareBackPress() {
         let routes = AppInit.ref.state.nav.routes;
-        if(!routes){return}
+        if (!routes) {
+            return
+        }
         let routeName = routes[routes.length - 1]['routeName'];
 
 
-        let back = YITU.getAction("ANDROIDBACK_"+routeName);
-        if(back&&back()){
+        let back = YITU.getAction("ANDROIDBACK_" + routeName);
+        if (back && back()) {
             return true;
         }
         if (AppInit.ref) {
             if (AppInit.ref.state.nav.routes.length > 1) {
                 // go normal back steps
-                const disableRouteName = ['Main', "RegisterSuccess", "CarResult","CarAdd", "CarAdd_Enabled", "AccountResult", "AccountAddWXResult","PutForwardResult", "PutForwardResult_Bond","GuideIdentification", "GuideIdentification_Enabled", "GuideResult"];
+                const disableRouteName = ['Main', "RegisterSuccess", "CarResult", "CarAdd", "CarAdd_Enabled", "AccountResult", "AccountAddWXResult", "PutForwardResult", "PutForwardResult_Bond", "GuideIdentification", "GuideIdentification_Enabled", "GuideResult"];
 
                 if (disableRouteName.indexOf(routeName) === -1) {
                     AppInit.ref.dispatch({
@@ -284,13 +284,13 @@ class App extends Component {
             // clear storage
             // clear http authorization
             // navigate to main page
-            if (code === -421 || code === -422|| code === -423) {
+            if (code === -421 || code === -422 || code === -423) {
                 fail();
-                if (code === -421){
+                if (code === -421) {
                     this.skipLogin("登录信息已失效，请重新登录");
-                }else if (code === -422) {
+                } else if (code === -422) {
                     this.skipLogin("登录信息已过期，请重新登录");
-                }else if (code === -423){
+                } else if (code === -423) {
                     this.skipLogin("您的账号已在其他设备上登录");
                 }
             } else {
@@ -336,7 +336,7 @@ class App extends Component {
     //极光推送 单点登录 跳转指定界面
     getPush() {
         return <PushView
-            ref={(ref)=>{
+            ref={(ref) => {
                 this.pushView = ref;
             }}
             action={(path, par) => {
@@ -351,14 +351,14 @@ class App extends Component {
                     //回到登录页
                     this.skipLogin("您的账号已在其他设备上登录");
                 } else {
-                    if (!this.pushView.launchAppState){
+                    if (!this.pushView.launchAppState) {
                         AppInit.ref.dispatch({
                             type: "Navigation/NAVIGATE",
                             routeName: path,
                             params: par
                         });
-                    }else {
-                        DeviceEventEmitter.addListener('loadingEnd',()=>{
+                    } else {
+                        DeviceEventEmitter.addListener('loadingEnd', () => {
                             AppInit.ref.dispatch({
                                 type: "Navigation/NAVIGATE",
                                 routeName: path,
@@ -368,9 +368,7 @@ class App extends Component {
                         });
                     }
                 }
-
-            }}
-        />
+            }}/>
     }
 
 
@@ -380,9 +378,7 @@ class App extends Component {
 
     getMainView() {
         return (
-            <View
-                style={{flex: 1, flexDirection: "column",}}
-            >
+            <View style={{flex: 1, flexDirection: "column"}}>
                 <StatusBar
                     barStyle={
                         Platform.select({
