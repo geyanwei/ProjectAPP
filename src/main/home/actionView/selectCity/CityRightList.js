@@ -68,12 +68,6 @@ class CityRightList extends Component {
 
     }
 
-    _scrollTo(index) {
-        if (this.props.scrollTo) {
-            this.props.scrollTo(index);
-        }
-    }
-
     refresh(i) {
         if (this.state.index !== i) {
             this.setState({
@@ -83,7 +77,7 @@ class CityRightList extends Component {
     }
 
     scrollToIndex(index) {
-        this._scrollTo(index);
+        this.props.scrollTo&&this.props.scrollTo(index);
     }
 
     render() {
@@ -92,13 +86,13 @@ class CityRightList extends Component {
             <View
                 style={{
                     backgroundColor: 'transparent',
-                    position: "absolute",
-                    top: 0,
-                    right: 5,
+                    position:"absolute",
+                    top:0,
+                    right:0,
                     justifyContent:"center",
                     height:"100%",
-                    width: 20,
-                    // backgroundColor:"red"
+                    width: 30,
+                    paddingRight:0,
                 }}
                 {...this._panGesture.panHandlers}>
                 <View
@@ -112,11 +106,9 @@ class CityRightList extends Component {
                             this.rightItemY = pageY;
                         });
                     }}
-
                     style={{
                         alignItems: 'center',
-                        alignSelf: "center",
-                        // backgroundColor:"gray"
+                        alignSelf: "center"
                     }}>
                     {
                         array.map((item, index) => {

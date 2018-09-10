@@ -22,11 +22,14 @@ import HttpTool from "../../../../http/HttpTool";
 import APIPZP from "../../../../http/APIPZP";
 import RightList from './CityRightList.js';
 
+const {width, height} = Dimensions.get('window');
+const itemWidth = (width-2*10-5*6)/3;
+const itemHeight = 40;
+
 class CityIndexListView extends Component {
 
     constructor(props) {
         super(props);
-
         let getSectionData = (dataBlob, sectionID) => {
             return sectionID;
         };
@@ -121,10 +124,25 @@ class CityIndexListView extends Component {
         };
 
         let successCallback = (code, message, json, option) => {
-            let ALL_CITY_LIST = json;
+            let firstObj = [
+                {
+                    "firstChar": "#",
+                    arr:[
+                        {
+                            "firstChar": "#",
+                            "name": "六安",
+                            "enName": "liuan",
+                            "id": 4532,
+                            "fullname": "安徽/六安",
+                        }
+                    ]
+                }
+            ];
+            let ALL_CITY_LIST = firstObj.concat(json);
             // let HOST_CITY_LIST = json.hotCityList;
 
             let letterList = this._getFirstChar(ALL_CITY_LIST);
+
 
             let dataBlob = {};
 
@@ -148,7 +166,15 @@ class CityIndexListView extends Component {
                 for (let ii = 0; ii < count; ii++) {
                     thisRow.push(ii);
                 }
-                let eachheight = SECTIONHEIGHT + ROWHEIGHT * thisRow.length;
+                let firObj = dataBlob[sectionID]||[];
+                let rowHeight = ROWHEIGHT;
+                if (firObj[0]&&firObj[0].firstChar==="#") {
+                    let length = firObj[0].arr&&firObj[0].arr.length>0?firObj[0].arr.length:0;
+                    rowHeight = (parseInt(length/3)+(length%3>0?1:0)) *(itemHeight+2*5)+20;
+
+                    this.rowHeight = rowHeight;
+                }
+                let eachheight = SECTIONHEIGHT + rowHeight * thisRow.length;
                 totalheightArr.push(eachheight);
 
                 return thisRow;
@@ -169,21 +195,62 @@ class CityIndexListView extends Component {
         HttpTool.post(APIPZP.base_basedata_dataapi_areas_search, successCallback, failCallback, param);
     }
 
-    _renderListRow(cityJson, rowId) {
-        return (
-            <TouchableOpacity
-                key={'list_item_' + cityJson.id}
-                style={styles.rowView}
-                onPress={()=> {
-                    this.props.callBack&&this.props.callBack(cityJson);
-                }}>
-                <Text style={styles.rowdatatext}>{cityJson.name}</Text>
-                <Text style={[styles.rowdatatext,{
-                    color: YITU.textColor_2,
-                    fontSize:YITU.fontSize_4,
-                }]}>{cityJson.enName}</Text>
-            </TouchableOpacity>
-        )
+    createHeadItem(arr){
+        return arr.map((item,index)=>{
+            return (<TouchableOpacity
+                key={index}
+                style={{
+                    margin:5,
+                    width:itemWidth,
+                    height:itemHeight,
+                    backgroundColor:YITU.backgroundColor_1,
+                    borderRadius:5,
+                    alignItems:"center",
+                    justifyContent:"center"
+            }} onPress={()=>{
+                this.props.callBack&&this.props.callBack(item);
+            }}>
+                <Text
+                    numberOfLines={1}
+                    ellipsizeMode={"tail"}
+                    style={{
+                    fontSize:YITU.fontSize_6,
+                    color:YITU.textColor_1
+                }}>{item.name}</Text>
+            </TouchableOpacity>);
+        })
+    }
+    _renderListRow(cityJson, sectionId) {
+        if (sectionId==="#"){
+            return (<View key={'list_item_' + cityJson.id}
+                          style={[
+                              styles.rowView,{
+                                  paddingHorizontal:10,
+                                  paddingVertical:10,
+                                  justifyContent:"flex-start",
+                                  flexDirection:"row",
+                                  flexWrap: "wrap",
+                                  alignItems:"flex-start",
+                                  height:this.rowHeight||0
+                              }
+                          ]}>
+                {this.createHeadItem(cityJson.arr||[])}
+            </View>);
+        } else {
+            return (<TouchableOpacity
+                    key={'list_item_' + cityJson.id}
+                    style={styles.rowView}
+                    onPress={()=> {
+                        this.props.callBack&&this.props.callBack(cityJson);
+                    }}>
+                    <Text style={styles.rowdatatext}>{cityJson.name}</Text>
+                    <Text style={[styles.rowdatatext,{
+                        color: YITU.textColor_2,
+                        fontSize:YITU.fontSize_4,
+                    }]}>{cityJson.enName}</Text>
+                </TouchableOpacity>);
+        }
+
     }
     _renderListSectionHeader(sectionData, sectionID) {
         return (
@@ -197,33 +264,34 @@ class CityIndexListView extends Component {
 
     render() {
         return (<View style={styles.container}>
-                <ListView
-                    ref={listView => this._listView = listView}
-                    contentContainerStyle={styles.contentContainer}
-                    scrollRenderAheadDistance={Number.MAX_VALUE / 10}
-                    onScroll={(e) => {
-                        let y = Math.ceil(e.nativeEvent.contentOffset.y);
-                        let num = 0;
-                        for (let i = 0; i < totalheightArr.length; i++) {
-                            if (y >= num && y < num + Math.ceil(totalheightArr[i])) {
-                                this.rightItem.refresh(i);
-                                break;
-                            }
-                            num += totalheightArr[i];
+            <ListView
+                ref={listView => this._listView = listView}
+                contentContainerStyle={styles.contentContainer}
+                scrollRenderAheadDistance={Number.MAX_VALUE / 10}
+                onScroll={(e) => {
+                    let y = Math.ceil(e.nativeEvent.contentOffset.y);
+                    let num = 0;
+                    for (let i = 0; i < totalheightArr.length; i++) {
+                        if (y >= num && y < num + Math.ceil(totalheightArr[i])) {
+                            this.rightItem.refresh(i);
+                            break;
                         }
-                    }}
-                    
-                    stickySectionHeadersEnabled={true}
-                    dataSource={this.state.dataSource}
-                    renderRow={this._renderListRow.bind(this)}
-                    renderSectionHeader={this._renderListSectionHeader.bind(this)}
-                    enableEmptySections={true}
-                    initialListSize={10}
-                    pageSize={10}
-                />
+                        num += totalheightArr[i];
+                    }
+                }}
+
+                stickySectionHeadersEnabled={true}
+                dataSource={this.state.dataSource}
+                renderRow={this._renderListRow.bind(this)}
+                renderSectionHeader={this._renderListSectionHeader.bind(this)}
+                enableEmptySections={true}
+                initialListSize={10}
+                pageSize={10}
+            />
             {
                 this.renderRightItem()
             }
+
             </View>);
     }
     /**
@@ -232,7 +300,6 @@ class CityIndexListView extends Component {
      * @private
      */
     _scrollTo(index) {
-        // alert(index);
         let position = 0;
         for (let i = 0; i < index; i++) {
             position += totalheightArr[i]
@@ -254,52 +321,30 @@ class CityIndexListView extends Component {
 }
 module.exports = CityIndexListView;
 
-const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: YITU.backgroundColor_0,
     },
     contentContainer: {
-        overflow:'hidden',
-        width: YITU.screenWidth,
+        overflow:'hidden'
     },
 
-    letters: {
-        position: 'absolute',
-        height: height,
-        top: 0,
-        bottom: 0,
-        right: 10,
-        justifyContent: 'flex-start'
-    },
-    letter: {
-        height: height * 3.3 / 100,
-        width: width * 3 / 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    letterText: {
-        textAlign: 'center',
-        fontSize: height * 1.1 / 50,
-        color: '#e75404'
-    },
+
     sectionView: {
         paddingTop: 5,
         paddingBottom: 5,
         height: SECTIONHEIGHT,
-        paddingLeft: 10,
-        width: width,
+        paddingLeft: 15,
         backgroundColor: '#F4F4F4',
     },
     sectionText: {
-        color: '#e75404',
+        color: YITU.backgroundColor_3,
         fontWeight: 'bold'
     },
     rowView: {
         height: ROWHEIGHT,
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingHorizontal: 15,
         borderBottomColor: YITU.backgroundColor_Line,
         borderBottomWidth: StyleSheet.hairlineWidth,
         justifyContent:"center"
@@ -308,6 +353,5 @@ const styles = StyleSheet.create({
         paddingVertical:2,
         color: YITU.textColor_1,
         fontSize:YITU.fontSize_5,
-        width: width,
     },
 });

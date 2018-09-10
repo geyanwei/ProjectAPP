@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 const {width, height} = Dimensions.get("window");
-// import MyNativeMoudles from './myNativeModules';
+import MyNativeMoudles from './myNativeModules';
 
 
 window.YITU = {
@@ -35,8 +35,8 @@ window.YITU = {
 
 
     //字体类型
-    // fontName_regular: Platform.OS === 'ios'? parseFloat(MyNativeMoudles.systemVersion) < 9 ?'.HelveticaNeueInterface-Regular' : "PingFangSC-Regular" : "Roboto",
-    // fontName_medium: Platform.OS === 'ios'? parseFloat(MyNativeMoudles.systemVersion) < 9 ?'.HelveticaNeueInterface-MediumP4' : "PingFangSC-Medium" : "Roboto",
+    fontName_regular: Platform.OS === 'ios'? parseFloat(MyNativeMoudles.systemVersion) < 9 ?'.HelveticaNeueInterface-Regular' : "PingFangSC-Regular" : "Roboto",
+    fontName_medium: Platform.OS === 'ios'? parseFloat(MyNativeMoudles.systemVersion) < 9 ?'.HelveticaNeueInterface-MediumP4' : "PingFangSC-Medium" : "Roboto",
 
     //字颜色
     textColor_0: "#000",//字的主色
