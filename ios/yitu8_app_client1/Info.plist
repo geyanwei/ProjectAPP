@@ -29,7 +29,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx3893d2786119e0be</string>
+				<string>wx90c6e3efd0512067</string>
 			</array>
 		</dict>
 		<dict>
@@ -52,6 +52,36 @@
 				<string>yitu8</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>net.yitu8.user</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb1610395310</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Qzone</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent1105195698</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>QQ</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QQ41dff2b2</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -59,8 +89,13 @@
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>wechat</string>
 		<string>weixin</string>
 		<string>alipay</string>
+		<string>sinaweibo</string>
+		<string>mqzone</string>
+		<string>mqqapi</string>
+		<string></string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -87,6 +122,10 @@
 	<string>是否允许此App使用你的麦克风？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要您的同意,来访问相册进行上传头像或其他信息</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

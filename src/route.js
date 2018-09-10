@@ -54,6 +54,7 @@ import QueryCharter from './main/home/actionView/flight/QueryCharter.js';
 import QueryCharterNext from './main/home/actionView/flight/QueryCharterNext.js';
 import PositionLocation from './main/home/actionView/flight/PositionLocation.js';
 import SelectCity from './main/home/actionView/selectCity/SelectCity.js';
+import MySelCity from './main/home/actionView/selectCity/MySelCity.js';
 
 //消息
 import NotificationMessage from './main/message/MessageList/NotificationMessage.js';
@@ -112,6 +113,7 @@ const routeList = {
     'QueryCharterNext': QueryCharterNext,
     'PositionLocation': PositionLocation,
     'SelectCity': SelectCity,
+    'MySelCity': MySelCity,
 
     "NotificationMessage":NotificationMessage,
 };

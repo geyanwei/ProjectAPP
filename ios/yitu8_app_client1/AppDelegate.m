@@ -19,8 +19,11 @@
 #import <AlipaySDK/AlipaySDK.h>
 
 #import "WelcomeVC.h"
-
 #import "FirstVC.h"
+
+#import "RNUMConfigure.h"
+#import <UMAnalytics/MobClick.h>
+#import<UMSocialCore/UMSocialCore.h>
 
 @implementation AppDelegate
 
@@ -72,8 +75,6 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window.backgroundColor = [UIColor whiteColor];
   
-  [JPUSHService setupWithOption:launchOptions appKey:@"ad50eab787ef7ed8ca929412"
-                        channel:nil apsForProduction:nil];
   NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   
   RCTRootView *rootView = [[RCTRootView alloc]
@@ -96,11 +97,41 @@
     root.rootVC  = rootViewController;
     self.window.rootViewController = root;
   }
+  [self init_UM];
   
   [self.window makeKeyAndVisible];
   return YES;
 }
 
+-(void)init_UM {
+//  //友盟测试:5b39f077b27b0a165b000083  正式:57ea22eae0f55a8a6f0010ef
+//  [RNUMConfigure initWithAppkey:@"5b39f077b27b0a165b000083" channel:@"App Store"];
+//  [MobClick setScenarioType:E_UM_NORMAL];
+  /* 打开调试日志 */
+  [[UMSocialManager defaultManager] openLog:YES];
+  
+  /* 设置友盟appkey */
+  [[UMSocialManager defaultManager] setUmSocialAppkey:@"5b39f077b27b0a165b000083"];
+  [self configUSharePlatforms];
+  
+//  [self confitUShareSettings];
+  
+}
+
+//- (void)confitUShareSettings
+//{
+//  [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+//}
+- (void)configUSharePlatforms
+{
+  [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
+                                        appKey:@"wx90c6e3efd0512067" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:nil];
+  
+  [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105195698"
+                                     appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+  
+  [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1610395310"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+}
 
 //9.0之前接口
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{

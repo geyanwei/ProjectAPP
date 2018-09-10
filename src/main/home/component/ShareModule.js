@@ -6,9 +6,10 @@ import {
     Animated,
     Easing,
     View,
-    Image
+    Image, NativeModules
 } from 'react-native';
-import {ModalBox,Toast} from "myapplib";
+import {ModalBox, Toast} from "myapplib";
+import MyShearHelp from "../../share/MyShearHelp.js";
 
 class ShareModule extends Component {
     static show(data, cb) {
@@ -111,41 +112,41 @@ class ShareModule extends Component {
         </Animated.View>);
     }
 
-    getData(){
+    getData() {
         return [{
             title: "微信好友",
             icon: require("./image/icon_weChat.png"),
-            onPress:()=>{
+            onPress: () => {
                 this.setValue(0);
-                Toast.show("分享成功");
+                MyShearHelp.myShearHelp(2);
             }
         }, {
             title: "朋友圈",
             icon: require("./image/icon_weChat.png"),
-            onPress:()=>{
+            onPress: () => {
                 this.setValue(0);
-                alert("朋友圈")
+                MyShearHelp.myShearHelp(3);
             }
         }, {
             title: "新浪微博",
             icon: require("./image/icon_weibo.png"),
-            onPress:()=>{
+            onPress: () => {
                 this.setValue(0);
-                alert("新浪微博")
+                MyShearHelp.myShearHelp(4);
             }
         }, {
             title: "QQ空间",
             icon: require("./image/icon_qq.png"),
-            onPress:()=>{
+            onPress: () => {
                 this.setValue(0);
-                alert("QQ空间")
+                MyShearHelp.myShearHelp(1);
             }
         }, {
             title: "QQ好友",
             icon: require("./image/icon_qq.png"),
-            onPress:()=>{
+            onPress: () => {
                 this.setValue(0);
-                alert("QQ好友")
+                MyShearHelp.myShearHelp(0);
             }
         }];
     }
@@ -201,7 +202,7 @@ class MyItem extends Component {
                 <TouchableOpacity
                     style={{alignItems: "center", justifyContent: "center"}}
                     onPress={() => {
-                        item.onPress&&item.onPress();
+                        item.onPress && item.onPress();
                     }}>
                     <Image style={{width: 40, height: 40}} source={item.icon}/>
                     <Text style={{marginTop: 5, color: "#999", fontSize: 12}}>{item.title}</Text>

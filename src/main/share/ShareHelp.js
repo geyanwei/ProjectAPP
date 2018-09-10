@@ -56,8 +56,5 @@ module.exports = {
                     callBack({code: -4, msg: "未安装微信，请安装后分享"})
                 }
             });
-
-
     }
-
-}
+};

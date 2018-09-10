@@ -36,6 +36,7 @@ class SpotsDetails extends Component {
     }
 
     componentWillUnmount() {
+
     }
 
     render() {
@@ -160,14 +161,44 @@ class SpotsDetails extends Component {
 
     //创建功能模块
     createFuncItemView() {
-        return ["接机", "送机", "单次接送", "线路包车", "自由包车", "当地玩乐"].map((title, index) => {
-            return {title: title, icon: require('../../image/userIcon/grzx-zhaq.png')}
-        }).map((item, i) => {
+        return [
+            {
+                title:"接机",
+                path:"RecPlace",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            },
+            {
+                title:"送机",
+                path:"SendPlace",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            },
+            {
+                title:"单次接送",
+                path:"SingleRecOrSend",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            },
+            {
+                title:"线路包车",
+                path:"LineCharter",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            },
+            {
+                title:"自由包车",
+                path:"FreedomCharter",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            },
+            {
+                title:"当地玩乐",
+                path:"LocalPlay",
+                icon: require('../../image/userIcon/grzx-zhaq.png'),
+            }].map((item, i) => {
             return (<FuncItemView
                 key={i}
                 item={item}
-                cb={(item) => {
-                    alert(JSON.stringify(item));
+                cb={(data) => {
+                    navigation.push(this,data.path,{
+                        title:data.title
+                    })
                 }}/>);
         });
     }

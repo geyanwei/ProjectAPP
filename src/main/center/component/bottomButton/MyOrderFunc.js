@@ -27,7 +27,7 @@ class MyBottomAlert extends Component {
     }
 
     componentDidMount() {
-        ShareHelp.initShare("wx3893d2786119e0be");
+        ShareHelp.initShare("wx90c6e3efd0512067");
     }
 
     /**

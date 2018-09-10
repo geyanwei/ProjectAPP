@@ -73,9 +73,9 @@ class LineCharter extends Component {
                     title={"京都"}
                     placeholder={"选择您想去的城市"}
                     cb={(ref, text) => {
-                        navigation.push(this, "SelectCity", {
-                            title: "选择城市",
-                            param: {value: text},
+                        navigation.push(this, "MySelCity", {
+                            title: "城市选择",
+                            placeholder: "搜索中文/拼音/首字母",
                             callBack: (obj) => {
                                  ref.setTitle(obj.name || "");
                             }
