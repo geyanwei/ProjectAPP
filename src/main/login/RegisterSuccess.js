@@ -60,7 +60,6 @@ class RegisterSuccess extends Component {
                               });
                           }}>立即认证
                 </MyButton>
-
             </ScrollView>);
         return  (
             <PageView
@@ -70,8 +69,7 @@ class RegisterSuccess extends Component {
                 config={PageView.defaultConfig(this,{
                     pageLoading:false,
                     barConfig:this.navBar(),
-                })}
-            >
+                })}>
                 {main}
             </PageView>
         );

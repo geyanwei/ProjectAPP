@@ -6,9 +6,9 @@ import {
     Animated,
     Easing,
     View,
-    Image, NativeModules
+    Image
 } from 'react-native';
-import {ModalBox, Toast} from "myapplib";
+import {ModalBox} from "myapplib";
 import MyShearHelp from "../../share/MyShearHelp.js";
 
 class ShareModule extends Component {
@@ -102,7 +102,7 @@ class ShareModule extends Component {
                                 this.setValue(0);
                             }}>
                             <Image resizeMode={"contain"} style={{width: 20, height: 20}}
-                                   source={require("./image/close.png")}/>
+                                   source={require("../../../image/order/image/close.png")}/>
                         </TouchableOpacity>
                     </View>
 
@@ -115,38 +115,38 @@ class ShareModule extends Component {
     getData() {
         return [{
             title: "微信好友",
-            icon: require("./image/icon_weChat.png"),
+            icon: require("../../../image/order/image/icon_weChat.png"),
             onPress: () => {
                 this.setValue(0);
-                MyShearHelp.myShearHelp(2);
+                MyShearHelp.myShearImageAndTextHelp(2);
             }
         }, {
             title: "朋友圈",
-            icon: require("./image/icon_weChat.png"),
+            icon: require("../../../image/order/image/icon_weChat.png"),
             onPress: () => {
                 this.setValue(0);
-                MyShearHelp.myShearHelp(3);
+                MyShearHelp.myShearImageAndTextHelp(3);
             }
         }, {
             title: "新浪微博",
-            icon: require("./image/icon_weibo.png"),
+            icon: require("../../../image/order/image/icon_weibo.png"),
             onPress: () => {
                 this.setValue(0);
-                MyShearHelp.myShearHelp(4);
+                MyShearHelp.myShearImageAndTextHelp(4);
             }
         }, {
             title: "QQ空间",
-            icon: require("./image/icon_qq.png"),
+            icon: require("../../../image/order/image/icon_qq.png"),
             onPress: () => {
                 this.setValue(0);
-                MyShearHelp.myShearHelp(1);
+                MyShearHelp.myShearImageAndTextHelp(1);
             }
         }, {
             title: "QQ好友",
-            icon: require("./image/icon_qq.png"),
+            icon: require("../../../image/order/image/icon_qq.png"),
             onPress: () => {
                 this.setValue(0);
-                MyShearHelp.myShearHelp(0);
+                MyShearHelp.myShearImageAndTextHelp(0);
             }
         }];
     }

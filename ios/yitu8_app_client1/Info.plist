@@ -56,7 +56,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>net.yitu8.user</string>
+			<string>sinaweibo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wb1610395310</string>
@@ -75,12 +75,22 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
 			<key>CFBundleURLName</key>
 			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>QQ41dff2b2</string>
 			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -92,10 +102,38 @@
 		<string>wechat</string>
 		<string>weixin</string>
 		<string>alipay</string>
+		<string>sinaweibohd</string>
 		<string>sinaweibo</string>
-		<string>mqzone</string>
-		<string>mqqapi</string>
-		<string></string>
+		<string>weibosdk</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk2.5</string>
+    
+    <!-- QQ、Qzone URL Scheme 白名单-->
+    <string>mqqapi</string>
+    <string>mqq</string>
+    <string>mqqOpensdkSSoLogin</string>
+    <string>mqqconnect</string>
+    <string>mqqopensdkdataline</string>
+    <string>mqqopensdkgrouptribeshare</string>
+    <string>mqqopensdkfriend</string>
+    <string>mqqopensdkapi</string>
+    <string>mqqopensdkapiV2</string>
+    <string>mqqopensdkapiV3</string>
+    <string>mqqopensdkapiV4</string>
+    <string>mqzoneopensdk</string>
+    <string>wtloginmqq</string>
+    <string>wtloginmqq2</string>
+    <string>mqqwpa</string>
+    <string>mqzone</string>
+    <string>mqzonev2</string>
+    <string>mqzoneshare</string>
+    <string>wtloginqzone</string>
+    <string>mqzonewx</string>
+    <string>mqzoneopensdkapiV2</string>
+    <string>mqzoneopensdkapi19</string>
+    <string>mqzoneopensdkapi</string>
+    <string>mqqbrowser</string>
+		<string>mttbrowser</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

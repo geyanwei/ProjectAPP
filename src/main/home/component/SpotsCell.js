@@ -24,15 +24,15 @@ class SpotsCell extends Component {
                 resizeMode={"cover"}
                 style={{
                     width: YITU.screenWidth - 2 * YITU.space_2,
-                    height: (YITU.screenWidth - 2 * YITU.space_2) * 0.504,
+                    height: (YITU.screenWidth - 2 * YITU.space_2) * 0.4,
                     alignItems: "center",
-                    justifyContent: "center",
                     borderRadius: YITU.radius_1,
                     overflow: "hidden",
                 }}
                 defaultSource={data.defaultSource}
                 source={data.imgUrl?{uri:data.imgUrl}:data.images}>
                 <Text style={{
+                    marginTop:(YITU.screenWidth - 2 * YITU.space_2) * 0.12,
                     backgroundColor: "transparent",
                     color: YITU.c_title_white,
                     fontSize: YITU.fontSize_6

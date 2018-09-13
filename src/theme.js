@@ -74,6 +74,7 @@ window.YITU = {
     backgroundColor_12: "#fd4957",//按钮点击重颜色
     backgroundColor_13: "#e3414e",//按钮点击重颜色
     backgroundColor_14:"#f5f7f9",//区背景
+    backgroundColor_15:"rgba(195,225,247,255)",//背景主色
 
 
     c_bg_white: "#fff",

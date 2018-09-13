@@ -96,7 +96,7 @@ class ModuleView extends Component {
                 onPress={() => {
                     this.setValue(0);
                 }}>
-                <Image style={{width:40,height:40}} source={require("./image/close_icon.png")}/>
+                <Image style={{width:40,height:40}} source={require("../../../image/order/image/close_icon.png")}/>
             </TouchableHighlight>
         </Animated.View>);
     }

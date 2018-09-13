@@ -47,7 +47,6 @@ class MyRow extends Component {
         super(props);
         this.state = {
             data: props.data || {},
-
         };
     }
 
@@ -113,13 +112,13 @@ class MyRow extends Component {
             case "input":
                 view = (<View style={{flex: 1, paddingRight: YITU.space_2}}>
                     <TextInput
-                        style={[this.props.valueStyle, {height: 45}]}
+                        style={[this.props.valueStyle, {height: 45,...data.valueStyle}]}
                         placeholder={data.placeHolder}
                         defaultValue={data.value}
                         onChangeText={(value) => {
                             data.onPress && data.onPress(data, value);
                         }}
-                        {...data.valueStyle || {}}
+                        {...data.props || {}}
                     />
                 </View>);
                 break;
@@ -136,12 +135,13 @@ class MyRow extends Component {
                             fontSize: YITU.fontSize_4,
                             minWidth: 32,
                             color: data.value ? YITU.textColor_1 : YITU.textColor_5
-                        }}>{data.areaNum || "区号"}</Text>
+                        }}>{data.areaCode?("+"+data.areaCode):"区号"}</Text>
                         <Image resizeMode={"contain"}
                                style={{height: 12, marginLeft: YITU.space_0, marginRight: YITU.space_2}}
                                source={require('../image/userIcon/arrow_black.png')}/>
                     </TouchableOpacity>
                     <TextInput
+                        {...data.props||{}}
                         style={[this.props.valueStyle, {flex: 1, height: 45,...data.valueStyle}]}
                         placeholder={data.placeHolder}
                         defaultValue={data.mobile}
@@ -208,7 +208,7 @@ class MyRow extends Component {
                         onChangeText={(value) => {
                             data.onPress && data.onPress(data, value);
                         }}
-                        {...data.valueStyle || {}}
+                        {...data.props || {}}
                     />
                 </View>);
                 break;

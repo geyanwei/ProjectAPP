@@ -21,8 +21,8 @@ if(__DEV__){
    //发出去的包，正式的
     if(config.onLine){
         //上线的  同步修改原生代码
-        config.url  = 'http://driverapi.pro.io.yitu8.cn';
-        config.updateHost  = 'http://appver.pro.io.yitu8.cn';
+        config.url  = 'http://appapi-out.test.io.yitu8.cn';
+        config.updateHost  = 'http://appver-out.test.io.yitu8.cn';
     }else{
         // 测试环境的  同步修改原生代码 //测试：http://appapi-out.test.io.yitu8.cn
         config.url  = 'http://appapi-out.test.io.yitu8.cn';

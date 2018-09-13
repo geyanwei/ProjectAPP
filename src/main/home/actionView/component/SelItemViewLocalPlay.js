@@ -115,7 +115,6 @@ class SelItemViewLocalPlay extends Component {
         });
     }
 }
-
 module.exports = SelItemViewLocalPlay;
 
 

@@ -241,13 +241,13 @@ class SpotsDetailsHot extends Component {
                         navigation.pop(this);
                     }}
                     rightArr={[
-                        {
-                            defIcon: require("../../image/icon_collect_def.png"),
-                            selIcon: require("../../image/icon_collect_sel.png"),
-                            onPress: () => {
-                                alert("收藏");
-                            }
-                        },
+                        // {
+                        //     defIcon: require("../../image/icon_collect_def.png"),
+                        //     selIcon: require("../../image/icon_collect_sel.png"),
+                        //     onPress: () => {
+                        //         alert("收藏");
+                        //     }
+                        // },
                         {
                             defIcon: require("../../image/icon_share_def.png"),
                             selIcon: require("../../image/icon_share_sel.png"),
@@ -474,7 +474,7 @@ class ProductView extends Component {
                 <Text
                     style={{fontSize: YITU.fontSize_6, color: YITU.textColor_1, marginRight: YITU.space_1}}>更多车型</Text>
                 <Image style={{width: YITU.d_click_icon, height: YITU.d_click_icon}}
-                       source={isOff ? require("./component/image/off_icon.png") : require("./component/image/on_icon.png")}/>
+                       source={isOff ? require("../../image/order/image/off_icon.png") : require("../../image/order/image/on_icon.png")}/>
             </TouchableOpacity> : null}
         </View>);
     }

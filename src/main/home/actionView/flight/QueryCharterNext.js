@@ -17,6 +17,7 @@ import BottomItemView from "./component/BottomItemView.js";
 import MyRow from "../../../../component/MyRow.js";
 import QueryCharterItemDetail from "./component/QueryCharterItemDetail.js";
 import DetailsModule from "./component/DetailsModule.js";
+import Tool from "../../../../tool/Tool";
 
 let keyBoard = {};
 if (Platform.OS === 'ios') {
@@ -145,8 +146,11 @@ class QueryCharterNext extends Component {
                 field: "name",
                 isCheck: true,
                 value: this.name || "",
-                valueStyle: {
+                props:{
                     maxLength: 30,
+                },
+                valueStyle: {
+
                 },
                 onPress: (valueData, text) => {
                     valueData.value = text;
@@ -159,27 +163,33 @@ class QueryCharterNext extends Component {
                 type: "phone",
                 field: "mobile",
                 mobile: this.telNum || "",
-                areaNum: this.areaNum || "",
+                areaCode: this.areaCode || "",
                 isCheck: true,
                 value: this.mobile || "",
-                valueStyle: {
+                props:{
                     maxLength: 20,
-                    keyboardType: "numeric",
-                },
+                    keyboardType: "numeric"},
+                valueStyle: {},
                 onPress: (valueData, obj) => {
                     if (obj && obj.isArea) {
-                        this.areaNum = obj.value || "86";
-                        valueData.areaNum = this.areaNum;
+                        navigation.push(this, "AreaCodeChoose", {
+                            title: "选择国家区号",
+                            callback: (areaCode) => {
+                                this.areaCode = areaCode|| "";
+                                valueData.areaCode = this.areaCode;
 
-                        this.mobile = this.areaNum + "-" + this.telNum;
-                        valueData.value = this.mobile;
+                                this.mobile = this.areaCode + "-" + this.telNum;
+                                valueData.value = this.mobile;
 
-                        valueData.refs && valueData.refs.setData(valueData);
+                                valueData.refs && valueData.refs.setData(valueData);
+                            }
+                        });
                     } else {
+                        log(obj && obj.value);
                         this.telNum = obj && obj.value;
                         valueData.mobile = this.telNum;
 
-                        this.mobile = this.areaNum + "-" + this.telNum;
+                        this.mobile = this.areaCode + "-" + this.telNum;
                         valueData.value = this.mobile;
                     }
                 }
@@ -190,27 +200,33 @@ class QueryCharterNext extends Component {
                 type: "phone",
                 field: "beiMobile",
                 mobile: this.beiTelNum || "",
-                areaNum: this.beiAreaNum || "",
+                areaCode: this.beiAreaCode || "",
                 value: this.beiMobile || "",
-                valueStyle: {
+                props:{
                     maxLength: 20,
                     keyboardType: "numeric",
                 },
+                valueStyle: {},
                 msg: "备用手机号",
                 onPress: (valueData, obj) => {
                     if (obj && obj.isArea) {
-                        this.beiAreaNum = obj.value || "315";
-                        valueData.areaNum = this.beiAreaNum;
+                        navigation.push(this, "AreaCodeChoose", {
+                            title: "选择国家区号",
+                            callback: (areaCode) => {
+                                this.beiAreaCode = areaCode|| "";
+                                valueData.areaCode = this.beiAreaCode;
 
-                        this.beiMobile = this.beiAreaNum + "-" + this.beiTelNum;
-                        valueData.value = this.beiMobile;
+                                this.beiMobile = this.beiAreaCode + "-" + this.beiTelNum;
+                                valueData.value = this.beiMobile;
 
-                        valueData.refs && valueData.refs.setData(valueData);
+                                valueData.refs && valueData.refs.setData(valueData);
+                            }
+                        });
                     } else {
                         this.beiTelNum = obj && obj.value;
                         valueData.mobile = this.beiTelNum;
 
-                        this.beiMobile = this.beiAreaNum + "-" + this.beiTelNum;
+                        this.beiMobile = this.beiAreaCode + "-" + this.beiTelNum;
                         valueData.value = this.beiMobile;
                     }
                 }
@@ -221,9 +237,10 @@ class QueryCharterNext extends Component {
                 type: "input",
                 field: "weChat",
                 value: this.weChat || "",
-                valueStyle: {
+                props:{
                     maxLength: 30,
                 },
+                valueStyle: {},
                 noShowLine: true,
                 onPress: (valueData, text) => {
                     valueData.value = text;
@@ -257,9 +274,10 @@ class QueryCharterNext extends Component {
                 type: "input",
                 field: "noteInfo",
                 value: this.noteInfo || "",
-                valueStyle: {
-                    maxLength: 100,
+                props:{
+                    maxLength: 100
                 },
+                valueStyle: {},
                 noShowLine: true,
                 onPress: (valueData, text) => {
                     valueData.value = text;
@@ -350,7 +368,7 @@ class QueryCharterNext extends Component {
         let userData = this.viewData || [];
         for (let obj of userData) {
             if (obj.type !== "line") {
-                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaNum === "" || !obj.areaNum)) {
+                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaCode === "" || !obj.areaCode)) {
                     Toast.show((obj.msg || obj.title) + "区号不能为空");
                     return;
                 }

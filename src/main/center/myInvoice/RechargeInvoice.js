@@ -173,7 +173,7 @@ class RechargeInvoice extends Component {
             type: "phone",
             field: "mobile",
             mobile: this.telNum || "",
-            areaNum: this.areaNum || "",
+            areaCode: this.areaCode || "",
             isCheck: true,
             value: this.mobile || "",
             valueStyle: {
@@ -182,10 +182,10 @@ class RechargeInvoice extends Component {
             },
             onPress: (valueData, obj) => {
                 if (obj && obj.isArea) {
-                    this.areaNum = obj.value || "86";
-                    valueData.areaNum = this.areaNum;
+                    this.areaCode = obj.value || "86";
+                    valueData.areaCode = this.areaCode;
 
-                    this.mobile = this.areaNum + "-" + this.telNum;
+                    this.mobile = this.areaCode + "-" + this.telNum;
                     valueData.value = this.mobile;
 
                     valueData.refs && valueData.refs.setData(valueData);
@@ -193,7 +193,7 @@ class RechargeInvoice extends Component {
                     this.telNum = obj && obj.value;
                     valueData.mobile = this.telNum;
 
-                    this.mobile = this.areaNum + "-" + this.telNum;
+                    this.mobile = this.areaCode + "-" + this.telNum;
                     valueData.value = this.mobile;
                 }
             }
@@ -204,7 +204,7 @@ class RechargeInvoice extends Component {
             type: "phone",
             field: "beiMobile",
             mobile: this.beiTelNum || "",
-            areaNum: this.beiAreaNum || "",
+            areaCode: this.beiAreaCode || "",
             value: this.beiMobile || "",
             noShowLine:true,
             valueStyle: {
@@ -214,10 +214,10 @@ class RechargeInvoice extends Component {
             msg: "备用手机号",
             onPress: (valueData, obj) => {
                 if (obj && obj.isArea) {
-                    this.beiAreaNum = obj.value || "315";
-                    valueData.areaNum = this.beiAreaNum;
+                    this.beiAreaCode = obj.value || "315";
+                    valueData.areaCode = this.beiAreaCode;
 
-                    this.beiMobile = this.beiAreaNum + "-" + this.beiTelNum;
+                    this.beiMobile = this.beiAreaCode + "-" + this.beiTelNum;
                     valueData.value = this.beiMobile;
 
                     valueData.refs && valueData.refs.setData(valueData);
@@ -225,7 +225,7 @@ class RechargeInvoice extends Component {
                     this.beiTelNum = obj && obj.value;
                     valueData.mobile = this.beiTelNum;
 
-                    this.beiMobile = this.beiAreaNum + "-" + this.beiTelNum;
+                    this.beiMobile = this.beiAreaCode + "-" + this.beiTelNum;
                     valueData.value = this.beiMobile;
                 }
             }
@@ -301,7 +301,7 @@ class RechargeInvoice extends Component {
         let postValue = {};
         for (let obj of this.viewData) {
             if (obj.type !== "line") {
-                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaNum === "" || !obj.areaNum)) {
+                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaCode === "" || !obj.areaCode)) {
                     Toast.show((obj.msg || obj.title) + "区号不能为空");
                     return;
                 }

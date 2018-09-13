@@ -144,7 +144,7 @@ class InvoiceInforInput extends Component {
         let postValue = {};
         for (let obj of this.viewData) {
             if (obj.type !== "line") {
-                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaNum === "" || !obj.areaNum)) {
+                if (obj && obj.value && (obj.field === "mobile" || obj.field === "beiMobile") && (obj.areaCode === "" || !obj.areaCode)) {
                     Toast.show((obj.msg || obj.title) + "区号不能为空");
                     return;
                 }

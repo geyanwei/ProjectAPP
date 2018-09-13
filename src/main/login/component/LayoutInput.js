@@ -12,37 +12,27 @@ import InputSpace from '../../../component/InputSpace';
 import { Toast} from 'myapplib';
 
 class LayoutInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.data || {},
+        };
+    }
 
-    getRightView(obj, data) {
-        return (<View style={{
-                flex: 1,
-                flexDirection: "row",
-            }}>
-                <InputSpace
-                    key={data.title + "_"}
-                    option={data.option||{}}
-                    underlineColorAndroid="transparent"
-                    style={{
-                        flex: 1,
-                        padding:0,
-                        fontSize: YITU.fontSize_5,
-                        color: YITU.textColor_1,
-                        height: YITU.d_RowHeight,
-                    }}
-                    {...data.prop}
-                    value={data.value}
-                    cb={(text)=>{
-                        data.value = text;
-                        if (data.callBack) {
-                            data.callBack(text);
-                        }
-                    }}/>
-            </View>);
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            data: nextProps.data
+        });
+    }
+
+    setData(data) {
+        this.setState({
+            data: data
+        });
     }
 
     render() {
-        let {obj, data} = this.props;
-        let onPress = data.onPress;
+        let {data} = this.state;
         if (data.type === "line") {
             return <View style={{
                 width: "100%",
@@ -52,11 +42,9 @@ class LayoutInput extends Component {
         }
         return (<TouchableOpacity
                 activeOpacity={1}
-                disabled={onPress ? false : true}
+                disabled={data.onPress ? false : true}
                 onPress={() => {
-                    if (onPress) {
-                        onPress();
-                    }
+                    data.onPress && data.onPress(data);
                 }}
                 style={{
                     flexDirection: "row",
@@ -67,10 +55,93 @@ class LayoutInput extends Component {
                         color: data.titleColor || YITU.textColor_1,
                         width: 90,
                     }}>{data.subTitle || data.title}</Text>
-                {this.getRightView(obj, data)}
+                {this.getRightView(data)}
             </TouchableOpacity>);
     }
+    getRightView(data) {
+        if (!data || data === {}) {
+            return null;
+        }
+        let view = null;
+        switch (data.type) {
+            case "input":
+                view = <View
+                    style={{
+                        flex: 1,
+                        flexDirection: "row",
+                    }}>
+                    <InputSpace
+                        key={data.title + "_"}
+                        option={data.option||{}}
+                        underlineColorAndroid="transparent"
+                        style={{
+                            flex: 1,
+                            padding:0,
+                            fontSize: YITU.fontSize_5,
+                            color: YITU.textColor_1,
+                            height: YITU.d_RowHeight,
+                        }}
+                        {...data.prop}
+                        value={data.value}
+                        cb={(text)=>{
+                            data.value = text;
+                            if (data.callBack) {
+                                data.callBack(text);
+                            }
+                        }}/>
+                </View>;
+                break;
+            case "phone":
+                view = (<View style={{flex: 1, flexDirection: "row", paddingRight: YITU.space_2, alignItems: "center"}}>
+                    <TouchableOpacity
+                        style={{flexDirection: "row", alignItems: "center"}}
+                        onPress={() => {
+                            data.callBack && data.callBack(data, {
+                                isArea: true,
+                            });
+                        }}>
+                        <Text style={{
+                            fontSize: YITU.fontSize_4,
+                            minWidth: 32,
+                            color: data.value ? YITU.textColor_1 : YITU.textColor_5
+                        }}>{data.areaCode?("+"+data.areaCode):"区号"}</Text>
+                        <Image resizeMode={"contain"}
+                               style={{height: 12, marginLeft: YITU.space_0, marginRight: YITU.space_2}}
+                               source={require('../../../image/userIcon/arrow_black.png')}/>
+                    </TouchableOpacity>
+                    <InputSpace
+                        key={data.title + "_"}
+                        option={data.option||{}}
+                        underlineColorAndroid="transparent"
+                        style={{
+                            flex: 1,
+                            padding:0,
+                            fontSize: YITU.fontSize_5,
+                            color: YITU.textColor_1,
+                            height: YITU.d_RowHeight,
+                        }}
+                        {...data.prop}
+                        value={data.value}
+                        cb={(text)=>{
+                            data.callBack && data.callBack(data, {
+                                isArea: false,
+                                value: text
+                            });
+
+                            // data.value = text;
+                            // if (data.callBack) {
+                            //     data.callBack(text);
+                            // }
+                        }}/>
+                </View>);
+                break;
+            default:
+                break;
+        }
+        return view;
+    }
 }
+module.exports = LayoutInput;
 
 LayoutInput.showMessage = (obj, page) => {
     let msg = "";
@@ -108,4 +179,3 @@ LayoutInput.showMessage = (obj, page) => {
 LayoutInput.getValue = (obj, page) => {
     return obj.value||"";
 };
-module.exports = LayoutInput;

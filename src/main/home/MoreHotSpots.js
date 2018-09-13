@@ -64,13 +64,14 @@ class MoreHotSpots extends Component {
     }
 
     renderItemView(rowData, sectionID, rowID, highlightRow) {
-
         let itemData = rowData.item;
         return (<View style={{paddingHorizontal:YITU.space_0}}>
             <SpotsCell
                 data={itemData}
                 cb={(data)=>{
-                    alert(JSON.stringify(data));
+                    navigation.push(this, "SpotsDetailsHot", {
+                        title: "产品详情"
+                    });
                 }}/>
         </View>);
     }

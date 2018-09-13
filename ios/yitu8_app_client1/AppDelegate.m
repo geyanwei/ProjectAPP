@@ -105,13 +105,11 @@
 
 -(void)init_UM {
 //  //友盟测试:5b39f077b27b0a165b000083  正式:57ea22eae0f55a8a6f0010ef
-//  [RNUMConfigure initWithAppkey:@"5b39f077b27b0a165b000083" channel:@"App Store"];
-//  [MobClick setScenarioType:E_UM_NORMAL];
+  [RNUMConfigure initWithAppkey:@"5b39f077b27b0a165b000083" channel:@"App Store"];
+  [MobClick setScenarioType:E_UM_NORMAL];
   /* 打开调试日志 */
   [[UMSocialManager defaultManager] openLog:YES];
-  
-  /* 设置友盟appkey */
-  [[UMSocialManager defaultManager] setUmSocialAppkey:@"5b39f077b27b0a165b000083"];
+
   [self configUSharePlatforms];
   
 //  [self confitUShareSettings];
@@ -125,12 +123,12 @@
 - (void)configUSharePlatforms
 {
   [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
-                                        appKey:@"wx90c6e3efd0512067" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:nil];
+                                        appKey:@"wx90c6e3efd0512067" appSecret:@"76baaf969774bf8adcddc61b9fbfd98c" redirectURL:nil];
   
   [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105195698"
-                                     appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+                                     appSecret:nil redirectURL:@"yitu8.net.user"];
   
-  [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1610395310"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+  [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1610395310"  appSecret:@"9d49903d796e461968b6ac1f7ada4755" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
 }
 
 //9.0之前接口
@@ -144,6 +142,13 @@
   if ( [RCTLinkingManager application:application openURL:url
                     sourceApplication:sourceApplication annotation:annotation]) {
     return YES;
+  }
+  //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+  BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+  if(result){
+    return YES;
+  }else{
+    return NO;
   }
   return NO;
 }
@@ -162,6 +167,10 @@
     [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
       NSLog(@"result = %@",resultDic);
     }];
+  }
+  BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+  if(result){
+    return YES;
   }
   return YES;
 }

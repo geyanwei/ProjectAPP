@@ -331,21 +331,6 @@ class RegisterAccount extends Component {
                 <ScrollView style={styles.main}
                             keyboardShouldPersistTaps={"handled"}
                             keyboardDismissMode={"none"}>
-                    <ImageBackground style={{width: YITU.screenWidth, height: 0.5 * YITU.screenWidth}}
-                                     source={require("../../image/login/new_resister_pic.png")}>
-                        <View style={styles.titleRow}>
-                            <TouchableOpacity onPress={() => {
-                                navigation.pop(this)
-                            }}>
-                                <Image
-                                    style={{marginLeft: YITU.space_5, width: YITU.BAR_HEIGHT, height: YITU.BAR_HEIGHT}}
-                                    source={require('../../image/login/zc-back.png')}/>
-                            </TouchableOpacity>
-
-                            <View style={{marginRight: YITU.space_5, width: YITU.BAR_HEIGHT, height: YITU.BAR_HEIGHT}}/>
-                        </View>
-                        <Image style={styles.descImg} source={require('../../image/login/slogan.png')}/>
-                    </ImageBackground>
 
                     <AreaCell obj={this} title={"服务城市"} isSelCitys={true}
                               callBack={(val)=>{
@@ -388,9 +373,10 @@ class RegisterAccount extends Component {
                 }}
                 config={PageView.defaultConfig(this, {
                     pageLoading: false,
-                    full: true
-                })}
-            >
+                    navBack:()=>{
+                        navigation.pop(this);
+                    }
+                })}>
                 {main}
             </PageView>
         );
@@ -420,7 +406,7 @@ class AgreeBtn extends Component {
                     this.setState({
                         isAgree: !isAgree
                     },()=>{
-                        cb(!isAgree);
+                        cb && cb(!isAgree);
                     });
                 }}>
                 <Image style={{width: YITU.d_icon_small, height: YITU.d_icon_small}}

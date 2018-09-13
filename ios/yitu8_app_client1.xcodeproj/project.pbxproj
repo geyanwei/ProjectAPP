@@ -82,12 +82,6 @@
 		796837D121412FCF006523AF /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837B221412FCF006523AF /* UMSocialCore.framework */; };
 		796837D221412FCF006523AF /* libSocialUniqueId.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837B621412FCF006523AF /* libSocialUniqueId.a */; };
 		796837D321412FCF006523AF /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837B821412FCF006523AF /* libSocialWeChat.a */; };
-		796837D421412FCF006523AF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837BB21412FCF006523AF /* FBSDKLoginKit.framework */; };
-		796837D521412FCF006523AF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837BC21412FCF006523AF /* FBSDKShareKit.framework */; };
-		796837D621412FCF006523AF /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837BD21412FCF006523AF /* FBSDKMessengerShareKit.framework */; };
-		796837D721412FCF006523AF /* libSocialFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837BF21412FCF006523AF /* libSocialFacebook.a */; };
-		796837D821412FCF006523AF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837C021412FCF006523AF /* FBSDKCoreKit.framework */; };
-		796837D921412FCF006523AF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837C121412FCF006523AF /* Bolts.framework */; };
 		796837DA21412FCF006523AF /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837C421412FCF006523AF /* libSocialSina.a */; };
 		796837DB21412FCF006523AF /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837C821412FCF006523AF /* libSocialQQ.a */; };
 		796837DC21412FCF006523AF /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796837CA21412FCF006523AF /* libUMSocialLog.a */; };
@@ -622,14 +616,6 @@
 		796837B621412FCF006523AF /* libSocialUniqueId.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialUniqueId.a; sourceTree = "<group>"; };
 		796837B821412FCF006523AF /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
 		796837B921412FCF006523AF /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
-		796837BB21412FCF006523AF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		796837BC21412FCF006523AF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		796837BD21412FCF006523AF /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
-		796837BE21412FCF006523AF /* UMSocialFaceBookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialFaceBookHandler.h; sourceTree = "<group>"; };
-		796837BF21412FCF006523AF /* libSocialFacebook.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialFacebook.a; sourceTree = "<group>"; };
-		796837C021412FCF006523AF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		796837C121412FCF006523AF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		796837C221412FCF006523AF /* facebook_ios_sdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facebook_ios_sdk_Prefix.pch; sourceTree = "<group>"; };
 		796837C421412FCF006523AF /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		796837C521412FCF006523AF /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
 		796837C721412FCF006523AF /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
@@ -694,8 +680,6 @@
 				57C568A8B84C449883DCB710 /* CFNetwork.framework in Frameworks */,
 				5D8498862C8E4B848B1E53D9 /* Foundation.framework in Frameworks */,
 				D8C2409204CB42C59D3D66F3 /* UIKit.framework in Frameworks */,
-				796837D621412FCF006523AF /* FBSDKMessengerShareKit.framework in Frameworks */,
-				796837D721412FCF006523AF /* libSocialFacebook.a in Frameworks */,
 				79E04F7C213A691D0081B80E /* CoreText.framework in Frameworks */,
 				796837DB21412FCF006523AF /* libSocialQQ.a in Frameworks */,
 				79E04F7A213A690B0081B80E /* QuartzCore.framework in Frameworks */,
@@ -704,7 +688,6 @@
 				79F0BA59212EA5B30028F9CF /* libbz2.tbd in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
-				796837D421412FCF006523AF /* FBSDKLoginKit.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -724,7 +707,6 @@
 				796837D221412FCF006523AF /* libSocialUniqueId.a in Frameworks */,
 				0915A01ECE8046D18A48703F /* Security.framework in Frameworks */,
 				C53875A6F22349519AB97B00 /* libresolv.tbd in Frameworks */,
-				796837D521412FCF006523AF /* FBSDKShareKit.framework in Frameworks */,
 				D19A61CCD7AF4A418CD31FFE /* libRCTContacts.a in Frameworks */,
 				38B3D70388B9422C82C15815 /* libRNDeviceInfo.a in Frameworks */,
 				0655FC15A70E4AF599160935 /* libRNFS.a in Frameworks */,
@@ -743,11 +725,9 @@
 				2A9C48BF3C1446E4B5EA0C15 /* libjschelpers.a in Frameworks */,
 				795EFBA2212FFABC0017DEEB /* UMAnalytics.framework in Frameworks */,
 				795EFB9D212FFABC0017DEEB /* AlipaySDK.framework in Frameworks */,
-				796837D821412FCF006523AF /* FBSDKCoreKit.framework in Frameworks */,
 				796837DA21412FCF006523AF /* libSocialSina.a in Frameworks */,
 				796837CE21412FCF006523AF /* UShareUI.framework in Frameworks */,
 				A6D0E275E10646A596534B59 /* libthird-party.a in Frameworks */,
-				796837D921412FCF006523AF /* Bolts.framework in Frameworks */,
 				C2FFC7C5FA0647D9B3E3C09A /* libdouble-conversion.a in Frameworks */,
 				79E04F1B213A2CC40081B80E /* libRCTWeChat.a in Frameworks */,
 			);
@@ -1086,7 +1066,6 @@
 			children = (
 				796837B421412FCF006523AF /* UniqueId */,
 				796837B721412FCF006523AF /* WeChat */,
-				796837BA21412FCF006523AF /* Facebook */,
 				796837C321412FCF006523AF /* Sina */,
 				796837C621412FCF006523AF /* QQ */,
 			);
@@ -1109,21 +1088,6 @@
 				796837B921412FCF006523AF /* UMSocialWechatHandler.h */,
 			);
 			path = WeChat;
-			sourceTree = "<group>";
-		};
-		796837BA21412FCF006523AF /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				796837BB21412FCF006523AF /* FBSDKLoginKit.framework */,
-				796837BC21412FCF006523AF /* FBSDKShareKit.framework */,
-				796837BD21412FCF006523AF /* FBSDKMessengerShareKit.framework */,
-				796837BE21412FCF006523AF /* UMSocialFaceBookHandler.h */,
-				796837BF21412FCF006523AF /* libSocialFacebook.a */,
-				796837C021412FCF006523AF /* FBSDKCoreKit.framework */,
-				796837C121412FCF006523AF /* Bolts.framework */,
-				796837C221412FCF006523AF /* facebook_ios_sdk_Prefix.pch */,
-			);
-			path = Facebook;
 			sourceTree = "<group>";
 		};
 		796837C321412FCF006523AF /* Sina */ = {
