@@ -50,24 +50,34 @@ class UserCenter extends Component {
             flex: 1,
             backgroundColor: YITU.backgroundColor_1,
         }}>
-            <SearchItem
-                placeholder={"请输入目的地"}
-                returnKeyType={'search'}
-                cb={(val) => {
-                    this.searchVal = val
-                }}
-                onSubmitEditing={() => {
-                    this.myTitleArea.setData(true);
-                    this.myList.refreshListView({
-                        title:"结果",
-                        englishTitle:"Result",
-                        imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535797735915&di=20df7a9d79d2187142154669a7868f8e&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F2%2F2D%2F2DC8D18B509E29477F89BBB150F2DDF1.jpg"
-                    });
-                }}/>
+            <View style={{width:YITU.screenWidth}}>
+                <SearchItem
+                    placeholder={"请输入目的地"}
+                    returnKeyType={'search'}
+                    cb={(val) => {
+                        this.searchVal = val;
+                    }}
+                    quitOnPress={()=>{
+                        if (this.isSearch){
+                            this.myTitleArea.setData(false);
+                            this.myList.refreshListView();
+                        }
+                        this.isSearch = false;
+                    }}
+                    onSubmitEditing={() => {
+                        this.isSearch = true;
+                        this.myTitleArea.setData(true);
+                        this.myList.refreshListView({
+                            title:"结果",
+                            englishTitle:"Result",
+                            imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535797735915&di=20df7a9d79d2187142154669a7868f8e&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F2%2F2D%2F2DC8D18B509E29477F89BBB150F2DDF1.jpg"
+                        });
+                    }}/>
+            </View>
             <View style={{flex: 1, flexDirection: "row",}}>
                 <TitleArea ref={(a) => this.myTitleArea = a}
-                    cb={(item) => {
-                        this.myList.refreshListView(item)
+                    cb={(itemObj) => {
+                        this.myList.refreshListView(itemObj);
                     }}/>
 
                 <ConArea ref={(a) => this.myList = a}

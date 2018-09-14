@@ -103,7 +103,7 @@ class LayoutInput extends Component {
                         <Text style={{
                             fontSize: YITU.fontSize_4,
                             minWidth: 32,
-                            color: data.value ? YITU.textColor_1 : YITU.textColor_5
+                            color: data.areaCode ? YITU.textColor_1 : YITU.textColor_5
                         }}>{data.areaCode?("+"+data.areaCode):"区号"}</Text>
                         <Image resizeMode={"contain"}
                                style={{height: 12, marginLeft: YITU.space_0, marginRight: YITU.space_2}}

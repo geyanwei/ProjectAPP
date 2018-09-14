@@ -112,14 +112,14 @@
 
   [self configUSharePlatforms];
   
-//  [self confitUShareSettings];
+  [self confitUShareSettings];
   
 }
 
-//- (void)confitUShareSettings
-//{
-//  [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
-//}
+- (void)confitUShareSettings
+{
+  [UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+}
 - (void)configUSharePlatforms
 {
   [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession

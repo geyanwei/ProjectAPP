@@ -7,7 +7,6 @@
 //
 
 #import "FirstVC.h"
-#import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
 @interface FirstVC (){
@@ -25,7 +24,7 @@
   UIScrollView *myScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
   
   for (int i=0; i<3; i++){
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"1-%d.jpg",i+1]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"1-%d.png",i+1]];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH * i, 0, WIDTH, HEIGHT)];
     // 在最后一页创建按钮
     if (i == 2)
@@ -34,12 +33,14 @@
       imageView.userInteractionEnabled = YES;
       UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
       button.frame = CGRectMake(WIDTH / 3, HEIGHT * 7 / 8, WIDTH / 3, HEIGHT / 16);
-      [button setTitle:@"点击进入" forState:UIControlStateNormal];
+      [button setTitle:@"开启旅行" forState:UIControlStateNormal];
+      button.titleLabel.font = [UIFont systemFontOfSize: 16]; 
       [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-      button.layer.borderWidth = 2;
+      [button setBackgroundColor:[UIColor colorWithRed:0 green:155/255.0 blue:252/255.0 alpha:1]];
+//      button.layer.borderWidth = 2;
       button.layer.cornerRadius = 5;
       button.clipsToBounds = YES;
-      button.layer.borderColor = [UIColor whiteColor].CGColor;
+//      button.layer.borderColor = [UIColor whiteColor].CGColor;
       [button addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
       [imageView addSubview:button];
     }
@@ -58,9 +59,9 @@
   // 设置页数
   pageControl.numberOfPages = 3;
   // 设置页码的点的颜色
-  pageControl.pageIndicatorTintColor = [UIColor yellowColor];
+  pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
   // 设置当前页码的点颜色
-  pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+  pageControl.currentPageIndicatorTintColor = [UIColor colorWithRed:0 green:155/255.0 blue:252/255.0 alpha:1];
   [self.view addSubview:pageControl];
 }
 
@@ -68,7 +69,6 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
   // 计算当前在第几页
   pageControl.currentPage = (NSInteger)(scrollView.contentOffset.x / [UIScreen mainScreen].bounds.size.width);
-  
 }
 
 // 点击按钮保存数据并切换根视图控制器
