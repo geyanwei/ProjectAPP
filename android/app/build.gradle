@@ -142,6 +142,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-crop-picker')
     compile project(':react-native-autoheight-webview')
     compile project(':react-native-wheel-picker')
     compile project(':react-native-wechat')

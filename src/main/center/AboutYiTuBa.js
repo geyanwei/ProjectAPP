@@ -59,10 +59,7 @@ class AboutYiTuBa extends Component {
             }, {
                 title: "给小易个好评",
                 onPress: () => {
-                    this.openPage('AlterLoginPW', {
-                        title: '修改登录密码',
-                        pageKey: this.pageKey,
-                    });
+                    Linking.openURL("")
                 }
             }
         ];
@@ -77,7 +74,7 @@ class AboutYiTuBa extends Component {
         let view = (<ScrollView
             style={styles.container}
             keyboardShouldPersistTaps={"handled"}>
-            <Image style={styles.headImg} source={require("../../image/login/yt8logo.png")}/>
+            <Image style={styles.headImg} source={require("../../image/user/aboutUs/icon_logo.png")}/>
             <Text style={styles.title}>{"易途吧 V" + MyNativeModule.versionName}</Text>
 
             <LayoutBox.Icon
@@ -114,15 +111,15 @@ class AboutYiTuBa extends Component {
         return [
             {
                 title: "yitu8jwzwzc",
-                icon: require("../../image/login/yt8logo.png")
+                icon: require("../../image/user/aboutUs/icon_weChat.png")
             },
             {
                 title: "service@yitu8.cn",
-                icon: require("../../image/login/yt8logo.png")
+                icon: require("../../image/user/aboutUs/icon_email.png")
             },
             {
                 title: "400-0630-655",
-                icon: require("../../image/login/yt8logo.png")
+                icon: require("../../image/user/aboutUs/icon_kefu.png")
             }].map((item, index) => {
             return (<TouchableOpacity
                 activeOpacity={0.8}
