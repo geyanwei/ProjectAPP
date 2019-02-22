@@ -68,7 +68,7 @@
 #pragma mark - UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
   // 计算当前在第几页
-  pageControl.currentPage = (NSInteger)(scrollView.contentOffset.x / [UIScreen mainScreen].bounds.size.width);
+  pageControl.currentPage = (NSInteger)(scrollView.contentOffset.x / WIDTH);
 }
 
 // 点击按钮保存数据并切换根视图控制器
